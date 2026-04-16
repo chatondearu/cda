@@ -24,11 +24,11 @@
               THE LAB
             </NuxtLink>
             <NuxtLink
-              to="/contact"
+              to="/about"
               class="px-3 py-1 ui-heading text-primary_amber_soft hover:text-primary_amber"
               active-class="bg-surface_container_highest text-primary_amber"
             >
-              CONTACT
+              ABOUT
             </NuxtLink>
           </nav>
         </div>
@@ -36,17 +36,31 @@
     </header>
 
     <main class="mx-auto max-w-6xl px-4 pb-12 pt-6">
-      <div class="bg-surface_container_highest ui-ghost-border">
-        <div class="flex items-center justify-between px-4 py-2">
-          <div class="ui-micro text-primary_amber/60">SYS_MSG: READY</div>
-          <div class="ui-micro text-primary_amber/30">NOST-0000-X</div>
+      <div class="grid gap-4 lg:grid-cols-[1fr_18rem]">
+        <div class="bg-surface_container_highest ui-ghost-border">
+          <div class="flex items-center justify-between px-4 py-2">
+            <div class="ui-micro text-primary_amber/60">
+              SYS_MSG: READY
+            </div>
+            <div class="ui-micro text-primary_amber/30">
+              NOST-0000-X
+            </div>
+          </div>
+
+          <div class="px-4 py-6">
+            <slot />
+          </div>
         </div>
 
-        <div class="px-4 py-6">
-          <slot />
+        <div class="lg:sticky lg:top-6 lg:self-start">
+          <RetroWalkman />
         </div>
       </div>
     </main>
   </div>
 </template>
+
+<script setup lang="ts">
+import RetroWalkman from '~/components/ui/RetroWalkman.vue'
+</script>
 

@@ -76,8 +76,7 @@ type LabItem = {
 }
 
 const { data, pending, error } = await useAsyncData('lab-index', async () => {
-  return await queryCollection('content')
-    .where('path', 'LIKE', '/lab/%')
+  return await queryCollection('lab')
     .select('path', 'title', 'description', 'status', 'tech_stack', 'date')
     .order('date', 'DESC')
     .all<LabItem>()

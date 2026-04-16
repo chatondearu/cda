@@ -34,12 +34,20 @@ import TerminalWindow from '~/components/ui/TerminalWindow.vue'
 
 const route = useRoute()
 
-const path = computed(() => `/lab/${String(route.params.slug ?? '').replaceAll(',', '/')}`)
+const path = computed(() => {
+  const slugParam = route.params.slug
+  const parts = Array.isArray(slugParam) ? slugParam : [slugParam]
+  const safeParts = parts
+    .filter(Boolean)
+    .map(part => String(part))
+
+  return `/lab/${safeParts.join('/')}`
+})
 
 const { data: page, pending, error } = await useAsyncData(
   () => `lab:${path.value}`,
   async () => {
-    return await queryCollection('content')
+    return await queryCollection('lab')
       .path(path.value)
       .first()
   },

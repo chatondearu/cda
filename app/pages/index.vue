@@ -35,6 +35,8 @@ import TerminalWindow from '~/components/ui/TerminalWindow.vue'
 const fullText = 'WELCOME TO THE LAB... INITIALIZING...'
 const displayText = ref('')
 const cursorOn = ref(true)
+let typeInterval: number | undefined
+let cursorInterval: number | undefined
 
 const bootAt = Date.now()
 const uptime = computed(() => {
@@ -48,21 +50,23 @@ const uptime = computed(() => {
 onMounted(() => {
   let idx = 0
 
-  const typeInterval = window.setInterval(() => {
+  typeInterval = window.setInterval(() => {
     displayText.value = fullText.slice(0, idx + 1)
     idx += 1
     if (idx >= fullText.length)
       window.clearInterval(typeInterval)
   }, 36)
 
-  const cursorInterval = window.setInterval(() => {
+  cursorInterval = window.setInterval(() => {
     cursorOn.value = !cursorOn.value
   }, 480)
+})
 
-  onBeforeUnmount(() => {
+onBeforeUnmount(() => {
+  if (typeInterval)
     window.clearInterval(typeInterval)
+  if (cursorInterval)
     window.clearInterval(cursorInterval)
-  })
 })
 </script>
 
