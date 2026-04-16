@@ -12,4 +12,8 @@ export default defineNuxtConfig({
     '@nuxt/content',
     'nuxt-studio',
   ],
+
+  css: [
+    '~/assets/css/global.css',
+  ],
 })
