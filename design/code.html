@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>THE LAB // WEYLAND-YUTANI OS</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed": "#271900",
+                        "primary-container": "#ffb800",
+                        "tertiary-container": "#ffb579",
+                        "secondary-container": "#5b461e",
+                        "on-primary-fixed-variant": "#5e4200",
+                        "on-tertiary-container": "#7d4200",
+                        "inverse-on-surface": "#313030",
+                        "secondary": "#e1c28f",
+                        "error": "#ffb4ab",
+                        "tertiary-fixed": "#ffdcc3",
+                        "on-tertiary-fixed": "#2f1500",
+                        "on-tertiary": "#4d2600",
+                        "background": "#131313",
+                        "surface-container-high": "#2a2a2a",
+                        "on-primary": "#412d00",
+                        "surface": "#131313",
+                        "secondary-fixed-dim": "#e1c28f",
+                        "surface-variant": "#353534",
+                        "on-surface-variant": "#d5c4ab",
+                        "on-secondary-container": "#d2b482",
+                        "surface-container": "#201f1f",
+                        "primary-fixed": "#ffdea8",
+                        "on-primary-container": "#6b4c00",
+                        "on-secondary": "#402d07",
+                        "primary": "#ffdca1",
+                        "surface-dim": "#131313",
+                        "error-container": "#93000a",
+                        "inverse-surface": "#e5e2e1",
+                        "surface-container-lowest": "#0e0e0e",
+                        "surface-bright": "#3a3939",
+                        "outline-variant": "#514532",
+                        "on-primary-fixed": "#271900",
+                        "tertiary": "#ffdabf",
+                        "on-tertiary-fixed-variant": "#6e3900",
+                        "on-secondary-fixed-variant": "#58431c",
+                        "outline": "#9e8f78",
+                        "on-background": "#e5e2e1",
+                        "primary-fixed-dim": "#ffba20",
+                        "secondary-fixed": "#fedea9",
+                        "surface-tint": "#ffba20",
+                        "on-error": "#690005",
+                        "on-error-container": "#ffdad6",
+                        "surface-container-low": "#1c1b1b",
+                        "surface-container-highest": "#353534",
+                        "on-surface": "#e5e2e1",
+                        "tertiary-fixed-dim": "#ffb77d",
+                        "inverse-primary": "#7c5800"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0px",
+                        "lg": "0px",
+                        "xl": "0px",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Space Grotesk"],
+                        "label": ["Space Grotesk"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-color: #131313;
+            background-image: radial-gradient(#ffba20 0.5px, transparent 0.5px);
+            background-size: 24px 24px;
+            color: #ffdca1;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .scanline {
+            width: 100%;
+            height: 2px;
+            background: rgba(255, 186, 32, 0.05);
+            position: fixed;
+            top: 0;
+            z-index: 100;
+            pointer-events: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body selection:bg-primary-fixed-dim selection:text-background">
+<!-- TOP APP BAR -->
+<header class="fixed top-0 w-full border-b-2 border-[#ffba20] bg-[#131313] text-[#ffba20] z-50 flex justify-between items-center px-6 h-16 w-full">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined" data-icon="terminal">terminal</span>
+<h1 class="font-space-grotesk uppercase tracking-widest text-xl font-bold">REF-01/SYS_STATUS: NOMINAL</h1>
+</div>
+<div class="hidden md:flex gap-8 items-center font-space-grotesk text-xs tracking-widest">
+<span class="flex items-center gap-2"><span class="w-2 h-2 bg-[#ffba20] animate-pulse"></span> SECURE_LINE</span>
+<span class="opacity-60">USER: ADMIN_01</span>
+<span class="material-symbols-outlined hover:bg-[#ffba20] hover:text-[#131313] p-1 cursor-pointer" data-icon="settings_input_component">settings_input_component</span>
+</div>
+</header>
+<div class="flex pt-16 min-h-screen">
+<!-- SIDE NAVIGATION -->
+<aside class="hidden md:flex flex-col h-screen w-64 border-r border-[#ffba20]/20 bg-[#0e0e0e] py-8 sticky top-16">
+<div class="px-6 mb-10">
+<h2 class="font-space-grotesk text-[#ffba20] font-black text-xs uppercase tracking-widest">DIAGNOSTIC_v4.2</h2>
+<div class="h-[1px] w-full bg-[#ffba20]/20 mt-2"></div>
+</div>
+<nav class="flex flex-col flex-1">
+<a class="flex items-center gap-4 px-6 py-4 bg-[#ffba20] text-[#131313] font-bold font-space-grotesk text-xs uppercase transition-all duration-0" href="#">
+<span class="material-symbols-outlined text-sm" data-icon="timeline">timeline</span>
+                    TIMELINE_LOG
+                </a>
+<a class="flex items-center gap-4 px-6 py-4 text-[#ffba20] opacity-70 font-space-grotesk text-xs uppercase hover:bg-[#353534] transition-all duration-0" href="#">
+<span class="material-symbols-outlined text-sm" data-icon="inventory_2">inventory_2</span>
+                    ARCHIVE_REP
+                </a>
+<a class="flex items-center gap-4 px-6 py-4 text-[#ffba20] opacity-70 font-space-grotesk text-xs uppercase hover:bg-[#353534] transition-all duration-0" href="#">
+<span class="material-symbols-outlined text-sm" data-icon="settings_voice">settings_voice</span>
+                    CASSETTE_INT
+                </a>
+<a class="flex items-center gap-4 px-6 py-4 text-[#ffba20] opacity-70 font-space-grotesk text-xs uppercase hover:bg-[#353534] transition-all duration-0" href="#">
+<span class="material-symbols-outlined text-sm" data-icon="analytics">analytics</span>
+                    SYS_DIAG
+                </a>
+</nav>
+<div class="px-6 mt-auto">
+<div class="text-[10px] text-[#ffba20]/40 font-mono">
+                    COORD: 42.091 // 11.200<br/>
+                    MEM_LOAD: 14%
+                </div>
+</div>
+</aside>
+<!-- MAIN CONTENT CANVAS -->
+<main class="flex-1 overflow-x-hidden">
+<!-- HERO SECTION: THE COMMAND LINE -->
+<section class="p-8 md:p-16 border-b border-[#ffba20]/10 min-h-[530px] flex flex-col justify-center relative overflow-hidden">
+<div class="absolute top-4 left-4 text-[#ffba20]/20 text-[10px] font-mono">NOST-0034-X // BOOT_SEQUENCE</div>
+<div class="max-w-4xl">
+<div class="flex items-center gap-2 mb-6 text-primary-container">
+<span class="text-xs font-mono">&gt;&gt;</span>
+<span class="text-xs uppercase tracking-[0.3em] font-bold">Initializing Deep Systems</span>
+</div>
+<h2 class="text-4xl md:text-7xl font-black uppercase tracking-tighter text-primary leading-tight mb-8">
+                        MISSION BRIEF:<br/>
+<span class="bg-primary text-background px-2">ARCHITECTING</span> SYSTEM<br/>
+                        INTEGRATION_
+                    </h2>
+<p class="text-lg md:text-xl text-[#ffdca1]/70 font-light max-w-2xl leading-relaxed">
+                        DEPLOYING SCALABLE ARCHITECTURES ACROSS NEURAL NETWORKS AND DISTRIBUTED LEDGERS. OPERATING AT THE INTERSECTION OF RAW LOGIC AND HUMAN INTERFACE.
+                    </p>
+<div class="mt-12 flex flex-wrap gap-4">
+<button class="bg-primary text-on-primary px-8 py-3 font-bold uppercase tracking-widest hover:bg-background hover:text-primary border-2 border-primary transition-all duration-0">
+                            INITIALIZE_PROTOCOL
+                        </button>
+<button class="border-2 border-primary text-primary px-8 py-3 font-bold uppercase tracking-widest hover:bg-primary hover:text-on-primary transition-all duration-0">
+                            VIEW_RAW_DATA
+                        </button>
+</div>
+</div>
+<div class="absolute right-0 bottom-0 opacity-10 pointer-events-none hidden lg:block">
+<span class="material-symbols-outlined text-[400px]" data-icon="grid_view" style="font-variation-settings: 'wght' 100;">grid_view</span>
+</div>
+</section>
+<!-- EXPERIENCE SECTION: LOGIC_FLOW_CHRONO -->
+<section class="p-8 md:p-16 bg-surface-container-lowest relative">
+<div class="flex justify-between items-end mb-12 border-b border-primary/30 pb-4">
+<div>
+<span class="text-[10px] font-mono text-primary/40 block">MODULE_02</span>
+<h3 class="text-2xl font-black uppercase tracking-widest text-primary">LOGIC_FLOW_CHRONO</h3>
+</div>
+<span class="text-[10px] font-mono text-primary/40">TOTAL_UPTIME: 124,800_HRS</span>
+</div>
+<div class="space-y-0 relative">
+<!-- Timeline Line -->
+<div class="absolute left-0 md:left-1/2 top-0 bottom-0 w-[1px] bg-primary/20 hidden md:block"></div>
+<!-- Experience Item 1 -->
+<div class="relative grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 py-12 group">
+<div class="md:text-right">
+<span class="text-xs font-mono text-primary-container mb-2 block">2118 — PRESENT</span>
+<h4 class="text-xl font-bold text-primary uppercase">SENIOR SYSTEMS ARCHITECT</h4>
+<p class="text-xs text-primary/60 font-mono">REF: WEYLAND-YUTANI / CORP</p>
+</div>
+<div class="relative">
+<div class="absolute -left-[33px] top-1 w-4 h-4 bg-primary rotate-45 hidden md:block group-hover:scale-125 transition-transform"></div>
+<p class="text-sm leading-relaxed text-on-surface-variant">
+                                OVERSEEING THE DEPLOYMENT OF AUTONOMOUS LOGISTICS ARRAYS. OPTIMIZING CORE LATENCY FOR INTERSTELLAR COMMS. IMPLEMENTING SECURE HANDSHAKE PROTOCOLS FOR REMOTELY OPERATED SYNTHETICS.
+                            </p>
+<div class="mt-4 flex gap-2">
+<span class="bg-secondary-container text-on-secondary-container text-[10px] px-2 py-1 uppercase">RUST</span>
+<span class="bg-secondary-container text-on-secondary-container text-[10px] px-2 py-1 uppercase">K8S</span>
+<span class="bg-secondary-container text-on-secondary-container text-[10px] px-2 py-1 uppercase">GO</span>
+</div>
+</div>
+</div>
+<!-- Experience Item 2 -->
+<div class="relative grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 py-12 group border-t border-primary/5">
+<div class="md:order-2">
+<span class="text-xs font-mono text-primary-container mb-2 block">2114 — 2118</span>
+<h4 class="text-xl font-bold text-primary uppercase">CORE_ENGINE_DEV</h4>
+<p class="text-xs text-primary/60 font-mono">REF: SEVASTOPOL_STATION</p>
+</div>
+<div class="md:text-right relative">
+<div class="absolute -right-[33px] top-1 w-4 h-4 border-2 border-primary rotate-45 hidden md:block group-hover:bg-primary transition-colors"></div>
+<p class="text-sm leading-relaxed text-on-surface-variant">
+                                MAINTAINING LEGACY COBOL SYSTEMS ON DEEP-SPACE OUTPOSTS. DEVELOPING REAL-TIME DIAGNOSTIC TOOLS FOR ATMOSPHERIC PROCESSORS. 
+                            </p>
+<div class="mt-4 flex gap-2 md:justify-end">
+<span class="bg-secondary-container text-on-secondary-container text-[10px] px-2 py-1 uppercase">C++</span>
+<span class="bg-secondary-container text-on-secondary-container text-[10px] px-2 py-1 uppercase">ASSEMBLY</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- PROJECTS SECTION: ARCHIVE_REPOSITORY -->
+<section class="p-8 md:p-16">
+<div class="flex items-center gap-4 mb-12">
+<h3 class="text-2xl font-black uppercase tracking-widest text-primary">ARCHIVE_REPOSITORY</h3>
+<div class="h-[2px] flex-1 bg-primary/20"></div>
+<span class="material-symbols-outlined text-primary" data-icon="inventory_2">inventory_2</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Project 1 -->
+<div class="bg-surface-container-high border border-primary/10 p-6 relative group hover:border-primary/50 transition-colors">
+<div class="absolute top-0 left-0 w-2 h-2 border-t-2 border-l-2 border-primary"></div>
+<div class="absolute top-0 right-0 w-2 h-2 border-t-2 border-r-2 border-primary"></div>
+<div class="absolute bottom-0 left-0 w-2 h-2 border-b-2 border-l-2 border-primary"></div>
+<div class="absolute bottom-0 right-0 w-2 h-2 border-b-2 border-r-2 border-primary"></div>
+<div class="flex justify-between items-start mb-4">
+<span class="text-[10px] font-mono text-primary/40">DATA_CAPSULE: 01</span>
+<span class="bg-error-container text-on-error-container text-[8px] px-2 py-0.5 uppercase font-bold">UNFINISHED</span>
+</div>
+<img class="w-full h-40 object-cover grayscale brightness-50 mb-4 group-hover:grayscale-0 transition-all duration-500" data-alt="Close-up of a complex green circuit board with copper pathways and microchips in dark moody lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnv5u16RdFiE_aVP9yW3nMYRqZtpopG9GqIvWDsxLVhPs_MF07T7knYdemZ9NaMBj6voZRlTtVlH9P7nhnUMf-ZMdDU1zvrK1o4vsiVJzjR4Pc-Ys6dDb4TOkQZwqCJjs73JZ3lEishm6EeesD7QJqCWzYs7xDcCyNxQBnAFgB9Ex5Rp5UZE8hzoiE0PzPMPKRXDtCCKINhpXaUxOQGMRBrAl44VPcu7AqzggeCI16bvbT5zcAoq1LOLRvW-VrqpqiL9YqlZxDrGDw"/>
+<h4 class="text-lg font-bold text-primary mb-2 uppercase">PROJECT_X: NEURAL_MESH</h4>
+<p class="text-xs text-on-surface-variant mb-6 line-clamp-3">EXPERIMENTAL PEER-TO-PEER NETWORK DESIGNED FOR SUB-LIGHT COMMUNICATION SYNCING.</p>
+<div class="flex justify-between items-center">
+<span class="text-[10px] font-mono text-primary">TECH: RUST/WEBGL</span>
+<span class="material-symbols-outlined text-sm text-primary" data-icon="open_in_new">open_in_new</span>
+</div>
+</div>
+<!-- Project 2 -->
+<div class="bg-surface-container-high border border-primary/10 p-6 relative group hover:border-primary/50 transition-colors">
+<div class="absolute top-0 left-0 w-2 h-2 border-t-2 border-l-2 border-primary"></div>
+<div class="absolute top-0 right-0 w-2 h-2 border-t-2 border-r-2 border-primary"></div>
+<div class="absolute bottom-0 left-0 w-2 h-2 border-b-2 border-l-2 border-primary"></div>
+<div class="absolute bottom-0 right-0 w-2 h-2 border-b-2 border-r-2 border-primary"></div>
+<div class="flex justify-between items-start mb-4">
+<span class="text-[10px] font-mono text-primary/40">DATA_CAPSULE: 02</span>
+<span class="bg-secondary-container text-on-secondary-container text-[8px] px-2 py-0.5 uppercase font-bold">NOMINAL</span>
+</div>
+<img class="w-full h-40 object-cover grayscale brightness-50 mb-4 group-hover:grayscale-0 transition-all duration-500" data-alt="Technical code on a screen reflecting in dark glass with orange and amber glowing highlights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3VMWC1fgX3Lyb2eorhFXLNFUEi8fG7Jd2T8HO3-Eq6rQjCzdBbuukmAXWdAW5QY41GQrUdWrYWmDWgqeorvvhSl3sfQzpiGKc7E4gdGSrxgld8Qjm3_tZeg0sb8E67ruS44KdWje2eerhDv7iJet2Iyz-K_bMzxpBaC2iOeTgBDFmf8LW3vJeyPTOVyy_lHymudkhi6TxlNActSNZR3doNCtdpH3yNOYe7y3zEMgKGl9iwVOJ0u-lOV22vPMgbAE5iL17b5Ricanz"/>
+<h4 class="text-lg font-bold text-primary mb-2 uppercase">GHOST_SHELL: OS</h4>
+<p class="text-xs text-on-surface-variant mb-6 line-clamp-3">A MINIMALIST LINUX KERNEL OPTIMIZED FOR HEADLESS SERVER DEPLOYMENTS IN HIGH-RADIATION ZONES.</p>
+<div class="flex justify-between items-center">
+<span class="text-[10px] font-mono text-primary">TECH: C/ASSEMBLY</span>
+<span class="material-symbols-outlined text-sm text-primary" data-icon="open_in_new">open_in_new</span>
+</div>
+</div>
+<!-- Project 3 -->
+<div class="bg-surface-container-high border border-primary/10 p-6 relative group hover:border-primary/50 transition-colors">
+<div class="absolute top-0 left-0 w-2 h-2 border-t-2 border-l-2 border-primary"></div>
+<div class="absolute top-0 right-0 w-2 h-2 border-t-2 border-r-2 border-primary"></div>
+<div class="absolute bottom-0 left-0 w-2 h-2 border-b-2 border-l-2 border-primary"></div>
+<div class="absolute bottom-0 right-0 w-2 h-2 border-b-2 border-r-2 border-primary"></div>
+<div class="flex justify-between items-start mb-4">
+<span class="text-[10px] font-mono text-primary/40">DATA_CAPSULE: 03</span>
+<span class="bg-secondary-container text-on-secondary-container text-[8px] px-2 py-0.5 uppercase font-bold">NOMINAL</span>
+</div>
+<img class="w-full h-40 object-cover grayscale brightness-50 mb-4 group-hover:grayscale-0 transition-all duration-500" data-alt="Abstract satellite view of a digital planet with glowing network lines and blue-amber light gradients" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXAPGfJP4LOmOcU4P-wNDWKnRlpNg-kLfi0y51QQsKRZlW-x6ecxdvGYN4Jb080YDfvxpFRGfoxhItYBexRhLPdjWAtSOROyXyGmsOUPyRbDGq2o4cB5MhRfzF54sboOw61Lh2ewpW6YjQxhlVEFOgOCnHh4HgP5fK8s5UDlyTGGrPYQARq0hyI--Yn0BcWazCbAXFuR_4Jwh0yPdzjV96L4QqtUPFCxsmuATZvn_r8Dg2_kBVBcubiqmA4hFMwHZguPFscClwjCbZ"/>
+<h4 class="text-lg font-bold text-primary mb-2 uppercase">VOID_SCANNER_v2</h4>
+<p class="text-xs text-on-surface-variant mb-6 line-clamp-3">TOPOGRAPHICAL MAPPING SUITE FOR UNCHARTED ASTEROID FIELDS. USES LIDAR POINT-CLOUD DATA.</p>
+<div class="flex justify-between items-center">
+<span class="text-[10px] font-mono text-primary">TECH: PYTHON/CUDA</span>
+<span class="material-symbols-outlined text-sm text-primary" data-icon="open_in_new">open_in_new</span>
+</div>
+</div>
+</div>
+</section>
+<!-- MECHANICAL CASSETTE INTERFACE -->
+<section class="p-8 md:p-16 border-t border-primary/20 bg-surface-container">
+<div class="max-w-xl mx-auto bg-black border-4 border-[#353534] p-8 relative shadow-[0_0_40px_rgba(0,0,0,0.5)]">
+<div class="absolute -top-3 left-10 bg-black px-2 text-[10px] font-bold text-primary/60 uppercase">CASSETTE_INT // ANALOG_LOG</div>
+<div class="flex flex-col gap-6">
+<!-- Cassette Tape Window -->
+<div class="h-32 bg-[#131313] border-2 border-primary/20 rounded-sm flex items-center justify-around px-8 relative overflow-hidden">
+<div class="absolute inset-0 opacity-10">
+<div class="w-full h-full" style="background-image: repeating-linear-gradient(0deg, #ffba20 0px, #ffba20 1px, transparent 1px, transparent 4px);"></div>
+</div>
+<div class="w-20 h-20 border-4 border-primary/40 rounded-full flex items-center justify-center animate-[spin_10s_linear_infinite]">
+<div class="w-2 h-6 bg-primary/40"></div>
+</div>
+<div class="w-20 h-20 border-4 border-primary/40 rounded-full flex items-center justify-center animate-[spin_10s_linear_infinite]">
+<div class="w-2 h-6 bg-primary/40"></div>
+</div>
+</div>
+<!-- Controls -->
+<div class="grid grid-cols-5 gap-2">
+<button class="bg-[#353534] aspect-square flex items-center justify-center border-b-4 border-black active:border-b-0 active:translate-y-1 transition-all">
+<span class="material-symbols-outlined text-primary" data-icon="square" style="font-variation-settings: 'FILL' 1;">square</span>
+</button>
+<button class="bg-[#353534] aspect-square flex items-center justify-center border-b-4 border-black active:border-b-0 active:translate-y-1 transition-all">
+<span class="material-symbols-outlined text-primary" data-icon="play_arrow" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</button>
+<button class="bg-[#353534] aspect-square flex items-center justify-center border-b-4 border-black active:border-b-0 active:translate-y-1 transition-all">
+<span class="material-symbols-outlined text-primary" data-icon="fast_rewind" style="font-variation-settings: 'FILL' 1;">fast_rewind</span>
+</button>
+<button class="bg-[#353534] aspect-square flex items-center justify-center border-b-4 border-black active:border-b-0 active:translate-y-1 transition-all">
+<span class="material-symbols-outlined text-primary" data-icon="fast_forward" style="font-variation-settings: 'FILL' 1;">fast_forward</span>
+</button>
+<button class="bg-error-container aspect-square flex items-center justify-center border-b-4 border-black active:border-b-0 active:translate-y-1 transition-all">
+<div class="w-3 h-3 bg-white rounded-full"></div>
+</button>
+</div>
+<!-- Readout -->
+<div class="bg-[#0e0e0e] p-4 border border-primary/30">
+<div class="flex justify-between text-[10px] font-mono text-primary mb-2">
+<span>TRACK_04: INTERVIEW_DATA.LOG</span>
+<span>04:21 / 12:00</span>
+</div>
+<div class="w-full h-1 bg-primary/10 relative">
+<div class="absolute top-0 left-0 h-full w-1/3 bg-primary"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- FOOTER -->
+<footer class="w-full border-t border-[#ffba20]/10 bg-[#131313] text-[#ffba20] flex flex-col md:flex-row justify-between px-8 py-8 w-full gap-8">
+<div>
+<div class="text-[#ffba20] font-black tracking-widest text-lg mb-4">THE_LAB</div>
+<p class="font-space-grotesk text-[10px] tracking-widest opacity-60">©2122 WEYLAND-YUTANI // LOGICAL_MACHINE_OS</p>
+</div>
+<div class="flex flex-col gap-4">
+<div class="grid grid-cols-2 gap-x-8 gap-y-2 font-space-grotesk text-[10px] tracking-widest uppercase">
+<a class="text-[#ffdca1]/40 hover:text-[#ffba20] transition-colors" href="#">TERMINAL_EXIT</a>
+<a class="text-[#ffdca1]/40 hover:text-[#ffba20] transition-colors" href="#">ENCRYPT_DATA</a>
+<a class="text-[#ffdca1]/40 hover:text-[#ffba20] transition-colors" href="#">SYSTEM_HALT</a>
+<a class="text-[#ffdca1]/40 hover:text-[#ffba20] transition-colors" href="#">CORE_DUMP</a>
+</div>
+<div class="flex items-center gap-4 text-xs font-mono opacity-30">
+<span>LAT: 34.0522 N</span>
+<span>LON: 118.2437 W</span>
+</div>
+</div>
+</footer>
+</main>
+</div>
+<!-- MOBILE NAVIGATION (Visible only on small screens) -->
+<div class="md:hidden fixed bottom-0 left-0 right-0 bg-[#131313] border-t-2 border-[#ffba20] flex justify-around items-center h-16 z-50 px-4">
+<a class="flex flex-col items-center text-[#ffba20]" href="#"><span class="material-symbols-outlined" data-icon="timeline">timeline</span><span class="text-[8px] mt-1">LOG</span></a>
+<a class="flex flex-col items-center text-[#ffba20]/40" href="#"><span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span><span class="text-[8px] mt-1">ARCHIVE</span></a>
+<a class="flex flex-col items-center text-[#ffba20]/40" href="#"><span class="material-symbols-outlined" data-icon="settings_voice">settings_voice</span><span class="text-[8px] mt-1">VOICE</span></a>
+<a class="flex flex-col items-center text-[#ffba20]/40" href="#"><span class="material-symbols-outlined" data-icon="analytics">analytics</span><span class="text-[8px] mt-1">DIAG</span></a>
+</div>
+<!-- Decorative Corner Markers -->
+<div class="fixed top-20 left-4 text-primary/10 text-[8px] font-mono pointer-events-none">+ 00.12.91</div>
+<div class="fixed bottom-20 right-4 text-primary/10 text-[8px] font-mono pointer-events-none">+ FF.00.AE</div>
+</body></html>
