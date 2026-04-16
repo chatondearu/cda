@@ -10,10 +10,16 @@ export default defineNuxtConfig({
   modules: [
     '@unocss/nuxt',
     '@nuxt/content',
-    'nuxt-studio',
+    ...(process.dev ? ['nuxt-studio'] : []),
   ],
 
+  content: {
+    experimental: {
+      sqliteConnector: 'native',
+    },
+  },
+
   css: [
-    '~/app/assets/css/global.css',
+    '~/assets/css/global.css',
   ],
 })
