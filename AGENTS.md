@@ -6,7 +6,7 @@ You are an expert Fullstack/Frontend Developer specialized in Nuxt 3/4, Vue.js e
 ## 2. PROJECT CONTEXT
 * **Goal:** Build a personal developer showcase/archive site.
 * **Stack:** Nuxt 4, Nuxt Content v3, UnoCSS, Nuxt Studio (enabled in dev only).
-* **Architecture:** Strictly use the Nuxt 4 `app/` directory structure. Do not generate frontend files in the root directory unless specified for Nuxt Content (`/content`).
+* **Architecture:** This repository is a pnpm monorepo using `modules/*`. The main Nuxt app lives in `modules/app` and must keep the Nuxt 4 `app/` directory structure at package root.
 * **Design Source of Truth:** `design/DESIGN.md` has priority over legacy planning notes.
 * **Design Language:** "Clinical Diagnostic" industrial brutalism, hard edges, tonal surfaces, dense data UI, no decorative glows.
 
@@ -32,12 +32,16 @@ You are an expert Fullstack/Frontend Developer specialized in Nuxt 3/4, Vue.js e
     * `nix develop -c npx ...`
 2.  If direnv is blocked, run `direnv allow` at project root.
 3.  Keep Nix files consistent: `flake.nix`, `flake.lock`, `.envrc`.
+4.  For app-specific commands, use workspace filters from repo root:
+    * `nix develop -c pnpm --filter @chatondearu/app dev`
+    * `nix develop -c pnpm --filter @chatondearu/app build`
 
 ## 7. NUXT / CONTENT GOTCHAS
-1.  In `app/app.vue`, always use `<NuxtLayout><NuxtPage /></NuxtLayout>`.
-2.  In Nuxt 4 app-dir mode, use `~/assets/...` for files physically in `app/assets/...`.
-3.  For Nuxt Content v3, define explicit collections in `content.config.ts`.
+1.  In `modules/app/app/app.vue`, always use `<NuxtLayout><NuxtPage /></NuxtLayout>`.
+2.  In Nuxt 4 app-dir mode, use `~/assets/...` for files physically in `modules/app/app/assets/...`.
+3.  For Nuxt Content v3, define explicit collections in `modules/app/content.config.ts`.
 4.  Query the matching collection name (`queryCollection('lab')` for lab capsules).
-5.  Prefer Node 22 native sqlite connector:
+5.  Prefer Node native sqlite connector:
     * `content.experimental.sqliteConnector = 'native'`
 6.  Keep `nuxt-studio` enabled in dev only to avoid production build failures when repository metadata is not configured.
+7.  New shared/publishable packages must use the `@chatondearu/*` namespace.

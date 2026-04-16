@@ -1,0 +1,27 @@
+{
+  "name": "@chatondearu/app",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24 <25",
+    "pnpm": ">=10.33.0 <11"
+  },
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "@nuxt/content": "^3.13.0",
+    "nuxt": "^4.4.2",
+    "nuxt-studio": "1.6.0",
+    "vue": "latest"
+  },
+  "devDependencies": {
+    "@unocss/nuxt": "^66.6.8",
+    "@unocss/preset-web-fonts": "^66.6.8",
+    "unocss": "^66.6.8"
+  }
+}

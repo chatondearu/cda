@@ -1,0 +1,18 @@
+{
+  "name": "@chatondearu/eslint-config",
+  "version": "0.0.0",
+  "type": "module",
+  "main": "./index.js",
+  "exports": {
+    ".": "./index.js"
+  },
+  "files": [
+    "index.js"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "peerDependencies": {
+    "eslint": "^9.0.0"
+  }
+}

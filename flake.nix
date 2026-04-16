@@ -1,5 +1,5 @@
 {
-  description = "chatondearu-web dev environment";
+  description = "chatondearu monorepo dev environment";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -14,7 +14,7 @@
       {
         devShells.default = pkgs.mkShell {
           packages = with pkgs; [
-            nodejs_22
+            nodejs_24
             pnpm
             git
           ];

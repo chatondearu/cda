@@ -1,6 +1,6 @@
-# chatondearu-web
+# chatondearu workspace
 
-Site perso / archive de projets (Nuxt 4 + Nuxt Content + UnoCSS + Nuxt Studio).
+Monorepo pnpm pour les modules `@chatondearu/*` (app Nuxt + futurs packages).
 
 ## Prérequis
 
@@ -15,26 +15,35 @@ Site perso / archive de projets (Nuxt 4 + Nuxt Content + UnoCSS + Nuxt Studio).
 direnv allow
 ```
 
-2. Installer les dépendances:
+2. Installer les dépendances du workspace:
 
 ```bash
-pnpm install
+nix develop -c pnpm install
 ```
 
-## Dev
+## Dev (app principale)
 
 ```bash
-pnpm dev
+nix develop -c pnpm dev
 ```
 
-Le serveur tourne sur `http://localhost:3000`.
+Le serveur tourne sur `http://localhost:3000` (`modules/app`).
+
+## Commandes utiles (workspace)
+
+```bash
+nix develop -c pnpm build
+nix develop -c pnpm --filter @chatondearu/app preview
+```
 
 ## Notes
 
 - **Nix env**: le devshell est défini dans `flake.nix` et verrouillé par `flake.lock`.
+- **Monorepo**: les packages sont déclarés dans `pnpm-workspace.yaml` via `modules/*`.
+- **Version pinning**: Node `24.x` et pnpm `10.33.x` sont alignés entre Nix et `package.json`.
 - **pnpm**: si tu vois un warning “Ignored build scripts”, tu peux autoriser les builds nécessaires via:
 
 ```bash
-pnpm approve-builds
+nix develop -c pnpm approve-builds
 ```
 
