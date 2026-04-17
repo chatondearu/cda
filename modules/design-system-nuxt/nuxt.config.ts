@@ -8,7 +8,7 @@ export default defineNuxtConfig({
   unocss: {
     configFile: join(currentDir, 'uno.config.ts'),
   },
-  css: [join(currentDir, './app/assets/css/design-system.css')],
+  css: [join(currentDir, './app/assets/css/design-system.css'), '@unocss/reset/tailwind.css'],
   app: {
     head: {
       link: [

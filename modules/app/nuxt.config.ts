@@ -6,6 +6,7 @@ export default defineNuxtConfig({
     '@nuxt/content',
     ...(process.env.NODE_ENV === 'development' ? ['nuxt-studio'] : []),
   ],
+  css: ['~/assets/css/global.css'],
   app: {
     head: {
       title: 'THE LAB // LOGICAL MACHINE',

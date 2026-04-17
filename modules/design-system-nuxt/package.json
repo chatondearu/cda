@@ -9,6 +9,7 @@
   "dependencies": {
     "@unocss/nuxt": "^66.6.8",
     "@unocss/preset-web-fonts": "^66.6.8",
+    "@unocss/reset": "^66.6.8",
     "reka-ui": "latest",
     "unocss": "^66.6.8"
   }

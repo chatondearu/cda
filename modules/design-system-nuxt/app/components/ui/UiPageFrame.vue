@@ -1,7 +1,5 @@
 <template>
-  <div class="relative min-h-screen bg-background font-sans text-primary selection:bg-primary_fixed_dim selection:text-background">
-    <div class="pointer-events-none fixed inset-0 z-0 ds-dot-bg" />
-    <div class="scanline" />
+  <div class="relative min-h-screen bg-background font-sans text-primary selection:bg-primary_fixed_dim selection:text-background dot-grid scanline">
     <div class="pointer-events-none fixed left-4 top-20 z-30 font-mono text-[8px] text-primary/10">
       + 00.12.91
     </div>

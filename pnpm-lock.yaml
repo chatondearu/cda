@@ -41,6 +41,9 @@ importers:
       '@unocss/preset-web-fonts':
         specifier: ^66.6.8
         version: 66.6.8
+      '@unocss/reset':
+        specifier: ^66.6.8
+        version: 66.6.8
       reka-ui:
         specifier: latest
         version: 2.9.6(vue@3.5.32(typescript@6.0.2))
