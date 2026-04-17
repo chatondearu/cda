@@ -13,6 +13,7 @@
     "preview": "pnpm --filter @chatondearu/app preview",
     "postinstall": "pnpm --filter @chatondearu/app postinstall",
     "lint": "pnpm -r lint",
+    "typecheck": "pnpm --filter @chatondearu/app typecheck",
     "lint:fix": "pnpm -r lint:fix",
     "lint:colors": "pnpm --filter @chatondearu/design-system-nuxt lint:colors"
   }
