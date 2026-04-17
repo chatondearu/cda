@@ -14,5 +14,21 @@ export default defineContentConfig({
         date: z.string(),
       }),
     }),
+    archive: defineCollection({
+      type: 'page',
+      source: 'archive/**/*.md',
+      schema: z.object({
+        slug: z.string(),
+        capsule: z.string(),
+        title: z.string(),
+        status: z.enum(['nominal', 'unfinished']),
+        description: z.string(),
+        tech: z.string(),
+        image: z.string(),
+        repo_url: z.string().url(),
+        tier: z.enum(['featured', 'other']),
+        order: z.number(),
+      }),
+    }),
   },
 })

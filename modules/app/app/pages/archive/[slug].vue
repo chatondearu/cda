@@ -1,8 +1,9 @@
 <script setup lang="ts">
-const route = useRoute()
-const { archiveItems } = useSystemData()
+const { data: archiveDoc } = await useArchiveDetail()
 
-const currentItem = computed(() => archiveItems.find(item => item.slug === route.params.slug))
+const currentItem = computed(() =>
+  archiveDoc.value ? mapArchiveDocumentToItem(archiveDoc.value) : null,
+)
 </script>
 
 <template>
@@ -30,13 +31,23 @@ const currentItem = computed(() => archiveItems.find(item => item.slug === route
         />
       </div>
       <div class="mt-8">
-        <UiButton
-          as="a"
-          href="/archive"
-          variant="secondary"
-        >
-          RETURN_ARCHIVE
-        </UiButton>
+        <div class="flex flex-wrap gap-3">
+          <UiButton
+            as="a"
+            :href="currentItem.repoUrl"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            OPEN_REPOSITORY
+          </UiButton>
+          <UiButton
+            as="a"
+            href="/archive"
+            variant="secondary"
+          >
+            RETURN_ARCHIVE
+          </UiButton>
+        </div>
       </div>
     </div>
     <div

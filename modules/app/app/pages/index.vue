@@ -1,5 +1,12 @@
 <script setup lang="ts">
-const { timelineItems, archiveItems } = useSystemData()
+const { timelineItems } = useSystemData()
+const { data: archiveRows } = await useArchiveList()
+
+const featuredArchiveItems = computed(() =>
+  (archiveRows.value ?? [])
+    .filter(row => row.tier === 'featured')
+    .map(mapArchiveDocumentToItem),
+)
 </script>
 
 <template>
@@ -16,7 +23,9 @@ const { timelineItems, archiveItems } = useSystemData()
       </template>
 
       <template #actions>
-        <UiButton to="/contact">INITIALIZE_PROTOCOL</UiButton>
+        <UiButton to="/contact">
+          INITIALIZE_PROTOCOL
+        </UiButton>
         <UiButton variant="secondary" to="/resume">
           VIEW_RAW_DATA
         </UiButton>
@@ -27,7 +36,7 @@ const { timelineItems, archiveItems } = useSystemData()
       <UiArchiveRepositoryHeader />
       <div class="grid grid-cols-1 gap-6 md:grid-cols-3">
         <UiArchiveCard
-          v-for="item in archiveItems"
+          v-for="item in featuredArchiveItems.slice(0, 3)"
           :key="item.slug"
           :item="item"
         />

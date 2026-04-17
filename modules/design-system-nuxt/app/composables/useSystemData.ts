@@ -23,6 +23,8 @@ export interface ArchiveItem {
   description: string
   tech: string
   image: string
+  repoUrl: string
+  tier: 'featured' | 'other'
 }
 
 export function useSystemData() {
@@ -52,39 +54,8 @@ export function useSystemData() {
     },
   ]
 
-  const archiveItems: ArchiveItem[] = [
-    {
-      slug: 'neural-mesh',
-      capsule: 'DATA_CAPSULE: 01',
-      title: 'PROJECT_X: NEURAL_MESH',
-      status: 'unfinished',
-      description: 'EXPERIMENTAL PEER-TO-PEER NETWORK DESIGNED FOR SUB-LIGHT COMMUNICATION SYNCING.',
-      tech: 'RUST/WEBGL',
-      image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAnv5u16RdFiE_aVP9yW3nMYRqZtpopG9GqIvWDsxLVhPs_MF07T7knYdemZ9NaMBj6voZRlTtVlH9P7nhnUMf-ZMdDU1zvrK1o4vsiVJzjR4Pc-Ys6dDb4TOkQZwqCJjs73JZ3lEishm6EeesD7QJqCWzYs7xDcCyNxQBnAFgB9Ex5Rp5UZE8hzoiE0PzPMPKRXDtCCKINhpXaUxOQGMRBrAl44VPcu7AqzggeCI16bvbT5zcAoq1LOLRvW-VrqpqiL9YqlZxDrGDw',
-    },
-    {
-      slug: 'ghost-shell-os',
-      capsule: 'DATA_CAPSULE: 02',
-      title: 'GHOST_SHELL: OS',
-      status: 'nominal',
-      description: 'A MINIMALIST LINUX KERNEL OPTIMIZED FOR HEADLESS SERVER DEPLOYMENTS IN HIGH-RADIATION ZONES.',
-      tech: 'C/ASSEMBLY',
-      image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuD3VMWC1fgX3Lyb2eorhFXLNFUEi8fG7Jd2T8HO3-Eq6rQjCzdBbuukmAXWdAW5QY41GQrUdWrYWmDWgqeorvvhSl3sfQzpiGKc7E4gdGSrxgld8Qjm3_tZeg0sb8E67ruS44KdWje2eerhDv7iJet2Iyz-K_bMzxpBaC2iOeTgBDFmf8LW3vJeyPTOVyy_lHymudkhi6TxlNActSNZR3doNCtdpH3yNOYe7y3zEMgKGl9iwVOJ0u-lOV22vPMgbAE5iL17b5Ricanz',
-    },
-    {
-      slug: 'void-scanner-v2',
-      capsule: 'DATA_CAPSULE: 03',
-      title: 'VOID_SCANNER_v2',
-      status: 'nominal',
-      description: 'TOPOGRAPHICAL MAPPING SUITE FOR UNCHARTED ASTEROID FIELDS. USES LIDAR POINT-CLOUD DATA.',
-      tech: 'PYTHON/CUDA',
-      image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCXAPGfJP4LOmOcU4P-wNDWKnRlpNg-kLfi0y51QQsKRZlW-x6ecxdvGYN4Jb080YDfvxpFRGfoxhItYBexRhLPdjWAtSOROyXyGmsOUPyRbDGq2o4cB5MhRfzF54sboOw61Lh2ewpW6YjQxhlVEFOgOCnHh4HgP5fK8s5UDlyTGGrPYQARq0hyI--Yn0BcWazCbAXFuR_4Jwh0yPdzjV96L4QqtUPFCxsmuATZvn_r8Dg2_kBVBcubiqmA4hFMwHZguPFscClwjCbZ',
-    },
-  ]
-
   return {
     navItems,
     timelineItems,
-    archiveItems,
   }
 }

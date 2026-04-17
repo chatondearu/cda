@@ -1,0 +1,16 @@
+---
+slug: mirabelle-ha-blueprints
+capsule: "DATA_CAPSULE: 04"
+title: MIRABELLE_HA_BLUEPRINTS
+status: nominal
+description: "Collection de blueprints personnalises pour Home Assistant."
+tech: PYTHON
+image: https://picsum.photos/seed/mirabelle-ha-blueprints/1200/700
+repo_url: https://github.com/chatondearu/mirabelle-ha-blueprints
+tier: featured
+order: 4
+---
+
+# MIRABELLE_HA_BLUEPRINTS
+
+Extend this capsule in Nuxt Studio (body + frontmatter).
