@@ -7,17 +7,17 @@ const { timelineItems, archiveItems } = useSystemData()
     <UiHeroCommand>
       <template #title>
         MISSION BRIEF:<br>
-        <span class="bg-primary px-2 text-background">ARCHITECTING</span> SYSTEM<br>
-        INTEGRATION_
+        <span class="bg-primary px-2 text-background">[ FULLSTACK ]</span><br>
+        ENGINEERING_
       </template>
 
       <template #description>
-        DEPLOYING SCALABLE ARCHITECTURES ACROSS NEURAL NETWORKS AND DISTRIBUTED LEDGERS. OPERATING AT THE INTERSECTION OF RAW LOGIC AND HUMAN INTERFACE.
+        DÉPLOIEMENT D'ARCHITECTURES SCALABLES (VUE.JS/NUXT) ET ORCHESTRATION DE COMMUNAUTÉS. OPÉRANT À L'INTERSECTION DU DÉVELOPPEMENT LOGICIEL COMPLEXE ET DU BROADCAST INTERACTIF.
       </template>
 
       <template #actions>
-        <UiButton>INITIALIZE_PROTOCOL</UiButton>
-        <UiButton variant="secondary">
+        <UiButton to="/contact">INITIALIZE_PROTOCOL</UiButton>
+        <UiButton variant="secondary" to="/resume">
           VIEW_RAW_DATA
         </UiButton>
       </template>

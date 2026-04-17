@@ -1,14 +1,40 @@
 <script setup lang="ts">
+
 interface Props {
   variant?: 'primary' | 'secondary' | 'tertiary'
-  as?: 'button' | 'a'
+  to?: string
   href?: string
 }
 
-withDefaults(defineProps<Props>(), {
+const props = withDefaults(defineProps<Props>(), {
   variant: 'primary',
-  as: 'button',
-  href: '',
+  to: undefined,
+  href: undefined,
+})
+
+const attrs = useAttrs()
+
+const nuxtLinkAttrKeys = new Set([
+  'to',
+  'href',
+  'external',
+  'target',
+  'rel',
+  'replace',
+  'noRel',
+  'prefetch',
+  'noPrefetch',
+  'prefetchedClass',
+  'activeClass',
+  'exactActiveClass',
+  'ariaCurrentValue',
+])
+
+const isLink = computed(() => {
+  if (props.to || props.href)
+    return true
+
+  return Object.keys(attrs).some(key => nuxtLinkAttrKeys.has(key))
 })
 
 const classes: Record<string, string> = {
@@ -23,16 +49,19 @@ const classes: Record<string, string> = {
 
 <template>
   <NuxtLink
-    v-if="as === 'a'"
-    :to="href"
-    :class="classes[variant]"
+    v-if="isLink"
+    v-bind="attrs"
+    :to="props.to ?? attrs.to"
+    :href="props.href ?? attrs.href"
+    :class="classes[props.variant]"
   >
     <slot />
   </NuxtLink>
   <button
     v-else
+    v-bind="attrs"
     type="button"
-    :class="classes[variant]"
+    :class="classes[props.variant]"
   >
     <slot />
   </button>
