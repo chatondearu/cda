@@ -6,6 +6,10 @@
   "exports": {
     ".": "./nuxt.config.ts"
   },
+  "scripts": {
+    "lint:colors": "node ./scripts/check-no-hardcoded-colors.mjs",
+    "lint": "pnpm lint:colors"
+  },
   "dependencies": {
     "@unocss/nuxt": "^66.6.8",
     "@unocss/preset-web-fonts": "^66.6.8",

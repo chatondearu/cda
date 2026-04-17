@@ -20,6 +20,14 @@ To move beyond a "standard" retro-tech look, we utilize **Intentional Data Densi
 
 The palette is rooted in the high-contrast environment of a deep-space vessel. It prioritizes legibility in low-light conditions and the psychological weight of a monochrome-plus-accent system.
 
+### Theme Architecture (Mandatory)
+
+- **Token-only implementation:** all UI colors must be semantic tokens (`background`, `surface_container_*`, `primary`, `outline`, etc.) consumed through Uno classes.
+- **No hardcoded color values:** never use hex, named colors, or ad-hoc rgb/rgba in component templates.
+- **Single source of truth:** dark/light values are defined as CSS variables in `modules/design-system-nuxt/app/assets/css/design-system.css`.
+- **Uno binding:** `modules/design-system-nuxt/uno.config.ts` must map colors to `rgb(var(--token) / <alpha-value>)`.
+- **Mode switch contract:** theme mode is controlled only via root classes (`:root.dark`, `:root.light`) and not via per-component custom logic.
+
  
 
 ### Tonal Hierarchy
@@ -39,6 +47,8 @@ While standard UI relies on 1px borders for "boxes," this system prohibits decor
 - **Structural Boundaries:** Must be defined by background shifts (e.g., a `surface_container_low` sidebar against a `surface` background).
 
 - **Data Conduits:** Thin amber lines (`outline` token) are reserved *only* for connecting related data points or framing active terminal inputs. If it doesn't represent a logical flow, remove the line.
+
+- **Theme parity:** every visual conduit or frame must remain legible and equivalent in both dark and light variable sets.
 
  
 
