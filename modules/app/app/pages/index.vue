@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { timelineItems } = useSystemData()
+const streamerItems = useStreamerTimeline()
 const { data: archiveRows } = await useArchiveList()
 
 const featuredArchiveItems = computed(() =>
@@ -31,7 +31,7 @@ const featuredArchiveItems = computed(() =>
         </UiButton>
       </template>
     </UiHeroCommand>
-    <UiTimeline :items="timelineItems" />
+    <UiTimeline :items="[...streamerItems]" />
     <section class="p-8 md:p-16">
       <UiArchiveRepositoryHeader />
       <div class="grid grid-cols-1 gap-6 md:grid-cols-3">

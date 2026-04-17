@@ -18,4 +18,11 @@ export default defineNuxtConfig({
     },
   },
   compatibilityDate: '2026-04-16',
+  routeRules: {
+    '/rx-quiet/catnip-buffer/career': {
+      headers: {
+        'x-robots-tag': 'noindex, nofollow',
+      },
+    },
+  },
 })
