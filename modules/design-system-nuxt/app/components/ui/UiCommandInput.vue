@@ -21,13 +21,13 @@ function onInput(event: Event) {
 
 <template>
   <div class="w-full">
-    <label class="mb-2 block text-[10px] uppercase tracking-[0.22em] text-[#ffdca1]/65">
+    <label class="mb-2 block text-[10px] uppercase tracking-[0.22em] text-primary/65">
       {{ label }}
     </label>
     <input
       :value="modelValue"
       type="text"
-      class="w-full border-0 border-b border-[#ffba20] bg-transparent px-0 py-2 text-[#ffdca1] outline-none"
+      class="w-full border-0 border-b border-primary_fixed_dim bg-transparent px-0 py-2 text-primary outline-none"
       @input="onInput"
     >
   </div>

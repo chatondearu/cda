@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Aerospace Corp - Light Mode</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary": "#ffffff",
+                    "on-secondary-fixed": "#111d23",
+                    "surface-tint": "#8f4e00",
+                    "on-surface": "#1b1c19",
+                    "on-primary-fixed": "#2e1500",
+                    "on-tertiary-fixed-variant": "#304a55",
+                    "secondary-container": "#d7e4ec",
+                    "on-secondary-container": "#5a666d",
+                    "surface-dim": "#dcdad5",
+                    "on-tertiary": "#ffffff",
+                    "on-background": "#1b1c19",
+                    "on-error": "#ffffff",
+                    "secondary": "#546067",
+                    "surface-container-highest": "#e4e2dd",
+                    "surface": "#fbf9f4",
+                    "tertiary-fixed-dim": "#afcbd8",
+                    "on-primary-fixed-variant": "#6d3a00",
+                    "on-primary": "#ffffff",
+                    "outline": "#897362",
+                    "background": "#fbf9f4",
+                    "on-error-container": "#93000a",
+                    "tertiary": "#48626e",
+                    "on-surface-variant": "#564334",
+                    "primary-container": "#ff8f00",
+                    "on-tertiary-fixed": "#021f29",
+                    "on-tertiary-container": "#2a434e",
+                    "inverse-primary": "#ffb77a",
+                    "error": "#ba1a1a",
+                    "secondary-fixed-dim": "#bbc8d0",
+                    "surface-variant": "#e4e2dd",
+                    "surface-bright": "#fbf9f4",
+                    "secondary-fixed": "#d7e4ec",
+                    "surface-container-low": "#f6f3ee",
+                    "tertiary-fixed": "#cbe7f5",
+                    "inverse-surface": "#30312d",
+                    "primary-fixed": "#ffdcc2",
+                    "primary": "#8f4e00",
+                    "surface-container": "#f0eee9",
+                    "outline-variant": "#dcc1ae",
+                    "on-primary-container": "#623400",
+                    "surface-container-high": "#eae8e3",
+                    "inverse-on-surface": "#f3f0eb",
+                    "error-container": "#ffdad6",
+                    "on-secondary-fixed-variant": "#3c494f",
+                    "tertiary-container": "#95b0bd",
+                    "primary-fixed-dim": "#ffb77a",
+                    "surface-container-lowest": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0px",
+                    "lg": "0px",
+                    "xl": "0px",
+                    "full": "0px"
+            },
+            "spacing": {},
+            "fontFamily": {
+                    "headline": [
+                            "Space Grotesk"
+                    ],
+                    "body": [
+                            "Space Grotesk"
+                    ],
+                    "label": [
+                            "Space Grotesk"
+                    ]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-image: radial-gradient(#dcdad5 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        
+        /* Subtle scanline overlay for light mode */
+        .scanline-overlay {
+            background: linear-gradient(
+                to bottom,
+                rgba(255,255,255,0),
+                rgba(255,255,255,0) 50%,
+                rgba(0,0,0,0.02) 50%,
+                rgba(0,0,0,0.02)
+            );
+            background-size: 100% 4px;
+            pointer-events: none;
+        }
+
+        .hatch-pattern {
+            background-image: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 2px,
+                rgba(143, 78, 0, 0.2) 2px,
+                rgba(143, 78, 0, 0.2) 4px
+            );
+        }
+        
+        .ghost-border {
+            border: 1px solid rgba(137, 115, 98, 0.2);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body min-h-screen flex flex-col relative overflow-x-hidden selection:bg-primary selection:text-on-primary">
+<!-- Scanline Overlay -->
+<div class="scanline-overlay fixed inset-0 z-[100] pointer-events-none"></div>
+<!-- Layout Container -->
+<div class="flex flex-col md:flex-row min-h-screen">
+<!-- Navigation Drawer (Desktop) / Hidden Mobile -->
+<nav class="hidden md:flex fixed left-0 top-0 h-full z-40 flex-col bg-[#f2f0ea] w-72 border-r-[0.5px] border-[#546067]/20 transition-all duration-100">
+<!-- Header -->
+<div class="p-6 border-b-[0.5px] border-[#546067]/20 flex items-center justify-between">
+<h2 class="font-['Space_Grotesk'] font-black text-xl text-[#1b1c19]">MODULE_INDEX</h2>
+<span class="text-xs text-secondary tracking-widest">+</span>
+</div>
+<!-- Tabs -->
+<ul class="flex-1 overflow-y-auto py-4 px-3 space-y-2">
+<li>
+<a class="bg-[#8f4e00] text-[#fbf9f4] font-bold p-3 font-['Space_Grotesk'] text-sm tracking-normal flex items-center gap-3 transition-colors duration-100 ease-linear hover:bg-[#8f4e00] hover:text-[#fbf9f4]" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">memory</span>
+<span>CORE_LOGIC</span>
+<span class="ml-auto text-[10px] opacity-70">REF.01</span>
+</a>
+</li>
+<li>
+<a class="text-[#1b1c19] p-3 hover:bg-[#546067]/10 font-['Space_Grotesk'] font-medium text-sm tracking-normal flex items-center gap-3 transition-colors duration-100 ease-linear hover:bg-[#8f4e00] hover:text-[#fbf9f4]" href="#">
+<span class="material-symbols-outlined">sensors</span>
+<span>DATA_STREAM</span>
+</a>
+</li>
+<li>
+<a class="text-[#1b1c19] p-3 hover:bg-[#546067]/10 font-['Space_Grotesk'] font-medium text-sm tracking-normal flex items-center gap-3 transition-colors duration-100 ease-linear hover:bg-[#8f4e00] hover:text-[#fbf9f4]" href="#">
+<span class="material-symbols-outlined">developer_board</span>
+<span>PERIPHERALS</span>
+</a>
+</li>
+<li>
+<a class="text-[#1b1c19] p-3 hover:bg-[#546067]/10 font-['Space_Grotesk'] font-medium text-sm tracking-normal flex items-center gap-3 transition-colors duration-100 ease-linear hover:bg-[#8f4e00] hover:text-[#fbf9f4]" href="#">
+<span class="material-symbols-outlined">fingerprint</span>
+<span>AUTH_PROTOCOL</span>
+</a>
+</li>
+</ul>
+<!-- Footer area in sidebar -->
+<div class="p-4 border-t-[0.5px] border-[#546067]/20 text-[10px] text-secondary tracking-widest font-mono uppercase">
+<div class="flex justify-between items-center mb-1">
+<span>SYS_STAT</span>
+<span class="text-primary font-bold">ONLINE</span>
+</div>
+<div class="flex justify-between items-center">
+<span>PING</span>
+<span>14ms</span>
+</div>
+</div>
+</nav>
+<!-- Main Content Area -->
+<div class="flex-1 flex flex-col md:ml-72 relative w-full">
+<!-- TopAppBar (Mobile & Desktop) -->
+<header class="flex items-center justify-between px-6 py-4 w-full bg-[#fbf9f4] border-b-[0.5px] border-[#546067]/20 sticky top-0 z-30">
+<!-- Leading -->
+<div class="flex items-center gap-4">
+<button class="md:hidden text-[#8f4e00] transition-colors duration-100 ease-linear hover:bg-[#8f4e00] hover:text-[#fbf9f4] p-2 rounded-none">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#8f4e00]">terminal</span>
+<h1 class="font-['Space_Grotesk'] uppercase tracking-widest text-xs text-[#8f4e00] font-bold">SYSTEM_STATUS // 01</h1>
+</div>
+</div>
+<!-- Center Brand (Mobile) -->
+<div class="md:hidden font-bold text-lg tracking-tighter text-[#1b1c19]">
+                    AERO_CORP
+                </div>
+<!-- Trailing -->
+<div class="flex items-center gap-4">
+<button class="text-[#546067] transition-colors duration-100 ease-linear hover:bg-[#8f4e00] hover:text-[#fbf9f4] p-2 rounded-none">
+<span class="material-symbols-outlined">settings_input_component</span>
+</button>
+</div>
+</header>
+<!-- Content Canvas -->
+<main class="flex-1 p-4 md:p-8 lg:p-12 overflow-x-hidden">
+<!-- Hero Section -->
+<section class="mb-16 relative">
+<!-- Tech Brackets -->
+<div class="absolute -top-2 -left-2 w-4 h-4 border-t-2 border-l-2 border-primary"></div>
+<div class="absolute -bottom-2 -right-2 w-4 h-4 border-b-2 border-r-2 border-primary"></div>
+<div class="bg-surface-container-high p-8 md:p-12 relative overflow-hidden ghost-border">
+<!-- Decorative bg -->
+<div class="absolute inset-0 opacity-[0.03] pointer-events-none" style="background-image: radial-gradient(circle, #1b1c19 1px, transparent 1px); background-size: 10px 10px;"></div>
+<!-- Metadata Row -->
+<div class="flex justify-between items-start mb-8 font-label text-[10px] tracking-[0.2em] uppercase text-secondary">
+<div>
+<span class="block text-primary">MISSION BRIEF // </span>
+<span>INIT_SEQ: AX-99</span>
+</div>
+<div class="text-right">
+<span class="block">CLASSIFIED: LVL_4</span>
+<span>OP_DATE: 1984.11.04</span>
+</div>
+</div>
+<!-- Main Title -->
+<div class="mb-8 max-w-4xl">
+<h1 class="font-headline font-bold text-4xl md:text-6xl lg:text-7xl leading-none text-on-surface tracking-tight uppercase mb-4">
+                                OPERATION <br/>
+<span class="text-primary">SILENT_DAWN</span>
+</h1>
+<p class="font-body text-base md:text-lg text-on-surface max-w-2xl leading-relaxed">
+                                Executing primary directive protocols. System overriding manual controls. Synchronizing telemetry data across global nodes. Ensure all peripheral devices are securely linked before initiating the sequence.
+                            </p>
+</div>
+<!-- Actions -->
+<div class="flex flex-wrap gap-4 items-center">
+<!-- Primary Button Module -->
+<button class="bg-primary text-on-primary font-label text-xs uppercase tracking-widest px-6 py-4 flex items-center gap-3 hover:bg-on-surface transition-colors duration-100 group relative overflow-hidden">
+<span class="relative z-10 font-bold">INITIATE_SEQ</span>
+<span class="material-symbols-outlined relative z-10 text-sm">rocket_launch</span>
+<div class="absolute right-0 top-0 bottom-0 w-8 hatch-pattern opacity-50 group-hover:opacity-20 transition-opacity"></div>
+</button>
+<!-- Secondary Button Module -->
+<button class="bg-surface-container-highest text-on-surface font-label text-xs uppercase tracking-widest px-6 py-4 flex items-center gap-3 ghost-border hover:bg-on-surface hover:text-on-primary transition-colors duration-100">
+<span>ABORT_ROUTINE</span>
+<span class="material-symbols-outlined text-sm">cancel</span>
+</button>
+</div>
+</div>
+</section>
+<!-- 2-Col Layout for Chrono & Repo -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-8 md:gap-12 mb-16">
+<!-- Left Col: Chrono Timeline -->
+<section class="xl:col-span-7">
+<div class="flex items-center justify-between mb-6 border-b-[0.5px] border-outline-variant pb-2">
+<h3 class="font-headline font-bold text-lg text-on-surface tracking-tight flex items-center gap-2 uppercase">
+<span class="material-symbols-outlined text-primary text-xl">timeline</span>
+                                LOGIC_FLOW_CHRONO
+                            </h3>
+<span class="font-label text-[10px] tracking-widest text-secondary">REF // T-MINUS</span>
+</div>
+<div class="space-y-0 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-outline-variant/30">
+<!-- Timeline Item 1 -->
+<div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active py-4">
+<!-- Marker -->
+<div class="flex items-center justify-center w-10 h-10 rounded-none bg-primary shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 relative">
+<span class="material-symbols-outlined text-on-primary text-sm">check_circle</span>
+<div class="absolute -right-2 top-1/2 -translate-y-1/2 w-4 h-4 border-t border-r border-primary/50 pointer-events-none md:hidden"></div>
+</div>
+<!-- Content Card -->
+<div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-surface-container-high p-4 ghost-border hover:bg-surface-container-highest transition-colors duration-100">
+<div class="flex justify-between items-start mb-2">
+<span class="font-label text-[10px] text-primary tracking-widest font-bold">PHASE 01</span>
+<span class="font-label text-[10px] text-secondary tracking-widest">08:00_HRS</span>
+</div>
+<h4 class="font-headline font-bold text-sm mb-1 uppercase">Sys_Boot Sequence</h4>
+<p class="font-body text-xs text-on-surface-variant leading-relaxed">Initializing core logic gates and establishing secure handshake with mainframe.</p>
+</div>
+</div>
+<!-- Timeline Item 2 -->
+<div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group py-4">
+<!-- Marker -->
+<div class="flex items-center justify-center w-10 h-10 rounded-none bg-surface-container-highest border border-outline-variant shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+<span class="material-symbols-outlined text-secondary text-sm">sync</span>
+</div>
+<!-- Content Card -->
+<div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-surface p-4 border-b border-outline-variant/30 hover:bg-surface-container-low transition-colors duration-100 relative">
+<div class="absolute bottom-0 left-0 w-2 h-2 border-b-2 border-l-2 border-secondary/30"></div>
+<div class="flex justify-between items-start mb-2">
+<span class="font-label text-[10px] text-secondary tracking-widest font-bold">PHASE 02</span>
+<span class="font-label text-[10px] text-secondary tracking-widest">09:15_HRS</span>
+</div>
+<h4 class="font-headline font-bold text-sm mb-1 uppercase">Data Calibration</h4>
+<p class="font-body text-xs text-on-surface-variant leading-relaxed">Aligning sensor arrays. Minor variance detected in Sector 7G, adjusting tolerances.</p>
+</div>
+</div>
+<!-- Timeline Item 3 -->
+<div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group py-4">
+<!-- Marker -->
+<div class="flex items-center justify-center w-10 h-10 rounded-none bg-surface-container-highest border border-outline-variant shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+<span class="material-symbols-outlined text-secondary text-sm">lock_open</span>
+</div>
+<!-- Content Card -->
+<div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-surface p-4 border-b border-outline-variant/30 hover:bg-surface-container-low transition-colors duration-100 relative">
+<div class="absolute bottom-0 right-0 w-2 h-2 border-b-2 border-r-2 border-secondary/30"></div>
+<div class="flex justify-between items-start mb-2">
+<span class="font-label text-[10px] text-secondary tracking-widest font-bold">PHASE 03</span>
+<span class="font-label text-[10px] text-secondary tracking-widest">PENDING</span>
+</div>
+<h4 class="font-headline font-bold text-sm mb-1 uppercase">Auth Override</h4>
+<p class="font-body text-xs text-on-surface-variant leading-relaxed">Awaiting manual clearance codes from command center to proceed.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Right Col: Archive Repository -->
+<section class="xl:col-span-5 flex flex-col">
+<div class="flex items-center justify-between mb-6 border-b-[0.5px] border-outline-variant pb-2">
+<h3 class="font-headline font-bold text-lg text-on-surface tracking-tight flex items-center gap-2 uppercase">
+<span class="material-symbols-outlined text-primary text-xl">folder_special</span>
+                                ARCHIVE_REPOSITORY
+                            </h3>
+<span class="font-label text-[10px] tracking-widest text-secondary">CAPACITY: 88%</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-1 gap-4 flex-1 content-start">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest p-4 ghost-border hover:bg-surface-container-low transition-colors duration-100 group cursor-pointer relative">
+<div class="absolute top-2 right-2 text-secondary opacity-30 text-xs">+</div>
+<div class="flex items-start gap-4">
+<div class="w-12 h-12 bg-primary-container shrink-0 flex items-center justify-center relative">
+<span class="material-symbols-outlined text-on-primary-container">database</span>
+<!-- Micro grid -->
+<div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(circle, #623400 1px, transparent 1px); background-size: 4px 4px;"></div>
+</div>
+<div>
+<div class="font-label text-[10px] text-primary tracking-widest mb-1">CAPSULE_A1</div>
+<h4 class="font-headline font-bold text-sm uppercase mb-1">Geodesic Scans</h4>
+<p class="font-body text-xs text-on-surface-variant line-clamp-2">Topographical mapping data of Sector 4. High resolution telemetry.</p>
+</div>
+</div>
+<div class="mt-4 pt-2 border-t border-outline-variant/30 flex justify-between items-center text-[10px] font-label text-secondary">
+<span>SIZE: 4.2TB</span>
+<span class="group-hover:text-primary transition-colors flex items-center gap-1">MOUNT <span class="material-symbols-outlined text-[10px]">chevron_right</span></span>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest p-4 ghost-border hover:bg-surface-container-low transition-colors duration-100 group cursor-pointer relative">
+<div class="absolute top-2 right-2 text-secondary opacity-30 text-xs">+</div>
+<div class="flex items-start gap-4">
+<div class="w-12 h-12 bg-surface-variant shrink-0 flex items-center justify-center ghost-border">
+<span class="material-symbols-outlined text-on-surface-variant">terminal</span>
+</div>
+<div>
+<div class="font-label text-[10px] text-secondary tracking-widest mb-1">CAPSULE_B2</div>
+<h4 class="font-headline font-bold text-sm uppercase mb-1">Legacy Scripts</h4>
+<p class="font-body text-xs text-on-surface-variant line-clamp-2">Fortran archives and initial bootloader sequences from rev 1.0.</p>
+</div>
+</div>
+<div class="mt-4 pt-2 border-t border-outline-variant/30 flex justify-between items-center text-[10px] font-label text-secondary">
+<span>SIZE: 840MB</span>
+<span class="group-hover:text-primary transition-colors flex items-center gap-1">MOUNT <span class="material-symbols-outlined text-[10px]">chevron_right</span></span>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Bottom UI: Cassette Player Interface -->
+<section class="mt-auto border-t border-outline-variant/50 pt-8 pb-4 relative">
+<div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-surface px-4 font-label text-[10px] text-secondary tracking-[0.2em]">AUDIO_LOG_PLAYBACK</div>
+<div class="bg-surface-container p-6 flex flex-col md:flex-row items-center gap-8 ghost-border relative overflow-hidden">
+<!-- Tech decoration -->
+<div class="absolute bottom-0 right-0 w-32 h-32 hatch-pattern opacity-10 pointer-events-none"></div>
+<!-- Cassette reels -->
+<div class="flex items-center gap-4 shrink-0 bg-surface p-4 ghost-border">
+<!-- Reel 1 -->
+<div class="w-16 h-16 rounded-full border-4 border-surface-container-highest flex items-center justify-center relative">
+<div class="w-4 h-4 rounded-full bg-primary relative z-10"></div>
+<!-- Spokes -->
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="w-full h-1 bg-surface-container-highest absolute transform rotate-0"></div>
+<div class="w-full h-1 bg-surface-container-highest absolute transform rotate-45"></div>
+<div class="w-full h-1 bg-surface-container-highest absolute transform rotate-90"></div>
+<div class="w-full h-1 bg-surface-container-highest absolute transform rotate-[135deg]"></div>
+</div>
+</div>
+<div class="w-8 h-px bg-outline-variant/50 relative">
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[8px] text-secondary font-mono">TAPE</div>
+</div>
+<!-- Reel 2 -->
+<div class="w-16 h-16 rounded-full border-4 border-surface-container-highest flex items-center justify-center relative">
+<div class="w-4 h-4 rounded-full bg-surface-container-highest relative z-10"></div>
+<!-- Spokes -->
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="w-full h-1 bg-surface-container-highest absolute transform rotate-0"></div>
+<div class="w-full h-1 bg-surface-container-highest absolute transform rotate-45"></div>
+<div class="w-full h-1 bg-surface-container-highest absolute transform rotate-90"></div>
+<div class="w-full h-1 bg-surface-container-highest absolute transform rotate-[135deg]"></div>
+</div>
+</div>
+</div>
+<!-- Controls & Track Info -->
+<div class="flex-1 w-full flex flex-col gap-4">
+<div class="flex justify-between items-end border-b border-outline-variant/30 pb-2">
+<div>
+<h4 class="font-headline font-bold text-base uppercase text-on-surface">Director's Log_045</h4>
+<p class="font-label text-[10px] text-secondary tracking-widest mt-1">FREQ: 144.02 MHz</p>
+</div>
+<div class="font-mono text-xl text-primary font-bold">
+                                    02:14 <span class="text-secondary text-sm">/ 05:30</span>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<!-- Action Buttons -->
+<div class="flex gap-2">
+<button class="w-10 h-10 bg-surface-container-highest text-on-surface flex items-center justify-center ghost-border hover:bg-primary hover:text-on-primary transition-colors duration-100">
+<span class="material-symbols-outlined text-sm">skip_previous</span>
+</button>
+<button class="w-12 h-12 bg-primary text-on-primary flex items-center justify-center hover:bg-on-surface transition-colors duration-100 relative overflow-hidden group">
+<span class="material-symbols-outlined">play_arrow</span>
+<div class="absolute bottom-0 left-0 w-full h-1 bg-primary-container scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
+</button>
+<button class="w-10 h-10 bg-surface-container-highest text-on-surface flex items-center justify-center ghost-border hover:bg-primary hover:text-on-primary transition-colors duration-100">
+<span class="material-symbols-outlined text-sm">skip_next</span>
+</button>
+</div>
+<!-- Scrubber -->
+<div class="flex-1 flex items-center gap-3">
+<div class="text-[10px] font-mono text-secondary">LVL</div>
+<div class="h-4 flex-1 bg-surface ghost-border flex items-center px-1 gap-[2px]">
+<!-- Fake EQ Bars -->
+<div class="h-1/2 w-1 bg-primary"></div>
+<div class="h-full w-1 bg-primary"></div>
+<div class="h-3/4 w-1 bg-primary"></div>
+<div class="h-1/4 w-1 bg-primary-container"></div>
+<div class="h-full w-1 bg-primary-container"></div>
+<div class="h-1/2 w-1 bg-secondary/30"></div>
+<div class="h-full w-1 bg-secondary/30"></div>
+<div class="h-1/4 w-1 bg-secondary/30"></div>
+<div class="h-1/2 w-1 bg-secondary/30"></div>
+<div class="h-full w-1 bg-secondary/30"></div>
+<div class="h-3/4 w-1 bg-secondary/30"></div>
+<div class="h-1/4 w-1 bg-secondary/30"></div>
+<div class="h-full w-1 bg-secondary/30"></div>
+<div class="h-1/2 w-1 bg-secondary/30"></div>
+<div class="h-full w-1 bg-secondary/30"></div>
+<div class="h-1/4 w-1 bg-secondary/30"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer (from JSON) -->
+<footer class="flex justify-between items-center px-8 py-4 w-full mt-auto bg-[#fbf9f4] border-t-[0.5px] border-[#546067]/20 z-10 relative">
+<div class="font-['Space_Grotesk'] text-[10px] uppercase tracking-[0.2em] text-[#8f4e00]">
+                    © 1984 AEROSPACE_CORP [REV. 8.0.1]
+                </div>
+<ul class="flex gap-6 font-['Space_Grotesk'] text-[10px] uppercase tracking-[0.2em]">
+<li><a class="text-[#546067] hover:text-[#1b1c19] transition-opacity duration-150" href="#">DOCS_MD</a></li>
+<li><a class="text-[#8f4e00] underline transition-opacity duration-150" href="#">SCHEMATICS</a></li>
+<li><a class="text-[#546067] hover:text-[#1b1c19] transition-opacity duration-150" href="#">DEBUG_CON</a></li>
+<li><a class="text-[#546067] hover:text-[#1b1c19] transition-opacity duration-150" href="#">LEGAL</a></li>
+</ul>
+</footer>
+</div>
+</div>
+</body></html>

@@ -4,6 +4,87 @@
   box-sizing: border-box;
 }
 
+:root,
+:root.dark {
+  --background: 19 19 19;
+  --surface: 19 19 19;
+  --surface-dim: 19 19 19;
+  --surface-bright: 58 57 57;
+  --surface-variant: 53 53 52;
+  --surface-container: 32 31 31;
+  --surface-container-low: 28 27 27;
+  --surface-container-lowest: 14 14 14;
+  --surface-container-high: 42 42 42;
+  --surface-container-highest: 53 53 52;
+  --primary: 255 220 161;
+  --on-primary: 65 45 0;
+  --primary-container: 255 184 0;
+  --on-primary-container: 107 76 0;
+  --primary-fixed: 255 222 168;
+  --primary-fixed-dim: 255 186 32;
+  --on-primary-fixed: 39 25 0;
+  --secondary: 225 194 143;
+  --on-secondary: 64 45 7;
+  --secondary-container: 91 70 30;
+  --on-secondary-container: 210 180 130;
+  --on-surface: 229 226 225;
+  --on-surface-variant: 213 196 171;
+  --on-background: 229 226 225;
+  --outline: 158 143 120;
+  --outline-variant: 81 69 50;
+  --error: 255 180 171;
+  --error-container: 147 0 10;
+  --on-error: 105 0 5;
+  --on-error-container: 255 218 214;
+  --inverse-surface: 229 226 225;
+  --inverse-on-surface: 49 48 48;
+  --inverse-primary: 124 88 0;
+  --tertiary: 255 218 191;
+  --on-tertiary: 77 38 0;
+  --tertiary-container: 255 181 121;
+  --on-tertiary-container: 125 66 0;
+}
+
+:root.light {
+  --background: 251 249 244;
+  --surface: 251 249 244;
+  --surface-dim: 220 218 213;
+  --surface-bright: 251 249 244;
+  --surface-variant: 228 226 221;
+  --surface-container: 240 238 233;
+  --surface-container-low: 246 243 238;
+  --surface-container-lowest: 255 255 255;
+  --surface-container-high: 234 232 227;
+  --surface-container-highest: 228 226 221;
+  --primary: 143 78 0;
+  --on-primary: 255 255 255;
+  --primary-container: 255 143 0;
+  --on-primary-container: 98 52 0;
+  --primary-fixed: 255 220 194;
+  --primary-fixed-dim: 255 183 122;
+  --on-primary-fixed: 46 21 0;
+  --secondary: 84 96 103;
+  --on-secondary: 255 255 255;
+  --secondary-container: 215 228 236;
+  --on-secondary-container: 90 102 109;
+  --on-surface: 27 28 25;
+  --on-surface-variant: 86 67 52;
+  --on-background: 27 28 25;
+  --outline: 137 115 98;
+  --outline-variant: 220 193 174;
+  --error: 186 26 26;
+  --error-container: 255 218 214;
+  --on-error: 255 255 255;
+  --on-error-container: 147 0 10;
+  --inverse-surface: 48 49 45;
+  --inverse-on-surface: 243 240 235;
+  --inverse-primary: 255 183 122;
+  --tertiary: 72 98 110;
+  --on-tertiary: 255 255 255;
+  --tertiary-container: 149 176 189;
+  --on-tertiary-container: 42 67 78;
+}
+
 html,
 body,
 #__nuxt {
@@ -12,6 +93,8 @@ body,
 
 body {
   margin: 0;
+  background: rgb(var(--background));
+  color: rgb(var(--on-background));
 }
 
 .material-symbols-outlined {
@@ -25,7 +108,7 @@ body {
   position: relative;
   isolation: isolate;
   /* Needed so blend-mode overlays have a real backdrop */
-  background: #131313;
+  background: rgb(var(--background));
 }
 
 .dot-grid::before,
@@ -39,7 +122,7 @@ body {
 /* Dot grid overlay (1px dot every 24px) */
 .dot-grid::before {
   opacity: 0.5;
-  background-image: radial-gradient(rgba(255, 186, 32, 0.45) 1px, transparent 1px);
+  background-image: radial-gradient(rgb(var(--primary-fixed-dim) / 45%) 1px, transparent 1px);
   background-size: 24px 24px;
   background-position: 12px 12px;
   mix-blend-mode: screen;
@@ -51,8 +134,8 @@ body {
   opacity: 0.06;
   background-image: repeating-linear-gradient(
     0deg,
-    rgba(0, 0, 0, 0.9) 0px,
-    rgba(0, 0, 0, 0.9) 1px,
+    rgb(var(--inverse-on-surface) / 90%) 0px,
+    rgb(var(--inverse-on-surface) / 90%) 1px,
     transparent 1px,
     transparent 4px
   );

@@ -4,7 +4,24 @@ const { timelineItems, archiveItems } = useSystemData()
 
 <template>
   <div>
-    <UiHeroCommand />
+    <UiHeroCommand>
+      <template #title>
+        MISSION BRIEF:<br>
+        <span class="bg-primary px-2 text-background">ARCHITECTING</span> SYSTEM<br>
+        INTEGRATION_
+      </template>
+
+      <template #description>
+        DEPLOYING SCALABLE ARCHITECTURES ACROSS NEURAL NETWORKS AND DISTRIBUTED LEDGERS. OPERATING AT THE INTERSECTION OF RAW LOGIC AND HUMAN INTERFACE.
+      </template>
+
+      <template #actions>
+        <UiButton>INITIALIZE_PROTOCOL</UiButton>
+        <UiButton variant="secondary">
+          VIEW_RAW_DATA
+        </UiButton>
+      </template>
+    </UiHeroCommand>
     <UiTimeline :items="timelineItems" />
     <section class="p-8 md:p-16">
       <UiArchiveRepositoryHeader />

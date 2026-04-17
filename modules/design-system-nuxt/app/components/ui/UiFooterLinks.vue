@@ -9,6 +9,8 @@ interface Props {
 }
 
 defineProps<Props>()
+
+const { isDark, toggleMode } = useThemeMode()
 </script>
 
 <template>
@@ -36,6 +38,18 @@ defineProps<Props>()
         <span>LAT: 34.0522 N</span>
         <span>LON: 118.2437 W</span>
       </div>
+      <button
+        type="button"
+        class="inline-flex w-fit items-center gap-2 border border-primary/30 px-3 py-1 text-[10px] uppercase tracking-[0.18em] text-primary transition-colors hover:bg-primary/10"
+        @click="toggleMode"
+      >
+        <UiMaterialIcon
+          name="wb_sunny"
+          filled
+          size-class="text-sm"
+        />
+        <span>{{ isDark ? 'LIGHT_MODE' : 'DARK_MODE' }}</span>
+      </button>
     </div>
   </footer>
 </template>
