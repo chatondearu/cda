@@ -1,25 +1,20 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
+import process from 'node:process'
+
 export default defineNuxtConfig({
-  compatibilityDate: '2024-11-01',
-  devtools: { enabled: true },
-
-  future: {
-    compatibilityVersion: 4
-  },
-
+  extends: ['../design-system-nuxt'],
   modules: [
-    '@unocss/nuxt',
     '@nuxt/content',
-    ...(process.dev ? ['nuxt-studio'] : []),
+    ...(process.env.NODE_ENV === 'development' ? ['nuxt-studio'] : []),
   ],
-
+  app: {
+    head: {
+      title: 'THE LAB // LOGICAL MACHINE',
+    },
+  },
   content: {
     experimental: {
       sqliteConnector: 'native',
     },
   },
-
-  css: [
-    '~/assets/css/global.css',
-  ],
+  compatibilityDate: '2026-04-16',
 })

@@ -12,6 +12,10 @@
   "publishConfig": {
     "access": "public"
   },
+  "dependencies": {
+    "@antfu/eslint-config": "latest",
+    "@unocss/eslint-plugin": "latest"
+  },
   "peerDependencies": {
     "eslint": "^9.0.0"
   }

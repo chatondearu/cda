@@ -11,6 +11,8 @@
     "build": "pnpm --filter @chatondearu/app build",
     "generate": "pnpm --filter @chatondearu/app generate",
     "preview": "pnpm --filter @chatondearu/app preview",
-    "postinstall": "pnpm --filter @chatondearu/app postinstall"
+    "postinstall": "pnpm --filter @chatondearu/app postinstall",
+    "lint": "pnpm -r lint",
+    "lint:fix": "pnpm -r lint:fix"
   }
 }
