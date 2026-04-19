@@ -29,6 +29,7 @@ export interface ArchiveItem {
 
 export function useSystemData() {
   const navItems: NavItem[] = [
+    { label: 'HOME_BASE', to: '/', icon: 'home', dockLabel: 'HOME' },
     { label: 'TIMELINE_LOG', to: '/timeline', icon: 'timeline', dockLabel: 'LOG' },
     { label: 'ARCHIVE_REP', to: '/archive', icon: 'inventory_2', dockLabel: 'ARCHIVE' },
     { label: 'CASSETTE_INT', to: '/cassette', icon: 'settings_voice', dockLabel: 'VOICE' },
