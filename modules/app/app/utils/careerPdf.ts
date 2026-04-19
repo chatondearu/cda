@@ -17,7 +17,6 @@ export interface CareerContactDetails {
 const C = {
   background: [19, 19, 19] as const,
   surfaceLow: [28, 27, 27] as const,
-  surfaceHigh: [42, 42, 42] as const,
   onSurface: [229, 226, 225] as const,
   onSurfaceVariant: [213, 196, 171] as const,
   primary: [255, 220, 161] as const,
@@ -50,6 +49,11 @@ const OUTBOUND_PAD = 5
 const OUTBOUND_URL_W = CONTENT_W - OUTBOUND_PAD * 2 - 8
 /** Gap between Direct comms and Outbound columns (mm) */
 const COL_GAP_MM = 5
+
+/** Dot-grid panel chrome (clinical readout, matches site dot-grid) */
+const DOT_GRID_STEP_MM = 3
+const DOT_RADIUS_MM = 0.16
+const DOT_GRID_INSET_MM = 0.5
 
 const FS = {
   heroKicker: 8,
@@ -215,7 +219,7 @@ export async function downloadCareerPdf(
       const lines = doc.splitTextToSize(row.value, urlWrapW)
       h += LINE_MM + lines.length * LINE_MM + LINE_MM * 0.18
     }
-    return h + LINE_MM * 0.55
+    return h
   }
 
   /** Draw wrapped lines without advancing global layout cursor (panel-local coordinates). */
@@ -228,6 +232,37 @@ export async function downloadCareerPdf(
     return p
   }
 
+  /** Subtle dot grid inside panel bounds (drawn before text). */
+  function drawDotGridBackground(
+    panelLeft: number,
+    panelTop: number,
+    panelW: number,
+    panelH: number,
+  ): void {
+    setFill(C.outlineVariant)
+    const x0 = panelLeft + DOT_GRID_INSET_MM
+    const y0 = panelTop + DOT_GRID_INSET_MM
+    const x1 = panelLeft + panelW - DOT_GRID_INSET_MM
+    const y1 = panelTop + panelH - DOT_GRID_INSET_MM
+    for (let gx = x0; gx <= x1; gx += DOT_GRID_STEP_MM) {
+      for (let gy = y0; gy <= y1; gy += DOT_GRID_STEP_MM) {
+        doc.circle(gx, gy, DOT_RADIUS_MM, 'F')
+      }
+    }
+  }
+
+  /** Bottom accent only — primary token, no full box stroke */
+  function drawPanelBottomBorder(
+    panelLeft: number,
+    panelTop: number,
+    panelW: number,
+    panelH: number,
+  ): void {
+    const yLine = panelTop + panelH
+    setDraw(C.primary, 0.55)
+    doc.line(panelLeft, yLine, panelLeft + panelW, yLine)
+  }
+
   function drawContactPanelCore(
     panelTop: number,
     panelLeft: number,
@@ -236,10 +271,7 @@ export async function downloadCareerPdf(
     rows: ContactRow[],
   ): void {
     const panelH = estimateContactPanelHeight(rows, urlWrapW)
-    setFill(C.surfaceHigh)
-    doc.roundedRect(panelLeft, panelTop, panelW, panelH, 1, 1, 'F')
-    setDraw(C.outline, 0.28)
-    doc.roundedRect(panelLeft, panelTop, panelW, panelH, 1, 1, 'S')
+    drawDotGridBackground(panelLeft, panelTop, panelW, panelH)
 
     let py = panelTop + LINE_MM * 1.4
     const xl = panelLeft + 4
@@ -259,6 +291,8 @@ export async function downloadCareerPdf(
       setText(C.onSurface)
       py += LINE_MM * 0.18
     }
+
+    drawPanelBottomBorder(panelLeft, panelTop, panelW, panelH)
   }
 
   function estimateLinksPanelHeight(linksList: CareerProfileLink[], urlWrapW: number): number {
@@ -267,7 +301,7 @@ export async function downloadCareerPdf(
       const urlLines = doc.splitTextToSize(link.url, urlWrapW)
       h += LINE_MM + urlLines.length * LINE_MM + LINE_MM * 0.18
     }
-    return h + LINE_MM * 0.55
+    return h
   }
 
   function drawLinksPanelCore(
@@ -278,10 +312,7 @@ export async function downloadCareerPdf(
     linksList: CareerProfileLink[],
   ): void {
     const panelH = estimateLinksPanelHeight(linksList, urlWrapW)
-    setFill(C.surfaceHigh)
-    doc.roundedRect(panelLeft, panelTop, panelW, panelH, 1, 1, 'F')
-    setDraw(C.outline, 0.28)
-    doc.roundedRect(panelLeft, panelTop, panelW, panelH, 1, 1, 'S')
+    drawDotGridBackground(panelLeft, panelTop, panelW, panelH)
 
     let py = panelTop + LINE_MM * 1.4
     const xl = panelLeft + 4
@@ -301,6 +332,8 @@ export async function downloadCareerPdf(
       setText(C.onSurface)
       py += LINE_MM * 0.18
     }
+
+    drawPanelBottomBorder(panelLeft, panelTop, panelW, panelH)
   }
 
   function drawTwinSectionHeaders(
@@ -366,7 +399,7 @@ export async function downloadCareerPdf(
     drawContactPanelCore(panelTop, panel1Left, panel1W, urlW1, contactRows)
     drawLinksPanelCore(panelTop, panel2Left, panel2W, urlW2, linksList)
 
-    y = panelTop + panelBlockH + LINE_MM * 0.55 + LINE_MM * 1.4
+    y = panelTop + panelBlockH + LINE_MM * 0.55 + LINE_MM * 0.77
   }
 
   function drawLinksPanelFullWidth(linksList: CareerProfileLink[]): void {
@@ -454,7 +487,7 @@ export async function downloadCareerPdf(
     setDraw(C.outlineVariant, 0.28)
     doc.line(TIMELINE_X, markerCy + 2, TIMELINE_X, Math.max(spineBottom, markerCy + 5))
 
-    y += LINE_MM * 1.4
+    y += LINE_MM * 0.77
   }
 
   function drawFooters(totalPages: number): void {
