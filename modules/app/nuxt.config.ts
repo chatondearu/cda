@@ -9,6 +9,9 @@ export default defineNuxtConfig({
       careerEmail: '',
       careerPhone: '',
       careerLocation: '',
+      /** Umami — NUXT_PUBLIC_UMAMI_*; omit or leave empty to disable tracking */
+      umamiScriptUrl: '',
+      umamiWebsiteId: '',
     },
   },
   modules: [
