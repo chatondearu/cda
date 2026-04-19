@@ -17,7 +17,7 @@ const { isDark, toggleMode } = useThemeMode()
   <footer class="flex w-full flex-col gap-8 border-t border-primary_fixed_dim/10 bg-background px-8 py-8 text-primary_fixed_dim md:flex-row md:justify-between">
     <div>
       <div class="mb-4 font-sans text-lg font-black tracking-widest text-primary_fixed_dim">
-        THE_LAB
+        CDA_LAB
       </div>
       <p class="font-sans text-[10px] tracking-widest opacity-60">
         ©2122 WEYLAND-YUTANI // LOGICAL_MACHINE_OS

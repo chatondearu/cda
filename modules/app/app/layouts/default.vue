@@ -4,7 +4,7 @@ const { navItems } = useSystemData()
 const footerLinks = [
   { label: 'TERMINAL_EXIT', to: '/' },
   { label: 'ENCRYPT_DATA', to: '/system/diag' },
-  { label: 'SYSTEM_HALT', to: '/lab' },
+  { label: 'SYSTEM_HALT', to: '/cda-lab' },
   { label: 'CORE_DUMP', to: '/archive' },
 ]
 </script>

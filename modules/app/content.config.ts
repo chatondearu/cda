@@ -3,9 +3,9 @@ import { z } from 'zod'
 
 export default defineContentConfig({
   collections: {
-    lab: defineCollection({
+    cda_lab: defineCollection({
       type: 'page',
-      source: 'lab/**/*.md',
+      source: 'cda_lab/**/*.md',
       schema: z.object({
         title: z.string(),
         description: z.string(),

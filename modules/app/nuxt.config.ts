@@ -2,6 +2,14 @@ import process from 'node:process'
 
 export default defineNuxtConfig({
   extends: ['../design-system-nuxt'],
+  runtimeConfig: {
+    public: {
+      /** Set via NUXT_PUBLIC_CAREER_* — keep real values in .env (gitignored), not in repo */
+      careerEmail: '',
+      careerPhone: '',
+      careerLocation: '',
+    },
+  },
   modules: [
     '@nuxt/content',
     ...(process.env.NODE_ENV === 'development' ? ['nuxt-studio'] : []),
@@ -9,7 +17,7 @@ export default defineNuxtConfig({
   css: ['~/assets/css/global.css'],
   app: {
     head: {
-      title: 'THE LAB // LOGICAL MACHINE',
+      title: 'CDA_LAB // LOGICAL MACHINE',
     },
   },
   content: {

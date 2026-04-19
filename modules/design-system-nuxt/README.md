@@ -1,6 +1,6 @@
 # @chatondearu/design-system-nuxt
 
-Nuxt layer for the `Logical Machine` design system.
+Nuxt layer for the `CDA_LAB` / Logical Machine design system (CDA: ChatonDeAru).
 
 ## Goals
 

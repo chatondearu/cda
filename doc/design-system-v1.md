@@ -73,6 +73,6 @@
   - `/timeline`
   - `/archive`
   - `/archive/[slug]`
-  - `/lab`
+  - `/cda-lab`
   - `/cassette`
   - `/system/diag`

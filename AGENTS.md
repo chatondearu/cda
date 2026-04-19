@@ -43,7 +43,7 @@ You are an expert Fullstack/Frontend Developer specialized in Nuxt 3/4, Vue.js e
 1.  In `modules/app/app/app.vue`, always use `<NuxtLayout><NuxtPage /></NuxtLayout>`.
 2.  In Nuxt 4 app-dir mode, use `~/assets/...` for files physically in `modules/app/app/assets/...`.
 3.  For Nuxt Content v3, define explicit collections in `modules/app/content.config.ts`.
-4.  Query the matching collection name (`queryCollection('lab')` for lab capsules).
+4.  Query the matching collection name (`queryCollection('cda_lab')` for CDA_LAB capsules).
 5.  Prefer Node native sqlite connector:
     * `content.experimental.sqliteConnector = 'native'`
 6.  Keep `nuxt-studio` enabled in dev only to avoid production build failures when repository metadata is not configured.
