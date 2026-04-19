@@ -5,6 +5,7 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       /** Set via NUXT_PUBLIC_CAREER_* — keep real values in .env (gitignored), not in repo */
+      careerFullName: '',
       careerEmail: '',
       careerPhone: '',
       careerLocation: '',

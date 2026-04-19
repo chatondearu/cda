@@ -36,7 +36,12 @@ async function exportCareerPdf(): Promise<void> {
       <template #title>
         SIDE_CHANNEL_LOG:<br>
         <span class="bg-primary px-2 text-background">[ UNLISTED ]</span><br>
-        EMPLOYMENT_TIMELINE
+        <template v-if="contact.fullName">
+          <span class="uppercase">{{ contact.fullName }}</span><span class="text-primary/75"> [ EMPLOYMENT_TIMELINE ]</span>
+        </template>
+        <template v-else>
+          EMPLOYMENT_TIMELINE
+        </template>
       </template>
 
       <template #description>

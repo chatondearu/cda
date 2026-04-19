@@ -6,8 +6,9 @@ export interface CareerProfileLink {
   url: string
 }
 
-/** Optional contact lines from runtime env — passed from the career page only */
+/** Optional contact / identity from runtime env — passed from the career page only */
 export interface CareerContactDetails {
+  fullName?: string
   email?: string
   phone?: string
   location?: string
@@ -37,7 +38,9 @@ const CONTENT_W = PAGE_W - MARGIN_X - MARGIN_RIGHT
  */
 const CONTENT_MAX_Y = 274
 const LINE_MM = 4.9
-const HEAD_HERO_H = 30
+/** Hero band height (mm); grows if the main title wraps to several lines */
+const HEAD_HERO_H_BASE = 30
+const HERO_TITLE_LINE_STEP_MM = 6.5
 
 const TEXT_INDENT = MARGIN_X + 11
 const TIMELINE_X = MARGIN_X + 5
@@ -102,11 +105,25 @@ export async function downloadCareerPdf(
     doc.rect(0, 0, PAGE_W, PAGE_H, 'F')
   }
 
-  function drawHeroHeader(stamp: string): void {
+  function drawHeroHeader(stamp: string, subjectFullName?: string): void {
+    const namePart = subjectFullName?.trim()
+    const titleMain = namePart
+      ? `${namePart.toUpperCase()}  [ EMPLOYMENT_TIMELINE ]`
+      : 'EMPLOYMENT_TIMELINE'
+
+    doc.setFont('helvetica', 'bold')
+    doc.setFontSize(FS.heroTitle)
+    const titleMaxW = CONTENT_W
+    const titleLines = doc.splitTextToSize(titleMain, titleMaxW)
+
+    const titleFirstBaseline = 20
+    const lastBaseline = titleFirstBaseline + Math.max(0, titleLines.length - 1) * HERO_TITLE_LINE_STEP_MM
+    const heroH = Math.max(HEAD_HERO_H_BASE, lastBaseline + 8)
+
     setFill(C.primaryDim)
-    doc.rect(0, 0, PAGE_W, HEAD_HERO_H, 'F')
+    doc.rect(0, 0, PAGE_W, heroH, 'F')
     setDraw(C.outlineVariant, 0.2)
-    doc.line(0, HEAD_HERO_H, PAGE_W, HEAD_HERO_H)
+    doc.line(0, heroH, PAGE_W, heroH)
 
     doc.setFont('courier', 'normal')
     setText(C.onPrimary)
@@ -115,13 +132,16 @@ export async function downloadCareerPdf(
 
     doc.setFont('helvetica', 'bold')
     doc.setFontSize(FS.heroTitle)
-    doc.text('EMPLOYMENT_TIMELINE', MARGIN_X, 22)
+    setText(C.onPrimary)
+    for (let i = 0; i < titleLines.length; i++) {
+      doc.text(titleLines[i]!, MARGIN_X, titleFirstBaseline + i * HERO_TITLE_LINE_STEP_MM)
+    }
 
     doc.setFont('helvetica', 'normal')
     doc.setFontSize(FS.stamp)
     doc.text(`EXPORT_STAMP_UTC ${stamp}`, PAGE_W - MARGIN_RIGHT, 11, { align: 'right' })
 
-    y = HEAD_HERO_H + 9
+    y = heroH + 9
   }
 
   function drawContinuationHeader(): void {
@@ -514,7 +534,7 @@ export async function downloadCareerPdf(
   const stamp = new Date().toISOString().slice(0, 10)
 
   paintPageBackground()
-  drawHeroHeader(stamp)
+  drawHeroHeader(stamp, contact?.fullName)
 
   doc.setFont('courier', 'normal')
   setText(C.onSurfaceVariant)

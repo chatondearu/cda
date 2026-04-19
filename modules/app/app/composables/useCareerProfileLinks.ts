@@ -9,17 +9,17 @@ export function useCareerProfileLinks(): { profileLinks: CareerProfileLink[] } {
     {
       id: 'linkedin',
       label: 'LinkedIn',
-      url: 'https://www.linkedin.com/in/',
+      url: 'https://www.linkedin.com/in/romalie/',
     },
     {
       id: 'github',
       label: 'GitHub',
-      url: 'https://github.com/',
+      url: 'https://github.com/chatondearu',
     },
     {
-      id: 'stackoverflow',
-      label: 'Stack Overflow',
-      url: 'https://stackoverflow.com/users/',
+      id: 'website',
+      label: 'Website',
+      url: 'https://chatondearu.fr',
     },
   ]
 
