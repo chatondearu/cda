@@ -26,7 +26,7 @@ const featuredArchiveItems = computed(() =>
         <UiButton to="/contact">
           INITIALIZE_PROTOCOL
         </UiButton>
-        <UiButton variant="secondary" to="/resume">
+        <UiButton variant="secondary" to="/timeline">
           VIEW_RAW_DATA
         </UiButton>
       </template>
