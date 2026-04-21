@@ -2,7 +2,6 @@
 const directChannels = [
   { id: 'email', label: 'EMAIL_CHANNEL', value: 'contact@chatondearu.fr', href: 'mailto:contact@chatondearu.fr' },
   { id: 'github', label: 'GITHUB_SIGNAL', value: 'github.com/chatondearu', href: 'https://github.com/chatondearu' },
-  { id: 'linkedin', label: 'LINKEDIN_NODE', value: 'linkedin.com/in/romalie', href: 'https://www.linkedin.com/in/romalie/' },
 ] as const
 
 const collaborationProtocol = [
