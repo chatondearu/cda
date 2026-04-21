@@ -7,6 +7,8 @@ description: "Demo project used during the 2019 microservice talk."
 tech: JAVASCRIPT
 image: https://picsum.photos/seed/talk-microservce_with_vue-example-2019/1200/700
 repo_url: https://github.com/chatondearu/talk-microservce_with_vue-example-2019
+github_topics: []
+github_pinned: false
 tier: other
 order: 117
 ---

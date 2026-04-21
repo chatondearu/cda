@@ -7,6 +7,8 @@ description: "Experimental text-to-speech service backend."
 tech: PYTHON
 image: https://picsum.photos/seed/cool-tts-service/1200/700
 repo_url: https://github.com/chatondearu/cool-tts-service
+github_topics: []
+github_pinned: true
 tier: other
 order: 106
 ---

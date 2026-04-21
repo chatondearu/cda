@@ -7,6 +7,14 @@ description: "Desktop UI to inspect PipeWire nodes, ports and links in a switchb
 tech: VUE
 image: https://picsum.photos/seed/wiregraph/1200/700
 repo_url: https://github.com/chatondearu/wiregraph
+github_topics:
+  - nodes
+  - pipewire
+  - rust
+  - tauri
+  - ui
+  - vue
+github_pinned: false
 tier: featured
 order: 3
 ---

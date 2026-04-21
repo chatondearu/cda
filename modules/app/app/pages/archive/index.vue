@@ -1,15 +1,20 @@
 <script setup lang="ts">
 const { data: archiveRows } = await useArchiveList()
 
+const sortByGithubPinnedPriority = (a: { github_pinned?: boolean, order: number }, b: { github_pinned?: boolean, order: number }) =>
+  Number(b.github_pinned ?? false) - Number(a.github_pinned ?? false) || a.order - b.order
+
 const featuredArchiveItems = computed(() =>
   (archiveRows.value ?? [])
     .filter(row => row.tier === 'featured')
+    .toSorted(sortByGithubPinnedPriority)
     .map(mapArchiveDocumentToItem),
 )
 
 const secondaryArchiveItems = computed(() =>
   (archiveRows.value ?? [])
     .filter(row => row.tier === 'other')
+    .toSorted(sortByGithubPinnedPriority)
     .map(mapArchiveDocumentToItem),
 )
 </script>

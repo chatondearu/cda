@@ -7,6 +7,8 @@ description: "Vue talk content about microservice-oriented frontend patterns."
 tech: VUE
 image: https://picsum.photos/seed/talk-microservce_with_vue-2019/1200/700
 repo_url: https://github.com/chatondearu/talk-microservce_with_vue-2019
+github_topics: []
+github_pinned: false
 tier: other
 order: 116
 ---

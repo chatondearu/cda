@@ -7,6 +7,8 @@ description: "Flowmap and data-visualization explorations around mapping."
 tech: TYPESCRIPT
 image: https://picsum.photos/seed/cda.flowmap.gl/1200/700
 repo_url: https://github.com/chatondearu/cda.flowmap.gl
+github_topics: []
+github_pinned: false
 tier: other
 order: 105
 ---

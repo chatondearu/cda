@@ -25,3 +25,6 @@ logs
 
 .direnv/
 .pnpm/
+
+# One-off Firestore migration dumps (may contain sensitive data)
+tmp/

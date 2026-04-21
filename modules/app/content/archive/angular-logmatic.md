@@ -7,6 +7,8 @@ description: "Angular module for sending logs to Logmatic."
 tech: JAVASCRIPT
 image: https://picsum.photos/seed/angular-logmatic/1200/700
 repo_url: https://github.com/chatondearu/angular-logmatic
+github_topics: []
+github_pinned: false
 tier: other
 order: 100
 ---

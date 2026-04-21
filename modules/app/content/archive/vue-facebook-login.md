@@ -7,6 +7,8 @@ description: "Vue plugin around Facebook connection APIs."
 tech: JAVASCRIPT
 image: https://picsum.photos/seed/vue-facebook-login/1200/700
 repo_url: https://github.com/chatondearu/vue-facebook-login
+github_topics: []
+github_pinned: false
 tier: other
 order: 118
 ---

@@ -7,6 +7,8 @@ description: "Home Assistant integration for Imeon Energy monitoring and Energy 
 tech: PYTHON
 image: https://picsum.photos/seed/myrabelle-hacs-imeon-energy/1200/700
 repo_url: https://github.com/chatondearu/myrabelle-hacs-imeon-energy
+github_topics: []
+github_pinned: false
 tier: featured
 order: 6
 ---

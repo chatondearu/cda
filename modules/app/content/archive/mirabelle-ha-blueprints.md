@@ -7,6 +7,8 @@ description: "Collection de blueprints personnalises pour Home Assistant."
 tech: PYTHON
 image: https://picsum.photos/seed/mirabelle-ha-blueprints/1200/700
 repo_url: https://github.com/chatondearu/mirabelle-ha-blueprints
+github_topics: []
+github_pinned: true
 tier: featured
 order: 4
 ---

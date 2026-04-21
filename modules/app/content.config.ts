@@ -26,6 +26,8 @@ export default defineContentConfig({
         tech: z.string(),
         image: z.string(),
         repo_url: z.string().url(),
+        github_topics: z.array(z.string()).default([]),
+        github_pinned: z.boolean().default(false),
         tier: z.enum(['featured', 'other']),
         order: z.number(),
       }),

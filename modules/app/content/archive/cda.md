@@ -7,6 +7,8 @@ description: "Current personal website and archive workspace."
 tech: HTML
 image: https://picsum.photos/seed/cda/1200/700
 repo_url: https://github.com/chatondearu/cda
+github_topics: []
+github_pinned: false
 tier: other
 order: 104
 ---

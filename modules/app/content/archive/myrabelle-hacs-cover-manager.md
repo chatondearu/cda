@@ -7,6 +7,8 @@ description: "Home Assistant custom integration to manage switch-driven covers w
 tech: PYTHON
 image: https://picsum.photos/seed/myrabelle-hacs-cover-manager/1200/700
 repo_url: https://github.com/chatondearu/myrabelle-hacs-cover-manager
+github_topics: []
+github_pinned: false
 tier: featured
 order: 5
 ---

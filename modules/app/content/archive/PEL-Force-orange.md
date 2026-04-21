@@ -7,6 +7,8 @@ description: "TypeScript utility project for experiments and tooling."
 tech: TYPESCRIPT
 image: https://picsum.photos/seed/PEL-Force-orange/1200/700
 repo_url: https://github.com/chatondearu/PEL-Force-orange
+github_topics: []
+github_pinned: false
 tier: other
 order: 115
 ---

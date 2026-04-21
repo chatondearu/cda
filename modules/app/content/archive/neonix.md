@@ -7,6 +7,8 @@ description: "Nix-oriented tooling and environment experiments."
 tech: NIX
 image: https://picsum.photos/seed/neonix/1200/700
 repo_url: https://github.com/chatondearu/neonix
+github_topics: []
+github_pinned: false
 tier: featured
 order: 7
 ---

@@ -7,6 +7,8 @@ description: "A simple library for Maplibre with Vue 3 components, Composition A
 tech: VUE
 image: https://picsum.photos/seed/vue-maplibre/1200/700
 repo_url: https://github.com/chatondearu/vue-maplibre
+github_topics: []
+github_pinned: true
 tier: featured
 order: 1
 ---

@@ -7,6 +7,8 @@ description: "Interview project with focused technical constraints."
 tech: JAVASCRIPT
 image: https://picsum.photos/seed/logmatic-interview/1200/700
 repo_url: https://github.com/chatondearu/logmatic-interview
+github_topics: []
+github_pinned: false
 tier: other
 order: 112
 ---

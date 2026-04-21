@@ -7,6 +7,8 @@ description: "Coolify-oriented deployment setup around MeloTTS services."
 tech: DOCKERFILE
 image: https://picsum.photos/seed/melotts-coolify/1200/700
 repo_url: https://github.com/chatondearu/melotts-coolify
+github_topics: []
+github_pinned: false
 tier: other
 order: 114
 ---

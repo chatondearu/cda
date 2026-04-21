@@ -7,6 +7,8 @@ description: "The ultimate grillade script to optimise your BBQ grid system."
 tech: SHELL
 image: https://picsum.photos/seed/grillade/1200/700
 repo_url: https://github.com/chatondearu/grillade
+github_topics: []
+github_pinned: false
 tier: other
 order: 108
 ---

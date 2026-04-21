@@ -7,6 +7,8 @@ description: "A beautiful UI toolkit made with Vue."
 tech: VUE
 image: https://picsum.photos/seed/vue-beautiful-ui/1200/700
 repo_url: https://github.com/chatondearu/vue-beautiful-ui
+github_topics: []
+github_pinned: false
 tier: featured
 order: 9
 ---

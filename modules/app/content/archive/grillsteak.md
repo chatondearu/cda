@@ -7,6 +7,8 @@ description: "Legacy script and automation experiments."
 tech: JAVASCRIPT
 image: https://picsum.photos/seed/grillsteak/1200/700
 repo_url: https://github.com/chatondearu/grillsteak
+github_topics: []
+github_pinned: false
 tier: other
 order: 109
 ---
