@@ -15,6 +15,7 @@
     "lint": "pnpm -r lint",
     "typecheck": "pnpm --filter @chatondearu/app typecheck",
     "lint:fix": "pnpm -r lint:fix",
-    "lint:colors": "pnpm --filter @chatondearu/design-system-nuxt lint:colors"
+    "lint:colors": "pnpm --filter @chatondearu/design-system-nuxt lint:colors",
+    "sync:archive:github": "node scripts/sync-github-archives.mjs"
   }
 }

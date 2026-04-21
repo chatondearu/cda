@@ -24,6 +24,7 @@ export interface ArchiveItem {
   tech: string
   image: string
   repoUrl: string
+  projectUrl: string
   githubTopics: string[]
   githubPinned: boolean
   tier: 'featured' | 'other'

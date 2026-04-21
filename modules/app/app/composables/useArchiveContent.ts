@@ -17,6 +17,7 @@ export function mapArchiveDocumentToItem(doc: {
   tech: string
   image: string
   repo_url: string
+  project_url?: string
   github_topics?: string[]
   github_pinned?: boolean
   tier: ArchiveItem['tier']
@@ -30,6 +31,7 @@ export function mapArchiveDocumentToItem(doc: {
     tech: doc.tech,
     image: doc.image,
     repoUrl: doc.repo_url,
+    projectUrl: doc.project_url ?? doc.repo_url,
     githubTopics: doc.github_topics ?? [],
     githubPinned: doc.github_pinned ?? false,
     tier: doc.tier,

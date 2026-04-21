@@ -33,6 +33,16 @@ const currentItem = computed(() =>
       <div class="mt-8">
         <div class="flex flex-wrap gap-3">
           <UiButton
+            v-if="currentItem.projectUrl !== currentItem.repoUrl"
+            as="a"
+            :href="currentItem.projectUrl"
+            target="_blank"
+            rel="noopener noreferrer"
+            variant="secondary"
+          >
+            OPEN_PROJECT
+          </UiButton>
+          <UiButton
             as="a"
             :href="currentItem.repoUrl"
             target="_blank"
