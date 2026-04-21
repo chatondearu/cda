@@ -5,7 +5,7 @@ title: MELOTTS_COOLIFY
 status: nominal
 description: "Coolify-oriented deployment setup around MeloTTS services."
 tech: DOCKERFILE
-image: https://image.thum.io/get/width/1200/crop/700/noanimate/https%3A%2F%2Fgithub.com%2Fchatondearu%2Fmelotts-coolify
+image: /images/archive/melotts-coolify.svg
 repo_url: https://github.com/chatondearu/melotts-coolify
 github_topics: []
 github_pinned: false

@@ -5,7 +5,7 @@ title: UNO_VARIATIONS
 status: nominal
 description: "A UnoCSS variations first-class variant API."
 tech: TYPESCRIPT
-image: https://image.thum.io/get/width/1200/crop/700/noanimate/https%3A%2F%2Fchatondearu.github.io%2Funo-variations%2F
+image: https://image.thum.io/get/width/1200/crop/700/noanimate/https://chatondearu.github.io/uno-variations/
 repo_url: https://github.com/chatondearu/uno-variations
 github_topics:
   - tailwind-variants

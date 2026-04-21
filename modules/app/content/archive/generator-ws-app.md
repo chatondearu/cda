@@ -5,7 +5,7 @@ title: GENERATOR_WS_APP
 status: unfinished
 description: "Scaffolding generator for web service apps."
 tech: JAVASCRIPT
-image: https://image.thum.io/get/width/1200/crop/700/noanimate/https%3A%2F%2Fgithub.com%2Fchatondearu%2Fgenerator-ws-app
+image: /images/archive/generator-ws-app.svg
 repo_url: https://github.com/chatondearu/generator-ws-app
 github_topics: []
 github_pinned: false

@@ -5,7 +5,7 @@ title: GLITCHMAO
 status: nominal
 description: "GlitchMao - Hash and Sign authenticity toolkit (Rust, Nuxt 4)."
 tech: TYPESCRIPT
-image: https://image.thum.io/get/width/1200/crop/700/noanimate/https%3A%2F%2Fchatondearu.github.io%2Fglitchmao%2F
+image: https://image.thum.io/get/width/1200/crop/700/noanimate/https://chatondearu.github.io/glitchmao/
 repo_url: https://github.com/chatondearu/glitchmao
 github_topics:
   - content-creator-tool

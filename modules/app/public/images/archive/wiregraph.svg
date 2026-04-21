@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#0A0E14"/>
+      <stop offset="100%" stop-color="#1A2433"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="700" fill="url(#bg)"/>
+  <rect x="40" y="40" width="1120" height="620" fill="none" stroke="#6EE7F9" stroke-opacity="0.35" stroke-width="2"/>
+  <rect x="60" y="60" width="1080" height="580" fill="none" stroke="#6EE7F9" stroke-opacity="0.15" stroke-width="1"/>
+  <text x="90" y="160" fill="#9EEAF4" font-size="24" font-family="monospace" letter-spacing="2">ARCHIVE CAPSULE</text>
+  <text x="90" y="240" fill="#E4F4F7" font-size="64" font-weight="700" font-family="monospace">WIREGRAPH</text>
+  <text x="90" y="320" fill="#B4CBD1" font-size="28" font-family="monospace">TECH: VUE</text>
+  <text x="90" y="390" fill="#9FB2B8" font-size="24" font-family="monospace">Desktop UI to inspect PipeWire nodes, ports, and links in a switchboard-style </text>
+  <text x="90" y="610" fill="#6EE7F9" font-size="20" font-family="monospace">github.com/chatondearu/wiregraph</text>
+</svg>
