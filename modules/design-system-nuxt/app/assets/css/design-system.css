@@ -129,6 +129,13 @@ body {
   z-index: 0;
 }
 
+.dot-grid-magnet-canvas {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+}
+
 /* Scanlines overlay */
 .scanline::after {
   opacity: 0.06;
