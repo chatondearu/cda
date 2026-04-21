@@ -15,8 +15,10 @@ const footerLinks = [
     <UiTopBar title="REF-01/SYS_STATUS: NOMINAL" />
     <div class="min-h-screen flex pt-16">
       <UiSideNav :items="navItems" />
-      <main class="flex-1 overflow-x-hidden pb-20 md:pb-0">
-        <slot />
+      <main class="flex flex-1 flex-col overflow-x-hidden pb-20 md:pb-0">
+        <div class="flex-1">
+          <slot />
+        </div>
         <UiFooterLinks :links="footerLinks" />
       </main>
     </div>
