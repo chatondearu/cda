@@ -4,6 +4,10 @@ export default defineNuxtConfig({
   extends: ['../design-system-nuxt'],
   runtimeConfig: {
     public: {
+      /** Canonical primary site URL — set with NUXT_PUBLIC_SITE_URL */
+      siteUrl: 'https://chatondearu.fr',
+      /** Dedicated host used for the CV access gateway — set with NUXT_PUBLIC_ME_HOST */
+      meHost: 'rlienard.fr',
       /** Set via NUXT_PUBLIC_CAREER_* — keep real values in .env (gitignored), not in repo */
       careerFullName: '',
       careerEmail: '',
