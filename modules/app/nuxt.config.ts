@@ -6,6 +6,12 @@ export default defineNuxtConfig({
     public: {
       /** Canonical primary site URL — set with NUXT_PUBLIC_SITE_URL */
       siteUrl: 'https://chatondearu.fr',
+      /**
+       * Hostnames that redirect to siteUrl with /en when the path has no locale prefix.
+       * Comma-separated, no scheme (e.g. chatondearu.com,www.chatondearu.com).
+       * Set with NUXT_PUBLIC_REDIRECT_HOSTS_EN (Coolify env).
+       */
+      redirectHostsEn: '',
       /** Dedicated host used for the CV access gateway — set with NUXT_PUBLIC_ME_HOST */
       meHost: 'rlienard.fr',
       /** Set via NUXT_PUBLIC_CAREER_* — keep real values in .env (gitignored), not in repo */
