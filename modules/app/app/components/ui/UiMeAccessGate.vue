@@ -1,3 +1,9 @@
+<script setup lang="ts">
+const config = useRuntimeConfig()
+const siteUrl = String(config.public.siteUrl ?? 'https://chatondearu.fr').replace(/\/+$/, '')
+const contactUrl = `${siteUrl}/contact`
+</script>
+
 <template>
   <UiHeroCommand icon="hub">
     <template #title>
@@ -17,7 +23,7 @@
       </UiButton>
       <UiButton
         variant="secondary"
-        to="/contact"
+        :href="contactUrl"
       >
         OPEN_CONTACT_CHANNEL
       </UiButton>
