@@ -3,9 +3,9 @@ const { navItems } = useSystemData()
 const config = useRuntimeConfig()
 const requestUrl = useRequestURL()
 const requestHost = requestUrl.host.split(':')[0]?.trim().toLowerCase() ?? ''
-const meHost = String(config.public.meHost ?? 'me.rlienard.fr').trim().toLowerCase()
-const siteUrl = String(config.public.siteUrl ?? 'https://chatondearu.fr').trim()
-const isMeHostLayout = requestHost === meHost
+const meHost = String(config.public.meHost ?? '').trim().toLowerCase()
+const siteUrl = String(config.public.siteUrl ?? '').trim()
+const isMeHostLayout = meHost.length > 0 && requestHost === meHost
 
 const footerLinks = [
   { label: 'TERMINAL_EXIT', to: '/' },
