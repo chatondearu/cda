@@ -33,13 +33,13 @@ export interface ArchiveItem {
 export function useSystemData() {
   const { t } = useI18n()
 
-  const navItems: NavItem[] = [
+  const navItems = computed<NavItem[]>(() => [
     { label: t('nav.home'), to: '/', icon: 'home', dockLabel: t('nav.dock.home') },
     { label: t('nav.timeline'), to: '/timeline', icon: 'timeline', dockLabel: t('nav.dock.timeline') },
     { label: t('nav.archive'), to: '/archive', icon: 'inventory_2', dockLabel: t('nav.dock.archive') },
     { label: t('nav.cassette'), to: '/cassette', icon: 'settings_voice', dockLabel: t('nav.dock.cassette') },
     { label: t('nav.diag'), to: '/system/diag', icon: 'analytics', dockLabel: t('nav.dock.diag') },
-  ]
+  ])
 
   const timelineItems: TimelineItem[] = [
     {

@@ -8,13 +8,13 @@ const meHost = String(config.public.meHost ?? '').trim().toLowerCase()
 const siteUrl = String(config.public.siteUrl ?? '').trim()
 const isMeHostLayout = meHost.length > 0 && requestHost === meHost
 
-const footerLinks = [
+const footerLinks = computed(() => [
   { label: t('layout.footerLinks.exit'), to: '/' },
   { label: t('layout.footerLinks.contact'), to: '/contact' },
   { label: t('layout.footerLinks.diag'), to: '/system/diag' },
   { label: t('layout.footerLinks.lab'), to: '/cda-lab' },
   { label: t('layout.footerLinks.archive'), to: '/archive' },
-]
+])
 </script>
 
 <template>

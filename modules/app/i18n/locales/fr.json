@@ -24,11 +24,11 @@
     }
   },
   "nav": {
-    "home": "HOME_BASE",
-    "timeline": "TIMELINE_LOG",
-    "archive": "ARCHIVE_REP",
-    "cassette": "CASSETTE_INT",
-    "diag": "SYS_DIAG",
+    "home": "BASE_ACCUEIL",
+    "timeline": "CHRONO_LOG",
+    "archive": "DEPOT_ARCHIVES",
+    "cassette": "CASSETTE_VOIX",
+    "diag": "DIAG_SYSTEME",
     "dock": {
       "home": "ACCUEIL",
       "timeline": "LOG",
