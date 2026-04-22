@@ -2,8 +2,8 @@ export default defineNuxtRouteMiddleware((to) => {
   const requestUrl = useRequestURL()
   const config = useRuntimeConfig()
   const requestHost = requestUrl.host.split(':')[0]?.trim().toLowerCase() ?? ''
-  const meHost = String(config.public.meHost ?? 'me.rlienard.fr').trim().toLowerCase()
-  const isMeSubdomain = requestHost === meHost
+  const meHost = String(config.public.meHost ?? '').trim().toLowerCase()
+  const isMeSubdomain = meHost.length > 0 && requestHost === meHost
 
   if (!isMeSubdomain) {
     return

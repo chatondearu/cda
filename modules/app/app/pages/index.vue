@@ -6,8 +6,8 @@ const { data: archiveRows } = await useArchiveList()
 const requestUrl = useRequestURL()
 const config = useRuntimeConfig()
 const requestHost = requestUrl.host.split(':')[0]?.trim().toLowerCase() ?? ''
-const meHost = String(config.public.meHost ?? 'me.rlienard.fr').trim().toLowerCase()
-const isMeSubdomain = requestHost === meHost
+const meHost = String(config.public.meHost ?? '').trim().toLowerCase()
+const isMeSubdomain = meHost.length > 0 && requestHost === meHost
 
 function sortByGithubPinnedPriority(a: { github_pinned?: boolean, order: number }, b: { github_pinned?: boolean, order: number }): number {
   return Number(b.github_pinned ?? false) - Number(a.github_pinned ?? false) || a.order - b.order

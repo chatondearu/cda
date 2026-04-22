@@ -28,6 +28,10 @@ export default defineEventHandler((event) => {
   const url = getRequestURL(event)
   const host = url.hostname.toLowerCase()
 
+  const meHost = String(config.public.meHost ?? '').trim().toLowerCase()
+  if (meHost && host === meHost)
+    return
+
   if (!aliasHosts.has(host))
     return
 
