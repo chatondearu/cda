@@ -1,5 +1,6 @@
 <script setup lang="ts">
 const { navItems } = useSystemData()
+const { t } = useI18n()
 const config = useRuntimeConfig()
 const requestUrl = useRequestURL()
 const requestHost = requestUrl.host.split(':')[0]?.trim().toLowerCase() ?? ''
@@ -8,11 +9,11 @@ const siteUrl = String(config.public.siteUrl ?? '').trim()
 const isMeHostLayout = meHost.length > 0 && requestHost === meHost
 
 const footerLinks = [
-  { label: 'TERMINAL_EXIT', to: '/' },
-  { label: 'OPEN_CHANNEL', to: '/contact' },
-  { label: 'ENCRYPT_DATA', to: '/system/diag' },
-  { label: 'SYSTEM_HALT', to: '/cda-lab' },
-  { label: 'CORE_DUMP', to: '/archive' },
+  { label: t('layout.footerLinks.exit'), to: '/' },
+  { label: t('layout.footerLinks.contact'), to: '/contact' },
+  { label: t('layout.footerLinks.diag'), to: '/system/diag' },
+  { label: t('layout.footerLinks.lab'), to: '/cda-lab' },
+  { label: t('layout.footerLinks.archive'), to: '/archive' },
 ]
 </script>
 
@@ -27,7 +28,7 @@ const footerLinks = [
             rel="noopener noreferrer"
             class="text-[11px] text-primary/80 tracking-widest font-mono uppercase hover:text-primary"
           >
-            GO_TO_CHATONDEARU.FR
+            {{ t('layout.goToMainSite') }}
           </a>
         </div>
         <div class="flex-1">
@@ -36,7 +37,7 @@ const footerLinks = [
       </main>
     </template>
     <template v-else>
-      <UiTopBar title="REF-01/SYS_STATUS: NOMINAL" />
+      <AppSiteTopBar />
       <div class="min-h-screen flex pt-16">
         <UiSideNav :items="navItems" />
         <main class="flex flex-1 flex-col overflow-x-hidden pb-20 md:pb-0">

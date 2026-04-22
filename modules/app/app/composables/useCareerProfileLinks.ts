@@ -5,6 +5,9 @@ import type { CareerProfileLink } from '../utils/careerPdf'
  * Replace placeholder URLs with your real profiles before sharing this page.
  */
 export function useCareerProfileLinks(): { profileLinks: CareerProfileLink[] } {
+  const { locale } = useI18n()
+  const labelWebsite = locale.value === 'fr' ? 'Site web' : locale.value === 'zh' ? '网站' : locale.value === 'ja' ? 'ウェブサイト' : 'Website'
+
   const profileLinks: CareerProfileLink[] = [
     {
       id: 'linkedin',
@@ -18,7 +21,7 @@ export function useCareerProfileLinks(): { profileLinks: CareerProfileLink[] } {
     },
     {
       id: 'website',
-      label: 'Website',
+      label: labelWebsite,
       url: 'https://chatondearu.fr',
     },
   ]

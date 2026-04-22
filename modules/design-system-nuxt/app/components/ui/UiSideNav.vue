@@ -6,13 +6,15 @@ interface Props {
 }
 
 defineProps<Props>()
+const { t } = useI18n()
+const localePath = useLocalePath()
 </script>
 
 <template>
   <aside class="sticky top-16 hidden h-[calc(100dvh-4rem)] w-64 shrink-0 flex-col border-r border-primary_fixed_dim/20 bg-surface_container_lowest py-8 md:flex">
     <div class="mb-10 px-6">
       <h2 class="font-sans text-xs font-black uppercase tracking-widest text-primary_fixed_dim">
-        DIAGNOSTIC_v4.2
+        {{ t('ui.diagnosticVersion') }}
       </h2>
       <div class="mt-2 h-px w-full bg-primary_fixed_dim/20" />
     </div>
@@ -20,7 +22,7 @@ defineProps<Props>()
       <NuxtLink
         v-for="item in items"
         :key="item.to"
-        :to="item.to"
+        :to="localePath(item.to)"
         class="flex items-center gap-4 px-6 py-4 font-sans text-xs font-bold uppercase tracking-widest text-primary_fixed_dim/70 transition-none hover:bg-surface_container_highest"
         active-class="!bg-primary_fixed_dim !text-background hover:!bg-primary_fixed_dim hover:!text-background"
       >
@@ -33,8 +35,8 @@ defineProps<Props>()
     </nav>
     <div class="mt-auto px-6">
       <div class="font-mono text-[10px] text-primary_fixed_dim/40">
-        COORD: 42.091 // 11.200<br>
-        MEM_LOAD: 14%
+        {{ t('ui.coord') }}<br>
+        {{ t('ui.memLoad') }}
       </div>
     </div>
   </aside>

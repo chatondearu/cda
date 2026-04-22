@@ -1,0 +1,105 @@
+{
+  "common": {
+    "locale": "ja",
+    "loading": "読み込み中...",
+    "notFound": "見つかりません",
+    "openProject": "プロジェクトを開く",
+    "openRepository": "リポジトリを開く",
+    "returnArchive": "アーカイブに戻る",
+    "openCapsule": "カプセルを開く",
+    "themeLight": "ライトモード",
+    "themeDark": "ダークモード",
+    "language": "言語",
+    "settings": "設定"
+  },
+  "layout": {
+    "topbarTitle": "REF-01/SYS_STATUS: NOMINAL",
+    "goToMainSite": "CHATONDEARU.FRへ",
+    "footerLinks": {
+      "exit": "TERMINAL_EXIT",
+      "contact": "OPEN_CHANNEL",
+      "diag": "ENCRYPT_DATA",
+      "lab": "SYSTEM_HALT",
+      "archive": "CORE_DUMP"
+    }
+  },
+  "nav": {
+    "home": "ホーム",
+    "timeline": "タイムライン",
+    "archive": "アーカイブ",
+    "cassette": "ボイス",
+    "diag": "診断",
+    "dock": {
+      "home": "ホーム",
+      "timeline": "ログ",
+      "archive": "保管",
+      "cassette": "音声",
+      "diag": "診断"
+    }
+  },
+  "home": {
+    "seoTitle": "CDA_LAB // LOGICAL MACHINE",
+    "seoDescription": "フルスタック実績、技術アーカイブ、クリエイター年表。",
+    "heroDescription": "Vue.js/Nuxt によるスケーラブルな設計とコミュニティ運営を、複雑なソフトウェア開発とインタラクティブ配信の交点で実行。",
+    "ctaPrimary": "INITIALIZE_PROTOCOL",
+    "ctaSecondary": "VIEW_RAW_DATA"
+  },
+  "contact": {
+    "seoTitle": "CONTACT // CHATONDEARU",
+    "seoDescription": "連絡チャネルと協業プロトコル。",
+    "heroDescription": "プロジェクト相談、技術監査、開発ミッション計画のための入口。",
+    "mailAction": "INITIATE_HANDSHAKE",
+    "archiveAction": "REVIEW_ARCHIVE",
+    "slaHint": "SLA_HINT: 稼働状況に応じて初回返信は24-72時間。"
+  },
+  "timeline": {
+    "seoDescription": "ChatonDeAru のクリエイター年表。",
+    "heroDescription": "ChatonDeAru 名義での配信・制作活動の主要マイルストーン。",
+    "sectionTitle": "LOGIC_FLOW_CHRONO",
+    "totalUptime": "TOTAL_UPTIME: 124,800_HRS"
+  },
+  "archive": {
+    "header": "ARCHIVE_REPOSITORY",
+    "featuredTitle": "優先カプセル",
+    "featuredTag": "FEATURED_SET",
+    "otherTitle": "その他の公開リポジトリ",
+    "otherTag": "SECONDARY_SET",
+    "detailTitle": "ARCHIVE_DETAIL",
+    "missing": "データカプセルが見つかりません",
+    "status": {
+      "nominal": "正常",
+      "unfinished": "未完了"
+    }
+  },
+  "system": {
+    "title": "システム診断",
+    "syncNominal": "SYNC: NOMINAL",
+    "latency": "LATENCY: 02.1MS",
+    "coreTemp": "CORE TEMP: 42C",
+    "panel": {
+      "core": "コア",
+      "memory": "メモリ",
+      "coreLatency": "コアレイテンシ",
+      "memoryLoad": "メモリ負荷"
+    }
+  },
+  "career": {
+    "seoTitle": "SIDE_CHANNEL // CAREER",
+    "seoDescription": "非公開の職務経歴ログ。",
+    "heroDescription": "職歴と雇用実績ページ。公開ナビゲーションから除外。",
+    "exportPdf": "PDFをエクスポート",
+    "requestAccess": "CVアクセスを申請",
+    "openContact": "連絡チャネルを開く"
+  },
+  "ui": {
+    "diagnosticVersion": "DIAGNOSTIC_v4.2",
+    "coord": "COORD: 42.091 // 11.200",
+    "memLoad": "MEM_LOAD: 14%",
+    "secureLine": "SECURE_LINE",
+    "userAdmin": "USER: ADMIN_01",
+    "copyright": "©2122 WEYLAND-YUTANI // LOGICAL_MACHINE_OS",
+    "lat": "LAT: 34.0522 N",
+    "lon": "LON: 118.2437 W",
+    "initializingDeepSystems": "深層システムを初期化中"
+  }
+}

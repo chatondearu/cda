@@ -1,0 +1,105 @@
+{
+  "common": {
+    "locale": "zh",
+    "loading": "加载中...",
+    "notFound": "未找到",
+    "openProject": "打开项目",
+    "openRepository": "打开仓库",
+    "returnArchive": "返回档案",
+    "openCapsule": "打开胶囊",
+    "themeLight": "浅色模式",
+    "themeDark": "深色模式",
+    "language": "语言",
+    "settings": "设置"
+  },
+  "layout": {
+    "topbarTitle": "REF-01/SYS_STATUS: NOMINAL",
+    "goToMainSite": "前往_CHATONDEARU.FR",
+    "footerLinks": {
+      "exit": "TERMINAL_EXIT",
+      "contact": "OPEN_CHANNEL",
+      "diag": "ENCRYPT_DATA",
+      "lab": "SYSTEM_HALT",
+      "archive": "CORE_DUMP"
+    }
+  },
+  "nav": {
+    "home": "主页",
+    "timeline": "时间线",
+    "archive": "档案库",
+    "cassette": "语音",
+    "diag": "诊断",
+    "dock": {
+      "home": "主页",
+      "timeline": "日志",
+      "archive": "档案",
+      "cassette": "语音",
+      "diag": "诊断"
+    }
+  },
+  "home": {
+    "seoTitle": "CDA_LAB // LOGICAL MACHINE",
+    "seoDescription": "全栈作品、技术档案与创作者历程。",
+    "heroDescription": "部署可扩展的 Vue.js/Nuxt 架构并组织社区运营，连接复杂软件开发与互动直播。",
+    "ctaPrimary": "INITIALIZE_PROTOCOL",
+    "ctaSecondary": "VIEW_RAW_DATA"
+  },
+  "contact": {
+    "seoTitle": "CONTACT // CHATONDEARU",
+    "seoDescription": "联系渠道与协作协议。",
+    "heroDescription": "用于发起项目沟通、技术审计或开发合作规划的入口。",
+    "mailAction": "INITIATE_HANDSHAKE",
+    "archiveAction": "REVIEW_ARCHIVE",
+    "slaHint": "SLA_HINT: 根据当前负载，24-72 小时内首次回复。"
+  },
+  "timeline": {
+    "seoDescription": "ChatonDeAru 创作历程时间线。",
+    "heroDescription": "以 ChatonDeAru 名义进行直播与创作的关键里程碑。",
+    "sectionTitle": "逻辑流程时间线",
+    "totalUptime": "TOTAL_UPTIME: 124,800_HRS"
+  },
+  "archive": {
+    "header": "ARCHIVE_REPOSITORY",
+    "featuredTitle": "优先胶囊",
+    "featuredTag": "FEATURED_SET",
+    "otherTitle": "其他公开仓库",
+    "otherTag": "SECONDARY_SET",
+    "detailTitle": "ARCHIVE_DETAIL",
+    "missing": "未找到数据胶囊",
+    "status": {
+      "nominal": "正常",
+      "unfinished": "未完成"
+    }
+  },
+  "system": {
+    "title": "系统诊断",
+    "syncNominal": "SYNC: NOMINAL",
+    "latency": "LATENCY: 02.1MS",
+    "coreTemp": "CORE TEMP: 42C",
+    "panel": {
+      "core": "核心",
+      "memory": "内存",
+      "coreLatency": "核心延迟",
+      "memoryLoad": "内存负载"
+    }
+  },
+  "career": {
+    "seoTitle": "SIDE_CHANNEL // CAREER",
+    "seoDescription": "未公开的职业履历日志。",
+    "heroDescription": "职业路径与雇主参考页面，刻意不在公开导航中展示。",
+    "exportPdf": "导出 PDF",
+    "requestAccess": "申请访问简历",
+    "openContact": "打开联系通道"
+  },
+  "ui": {
+    "diagnosticVersion": "DIAGNOSTIC_v4.2",
+    "coord": "COORD: 42.091 // 11.200",
+    "memLoad": "MEM_LOAD: 14%",
+    "secureLine": "SECURE_LINE",
+    "userAdmin": "USER: ADMIN_01",
+    "copyright": "©2122 WEYLAND-YUTANI // LOGICAL_MACHINE_OS",
+    "lat": "LAT: 34.0522 N",
+    "lon": "LON: 118.2437 W",
+    "initializingDeepSystems": "正在初始化深层系统"
+  }
+}

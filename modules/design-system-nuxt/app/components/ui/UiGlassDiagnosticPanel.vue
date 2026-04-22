@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { TabsContent, TabsList, TabsRoot, TabsTrigger } from 'reka-ui'
+const { t } = useI18n()
 </script>
 
 <template>
@@ -10,25 +11,25 @@ import { TabsContent, TabsList, TabsRoot, TabsTrigger } from 'reka-ui'
           value="core"
           class="mr-2 border border-primary_fixed_dim/20 px-3 py-1 text-[10px] tracking-[0.18em] text-primary data-[state=active]:bg-primary_fixed_dim data-[state=active]:text-background"
         >
-          CORE
+          {{ t('system.panel.core') }}
         </TabsTrigger>
         <TabsTrigger
           value="memory"
           class="border border-primary_fixed_dim/20 px-3 py-1 text-[10px] tracking-[0.18em] text-primary data-[state=active]:bg-primary_fixed_dim data-[state=active]:text-background"
         >
-          MEMORY
+          {{ t('system.panel.memory') }}
         </TabsTrigger>
       </TabsList>
       <TabsContent value="core">
         <UiProgressReadout
-          label="CORE_LATENCY"
+          :label="t('system.panel.coreLatency')"
           value="02.1MS"
           :progress="82"
         />
       </TabsContent>
       <TabsContent value="memory">
         <UiProgressReadout
-          label="MEMORY_LOAD"
+          :label="t('system.panel.memoryLoad')"
           value="61%"
           :progress="61"
         />

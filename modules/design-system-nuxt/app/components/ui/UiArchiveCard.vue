@@ -6,6 +6,8 @@ interface Props {
 }
 
 defineProps<Props>()
+const { t } = useI18n()
+const localePath = useLocalePath()
 </script>
 
 <template>
@@ -14,7 +16,7 @@ defineProps<Props>()
     <div class="mb-4 flex items-start justify-between">
       <UiRefCode :code="item.capsule" />
       <UiStatusChip
-        :label="item.status === 'unfinished' ? 'UNFINISHED' : 'NOMINAL'"
+        :label="item.status === 'unfinished' ? t('archive.status.unfinished') : t('archive.status.nominal')"
         :variant="item.status === 'unfinished' ? 'error' : 'secondary'"
       />
     </div>
@@ -35,9 +37,9 @@ defineProps<Props>()
         :code="`TECH: ${item.tech}`"
       />
       <NuxtLink
-        :to="`/archive/${item.slug}`"
+        :to="localePath(`/archive/${item.slug}`)"
         class="text-primary"
-        aria-label="Open capsule"
+        :aria-label="t('common.openCapsule')"
       >
         <UiMaterialIcon
           name="open_in_new"

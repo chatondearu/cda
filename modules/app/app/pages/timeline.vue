@@ -1,8 +1,9 @@
 <script setup lang="ts">
+const { t } = useI18n()
 const streamerItems = useStreamerTimeline()
 
 useSeoMeta({
-  description: 'Chronologie du parcours créateur ChatonDeAru — streaming, communauté et broadcast.',
+  description: t('timeline.seoDescription'),
   ogTitle: '[og:title]',
   ogDescription: '[og:description]',
   ogImage: '[og:image]',
@@ -14,9 +15,6 @@ useSeoMeta({
 })
 
 useHead({
-  htmlAttrs: {
-    lang: 'fr',
-  },
   link: [
     {
       rel: 'icon',
@@ -33,14 +31,39 @@ useHead({
       <template #title>
         BROADCAST_LOG:<br>
         <span class="bg-primary px-2 text-background">[ CHATONDEARU ]</span><br>
-        CREATOR_TIMELINE
+        {{ t('timelinePage.heroTitle') }}
       </template>
 
       <template #description>
-        Jalons du parcours en tant que streamer et créateur sous l’alias ChatonDeAru : chaîne, formats, infra de stream et moments marquants côté communauté — sans détail du CV logiciel.
+        {{ t('timeline.heroDescription') }}
       </template>
     </UiHeroCommand>
 
     <UiTimeline :items="[...streamerItems]" />
   </div>
 </template>
+
+<i18n lang="json">
+{
+  "fr": {
+    "timelinePage": {
+      "heroTitle": "CREATOR_TIMELINE"
+    }
+  },
+  "en": {
+    "timelinePage": {
+      "heroTitle": "CREATOR_TIMELINE"
+    }
+  },
+  "zh": {
+    "timelinePage": {
+      "heroTitle": "创作时间线"
+    }
+  },
+  "ja": {
+    "timelinePage": {
+      "heroTitle": "クリエイター年表"
+    }
+  }
+}
+</i18n>

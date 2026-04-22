@@ -1,8 +1,10 @@
 <script setup lang="ts">
+const { t } = useI18n()
 const { data: archiveRows } = await useArchiveList()
 
-const sortByGithubPinnedPriority = (a: { github_pinned?: boolean, order: number }, b: { github_pinned?: boolean, order: number }) =>
-  Number(b.github_pinned ?? false) - Number(a.github_pinned ?? false) || a.order - b.order
+function sortByGithubPinnedPriority(a: { github_pinned?: boolean, order: number }, b: { github_pinned?: boolean, order: number }) {
+  return Number(b.github_pinned ?? false) - Number(a.github_pinned ?? false) || a.order - b.order
+}
 
 const featuredArchiveItems = computed(() =>
   (archiveRows.value ?? [])
@@ -24,9 +26,9 @@ const secondaryArchiveItems = computed(() =>
     <UiArchiveRepositoryHeader />
     <div class="mb-8 mt-6 flex items-center justify-between border-y border-primary/10 py-3">
       <h3 class="text-xs text-primary/70 tracking-[0.1em] font-mono">
-        PRIORITY CAPSULES
+        {{ t('archive.featuredTitle') }}
       </h3>
-      <span class="text-[10px] text-primary/50 font-mono">FEATURED_SET</span>
+      <span class="text-[10px] text-primary/50 font-mono">{{ t('archive.featuredTag') }}</span>
     </div>
     <div class="grid grid-cols-1 gap-6 md:grid-cols-3">
       <UiArchiveCard
@@ -37,9 +39,9 @@ const secondaryArchiveItems = computed(() =>
     </div>
     <div class="mb-8 mt-10 flex items-center justify-between border-y border-primary/10 py-3">
       <h3 class="text-xs text-primary/70 tracking-[0.1em] font-mono">
-        OTHER PUBLIC REPOSITORIES
+        {{ t('archive.otherTitle') }}
       </h3>
-      <span class="text-[10px] text-primary/50 font-mono">SECONDARY_SET</span>
+      <span class="text-[10px] text-primary/50 font-mono">{{ t('archive.otherTag') }}</span>
     </div>
     <div class="grid grid-cols-1 gap-6 md:grid-cols-3">
       <UiArchiveCard

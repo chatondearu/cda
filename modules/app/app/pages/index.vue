@@ -1,4 +1,6 @@
 <script setup lang="ts">
+const { t } = useI18n()
+const localePath = useLocalePath()
 const streamerItems = useStreamerTimeline()
 const { data: archiveRows } = await useArchiveList()
 const requestUrl = useRequestURL()
@@ -20,8 +22,8 @@ const featuredArchiveItems = computed(() =>
 
 if (isMeSubdomain) {
   useSeoMeta({
-    title: 'ME // RLienard',
-    description: 'Page de passerelle pour demander un accès au CV professionnel.',
+    title: t('home.meSeoTitle'),
+    description: t('home.meSeoDescription'),
     robots: 'noindex, nofollow',
   })
 
@@ -51,15 +53,15 @@ if (isMeSubdomain) {
         </template>
 
         <template #description>
-          DÉPLOIEMENT D'ARCHITECTURES SCALABLES (VUE.JS/NUXT) ET ORCHESTRATION DE COMMUNAUTÉS. OPÉRANT À L'INTERSECTION DU DÉVELOPPEMENT LOGICIEL COMPLEXE ET DU BROADCAST INTERACTIF.
+          {{ t('home.heroDescription') }}
         </template>
 
         <template #actions>
-          <UiButton to="/contact">
-            INITIALIZE_PROTOCOL
+          <UiButton :to="localePath('/contact')">
+            {{ t('home.ctaPrimary') }}
           </UiButton>
-          <UiButton variant="secondary" to="/timeline">
-            VIEW_RAW_DATA
+          <UiButton variant="secondary" :to="localePath('/timeline')">
+            {{ t('home.ctaSecondary') }}
           </UiButton>
         </template>
       </UiHeroCommand>
@@ -78,3 +80,32 @@ if (isMeSubdomain) {
     </template>
   </div>
 </template>
+
+<i18n lang="json">
+{
+  "fr": {
+    "home": {
+      "meSeoTitle": "ME // RLienard",
+      "meSeoDescription": "Page de passerelle pour demander un accès au CV professionnel."
+    }
+  },
+  "en": {
+    "home": {
+      "meSeoTitle": "ME // RLienard",
+      "meSeoDescription": "Gateway page to request access to the professional resume."
+    }
+  },
+  "zh": {
+    "home": {
+      "meSeoTitle": "ME // RLienard",
+      "meSeoDescription": "用于申请访问职业履历的入口页面。"
+    }
+  },
+  "ja": {
+    "home": {
+      "meSeoTitle": "ME // RLienard",
+      "meSeoDescription": "職務経歴書へのアクセスを申請するためのゲートウェイページ。"
+    }
+  }
+}
+</i18n>

@@ -1,0 +1,105 @@
+{
+  "common": {
+    "locale": "fr",
+    "loading": "Chargement...",
+    "notFound": "Introuvable",
+    "openProject": "Ouvrir le projet",
+    "openRepository": "Ouvrir le repository",
+    "returnArchive": "Retour archive",
+    "openCapsule": "Ouvrir la capsule",
+    "themeLight": "MODE_CLAIR",
+    "themeDark": "MODE_SOMBRE",
+    "language": "Langue",
+    "settings": "Parametres"
+  },
+  "layout": {
+    "topbarTitle": "REF-01/SYS_STATUS: NOMINAL",
+    "goToMainSite": "ALLER_VERS_CHATONDEARU.FR",
+    "footerLinks": {
+      "exit": "TERMINAL_EXIT",
+      "contact": "OPEN_CHANNEL",
+      "diag": "ENCRYPT_DATA",
+      "lab": "SYSTEM_HALT",
+      "archive": "CORE_DUMP"
+    }
+  },
+  "nav": {
+    "home": "HOME_BASE",
+    "timeline": "TIMELINE_LOG",
+    "archive": "ARCHIVE_REP",
+    "cassette": "CASSETTE_INT",
+    "diag": "SYS_DIAG",
+    "dock": {
+      "home": "ACCUEIL",
+      "timeline": "LOG",
+      "archive": "ARCHIVE",
+      "cassette": "VOIX",
+      "diag": "DIAG"
+    }
+  },
+  "home": {
+    "seoTitle": "CDA_LAB // LOGICAL MACHINE",
+    "seoDescription": "Showcase fullstack, archives techniques et parcours createur de ChatonDeAru.",
+    "heroDescription": "Deploiement d architectures scalables (Vue.js/Nuxt) et orchestration de communautes. A l intersection du developpement logiciel complexe et du broadcast interactif.",
+    "ctaPrimary": "INITIALIZE_PROTOCOL",
+    "ctaSecondary": "VIEW_RAW_DATA"
+  },
+  "contact": {
+    "seoTitle": "CONTACT // CHATONDEARU",
+    "seoDescription": "Canaux de contact et protocole de collaboration.",
+    "heroDescription": "Point d entree pour lancer une discussion projet, demander un audit technique, ou planifier une mission de developpement.",
+    "mailAction": "INITIATE_HANDSHAKE",
+    "archiveAction": "REVIEW_ARCHIVE",
+    "slaHint": "SLA_HINT: Premier retour sous 24-72h selon charge active."
+  },
+  "timeline": {
+    "seoDescription": "Chronologie du parcours createur ChatonDeAru.",
+    "heroDescription": "Jalons du parcours en tant que streamer et createur sous l alias ChatonDeAru.",
+    "sectionTitle": "LOGIC_FLOW_CHRONO",
+    "totalUptime": "TOTAL_UPTIME: 124,800_HRS"
+  },
+  "archive": {
+    "header": "ARCHIVE_REPOSITORY",
+    "featuredTitle": "PRIORITY CAPSULES",
+    "featuredTag": "FEATURED_SET",
+    "otherTitle": "OTHER PUBLIC REPOSITORIES",
+    "otherTag": "SECONDARY_SET",
+    "detailTitle": "ARCHIVE_DETAIL",
+    "missing": "DATA CAPSULE NOT FOUND",
+    "status": {
+      "nominal": "NOMINAL",
+      "unfinished": "UNFINISHED"
+    }
+  },
+  "system": {
+    "title": "SYSTEM_DIAGNOSTICS",
+    "syncNominal": "SYNC: NOMINAL",
+    "latency": "LATENCY: 02.1MS",
+    "coreTemp": "CORE TEMP: 42C",
+    "panel": {
+      "core": "CORE",
+      "memory": "MEMORY",
+      "coreLatency": "CORE_LATENCY",
+      "memoryLoad": "MEMORY_LOAD"
+    }
+  },
+  "career": {
+    "seoTitle": "SIDE_CHANNEL // CAREER",
+    "seoDescription": "Journal professionnel non liste.",
+    "heroDescription": "Parcours professionnel et references employeur, page absente de la navigation publique.",
+    "exportPdf": "EXPORT_PDF_ARCHIVE",
+    "requestAccess": "REQUEST_CV_ACCESS",
+    "openContact": "OPEN_CONTACT_CHANNEL"
+  },
+  "ui": {
+    "diagnosticVersion": "DIAGNOSTIC_v4.2",
+    "coord": "COORD: 42.091 // 11.200",
+    "memLoad": "MEM_LOAD: 14%",
+    "secureLine": "SECURE_LINE",
+    "userAdmin": "USER: ADMIN_01",
+    "copyright": "©2122 WEYLAND-YUTANI // LOGICAL_MACHINE_OS",
+    "lat": "LAT: 34.0522 N",
+    "lon": "LON: 118.2437 W",
+    "initializingDeepSystems": "Initializing Deep Systems"
+  }
+}

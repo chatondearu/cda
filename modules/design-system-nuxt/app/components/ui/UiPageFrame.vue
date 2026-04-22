@@ -33,7 +33,7 @@ const MAGNET_RADIUS = 180
 function parseRgbToken(token: string, fallback: [number, number, number]): [number, number, number] {
   const parsed = token.trim().split(/\s+/).map(Number).filter(Number.isFinite)
   if (parsed.length >= 3)
-    return [parsed[0], parsed[1], parsed[2]]
+    return [parsed[0] ?? fallback[0], parsed[1] ?? fallback[1], parsed[2] ?? fallback[2]]
   return fallback
 }
 

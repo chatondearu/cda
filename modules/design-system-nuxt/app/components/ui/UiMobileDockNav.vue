@@ -6,6 +6,7 @@ interface Props {
 }
 
 defineProps<Props>()
+const localePath = useLocalePath()
 </script>
 
 <template>
@@ -13,7 +14,7 @@ defineProps<Props>()
     <NuxtLink
       v-for="item in items.slice(0, 5)"
       :key="item.to"
-      :to="item.to"
+      :to="localePath(item.to)"
       class="flex flex-col items-center text-primary_fixed_dim/40 transition-colors"
       active-class="!text-primary_fixed_dim"
     >

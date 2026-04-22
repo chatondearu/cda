@@ -12,7 +12,7 @@
         <span class="font-mono text-xs">&gt;&gt;</span>
         <span class="text-xs font-bold uppercase tracking-[0.3em]">
           <slot name="status">
-            Initializing Deep Systems
+            {{ t('ui.initializingDeepSystems') }}
           </slot>
         </span>
       </div>
@@ -42,4 +42,5 @@ withDefaults(defineProps<Props>(), {
   icon: 'grid_view',
   bootLabel: 'NOST-0034-X // BOOT_SEQUENCE',
 })
+const { t } = useI18n()
 </script>

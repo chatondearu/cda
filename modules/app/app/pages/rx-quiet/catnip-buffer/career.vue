@@ -1,18 +1,16 @@
 <script setup lang="ts">
+const { t } = useI18n()
 const careerItems = useCareerTimeline()
 const { profileLinks } = useCareerProfileLinks()
 const { contact, hasContact } = useCareerContact()
 
 useSeoMeta({
-  title: 'SIDE_CHANNEL // CAREER',
-  description: 'Unlisted employment log.',
+  title: t('career.seoTitle'),
+  description: t('career.seoDescription'),
   robots: 'noindex, nofollow',
 })
 
 useHead({
-  htmlAttrs: {
-    lang: 'fr',
-  },
   meta: [
     { name: 'robots', content: 'noindex, nofollow' },
   ],
@@ -45,12 +43,12 @@ async function exportCareerPdf(): Promise<void> {
       </template>
 
       <template #description>
-        Parcours professionnel et références employeur — page volontairement absente de la navigation et des index publics. Partagez l’URL seulement avec les personnes concernées.
+        {{ t('career.heroDescription') }}
       </template>
 
       <template #actions>
         <UiButton variant="secondary" @click="exportCareerPdf">
-          EXPORT_PDF_ARCHIVE
+          {{ t('career.exportPdf') }}
         </UiButton>
       </template>
     </UiHeroCommand>

@@ -10,8 +10,8 @@ useHead(() => {
   return {
     script: [
       {
-        key: 'umami-analytics',
-        defer: true,
+        'key': 'umami-analytics',
+        'defer': true,
         src,
         'data-website-id': websiteId,
       },

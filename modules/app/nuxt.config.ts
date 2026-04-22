@@ -20,6 +20,7 @@ export default defineNuxtConfig({
   },
   modules: [
     '@nuxt/content',
+    '@nuxtjs/i18n',
     ...(process.env.NODE_ENV === 'development' ? ['nuxt-studio'] : []),
   ],
   css: ['~/assets/css/global.css'],
@@ -31,6 +32,24 @@ export default defineNuxtConfig({
   content: {
     experimental: {
       sqliteConnector: 'native',
+    },
+  },
+  i18n: {
+    strategy: 'prefix_except_default',
+    defaultLocale: 'fr',
+    langDir: 'locales',
+    locales: [
+      { code: 'fr', language: 'fr-FR', file: 'fr.json', name: 'Francais' },
+      { code: 'en', language: 'en-US', file: 'en.json', name: 'English' },
+      { code: 'zh', language: 'zh-CN', file: 'zh.json', name: 'Chinese' },
+      { code: 'ja', language: 'ja-JP', file: 'ja.json', name: 'Japanese' },
+    ],
+    detectBrowserLanguage: {
+      useCookie: true,
+      cookieKey: 'cda_locale',
+      redirectOn: 'root',
+      alwaysRedirect: false,
+      fallbackLocale: 'fr',
     },
   },
   compatibilityDate: '2026-04-16',

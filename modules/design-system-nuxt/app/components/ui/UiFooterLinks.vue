@@ -11,6 +11,8 @@ interface Props {
 defineProps<Props>()
 
 const { isDark, toggleMode } = useThemeMode()
+const { t } = useI18n()
+const localePath = useLocalePath()
 </script>
 
 <template>
@@ -20,7 +22,7 @@ const { isDark, toggleMode } = useThemeMode()
         CDA_LAB
       </div>
       <p class="font-sans text-[10px] tracking-widest opacity-60">
-        ©2122 WEYLAND-YUTANI // LOGICAL_MACHINE_OS
+        {{ t('ui.copyright') }}
       </p>
     </div>
     <div class="flex flex-col gap-4">
@@ -28,15 +30,15 @@ const { isDark, toggleMode } = useThemeMode()
         <NuxtLink
           v-for="link in links"
           :key="link.to"
-          :to="link.to"
+          :to="localePath(link.to)"
           class="text-primary/40 transition-colors hover:text-primary_fixed_dim"
         >
           {{ link.label }}
         </NuxtLink>
       </div>
       <div class="flex items-center gap-4 font-mono text-xs opacity-30">
-        <span>LAT: 34.0522 N</span>
-        <span>LON: 118.2437 W</span>
+        <span>{{ t('ui.lat') }}</span>
+        <span>{{ t('ui.lon') }}</span>
       </div>
       <button
         type="button"
@@ -48,7 +50,7 @@ const { isDark, toggleMode } = useThemeMode()
           filled
           size-class="text-sm"
         />
-        <span>{{ isDark ? 'LIGHT_MODE' : 'DARK_MODE' }}</span>
+        <span>{{ isDark ? t('common.themeLight') : t('common.themeDark') }}</span>
       </button>
     </div>
   </footer>

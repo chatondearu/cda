@@ -1,7 +1,11 @@
+<script setup lang="ts">
+const { t } = useI18n()
+</script>
+
 <template>
   <div class="mb-12 flex items-center gap-4">
     <h3 class="text-2xl font-black tracking-widest text-primary uppercase">
-      ARCHIVE_REPOSITORY
+      {{ t('archive.header') }}
     </h3>
     <div class="h-[2px] flex-1 bg-primary/20" />
     <UiMaterialIcon

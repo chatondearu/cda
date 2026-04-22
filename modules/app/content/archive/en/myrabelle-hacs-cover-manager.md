@@ -1,0 +1,21 @@
+---
+slug: myrabelle-hacs-cover-manager
+capsule: "DATA_CAPSULE: 05"
+title: MYRABELLE_HACS_COVER_MANAGER
+status: nominal
+description: "Home Assistant integration to manage switch-driven covers with time-based logic."
+tech: PYTHON
+image: /images/archive/myrabelle-hacs-cover-manager.svg
+repo_url: https://github.com/chatondearu/myrabelle-hacs-cover-manager
+github_topics: []
+github_pinned: false
+project_url: https://github.com/chatondearu/myrabelle-hacs-cover-manager
+tier: featured
+order: 5
+locale: en
+---
+
+
+# MYRABELLE_HACS_COVER_MANAGER
+
+Extend this capsule in Nuxt Studio (body + frontmatter).

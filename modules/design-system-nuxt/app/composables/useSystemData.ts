@@ -31,12 +31,14 @@ export interface ArchiveItem {
 }
 
 export function useSystemData() {
+  const { t } = useI18n()
+
   const navItems: NavItem[] = [
-    { label: 'HOME_BASE', to: '/', icon: 'home', dockLabel: 'HOME' },
-    { label: 'TIMELINE_LOG', to: '/timeline', icon: 'timeline', dockLabel: 'LOG' },
-    { label: 'ARCHIVE_REP', to: '/archive', icon: 'inventory_2', dockLabel: 'ARCHIVE' },
-    { label: 'CASSETTE_INT', to: '/cassette', icon: 'settings_voice', dockLabel: 'VOICE' },
-    { label: 'SYS_DIAG', to: '/system/diag', icon: 'analytics', dockLabel: 'DIAG' },
+    { label: t('nav.home'), to: '/', icon: 'home', dockLabel: t('nav.dock.home') },
+    { label: t('nav.timeline'), to: '/timeline', icon: 'timeline', dockLabel: t('nav.dock.timeline') },
+    { label: t('nav.archive'), to: '/archive', icon: 'inventory_2', dockLabel: t('nav.dock.archive') },
+    { label: t('nav.cassette'), to: '/cassette', icon: 'settings_voice', dockLabel: t('nav.dock.cassette') },
+    { label: t('nav.diag'), to: '/system/diag', icon: 'analytics', dockLabel: t('nav.dock.diag') },
   ]
 
   const timelineItems: TimelineItem[] = [

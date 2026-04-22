@@ -16,7 +16,7 @@ export default defineContentConfig({
     }),
     archive: defineCollection({
       type: 'page',
-      source: 'archive/**/*.md',
+      source: 'archive/*/*.md',
       schema: z.object({
         slug: z.string(),
         capsule: z.string(),
@@ -29,6 +29,7 @@ export default defineContentConfig({
         github_topics: z.array(z.string()).default([]),
         github_pinned: z.boolean().default(false),
         project_url: z.string().url().optional(),
+        locale: z.enum(['fr', 'en', 'zh', 'ja']),
         tier: z.enum(['featured', 'other']),
         order: z.number(),
       }),

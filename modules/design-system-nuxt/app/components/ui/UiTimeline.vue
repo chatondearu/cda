@@ -6,16 +6,17 @@ interface Props {
 }
 
 defineProps<Props>()
+const { t } = useI18n()
 </script>
 
 <template>
   <section class="relative bg-surface_container_lowest p-8 md:p-16">
     <UiSectionHeader
       code="MODULE_02"
-      title="LOGIC_FLOW_CHRONO"
+      :title="t('timeline.sectionTitle')"
     >
       <template #right>
-        <span class="font-mono text-[10px] text-primary/40">TOTAL_UPTIME: 124,800_HRS</span>
+        <span class="font-mono text-[10px] text-primary/40">{{ t('timeline.totalUptime') }}</span>
       </template>
     </UiSectionHeader>
     <div class="relative space-y-0">

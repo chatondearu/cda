@@ -19,6 +19,7 @@
   "dependencies": {
     "@chatondearu/design-system-nuxt": "workspace:*",
     "@nuxt/content": "^3.13.0",
+    "@nuxtjs/i18n": "^10.1.2",
     "jspdf": "^4.2.1",
     "nuxt": "^4.4.2",
     "nuxt-studio": "1.6.0",

@@ -1,4 +1,6 @@
 <script setup lang="ts">
+const { t } = useI18n()
+const localePath = useLocalePath()
 const directChannels = [
   { id: 'email', label: 'EMAIL_CHANNEL', value: 'contact@chatondearu.fr', href: 'mailto:contact@chatondearu.fr' },
   { id: 'github', label: 'GITHUB_SIGNAL', value: 'github.com/chatondearu', href: 'https://github.com/chatondearu' },
@@ -11,8 +13,8 @@ const collaborationProtocol = [
 ] as const
 
 useSeoMeta({
-  title: 'CONTACT // CHATONDEARU',
-  description: 'Canaux de contact et protocole de collaboration.',
+  title: t('contact.seoTitle'),
+  description: t('contact.seoDescription'),
   ogTitle: '[og:title]',
   ogDescription: '[og:description]',
   ogImage: '[og:image]',
@@ -34,18 +36,18 @@ useSeoMeta({
       </template>
 
       <template #description>
-        Point d’entrée pour lancer une discussion projet, demander un audit technique, ou planifier une mission de développement.
+        {{ t('contact.heroDescription') }}
       </template>
 
       <template #actions>
         <UiButton href="mailto:contact@chatondearu.fr">
-          INITIATE_HANDSHAKE
+          {{ t('contact.mailAction') }}
         </UiButton>
         <UiButton
           variant="secondary"
-          to="/archive"
+          :to="localePath('/archive')"
         >
-          REVIEW_ARCHIVE
+          {{ t('contact.archiveAction') }}
         </UiButton>
       </template>
     </UiHeroCommand>
@@ -103,7 +105,7 @@ useSeoMeta({
             </li>
           </ul>
           <p class="mt-6 max-w-xl text-[11px] text-primary/60 leading-relaxed font-mono">
-            SLA_HINT: Premier retour sous 24-72h selon charge active.
+            {{ t('contact.slaHint') }}
           </p>
         </div>
       </div>

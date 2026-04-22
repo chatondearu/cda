@@ -1,4 +1,6 @@
 <script setup lang="ts">
+const { t } = useI18n()
+const localePath = useLocalePath()
 const { data: archiveDoc } = await useArchiveDetail()
 
 const currentItem = computed(() =>
@@ -10,7 +12,7 @@ const currentItem = computed(() =>
   <section class="px-8 py-12 md:px-14">
     <UiSectionHeader
       code="MODULE_03A"
-      title="ARCHIVE_DETAIL"
+      :title="t('archive.detailTitle')"
     />
     <div
       v-if="currentItem"
@@ -40,7 +42,7 @@ const currentItem = computed(() =>
             rel="noopener noreferrer"
             variant="secondary"
           >
-            OPEN_PROJECT
+            {{ t('common.openProject') }}
           </UiButton>
           <UiButton
             as="a"
@@ -48,14 +50,14 @@ const currentItem = computed(() =>
             target="_blank"
             rel="noopener noreferrer"
           >
-            OPEN_REPOSITORY
+            {{ t('common.openRepository') }}
           </UiButton>
           <UiButton
             as="a"
-            href="/archive"
+            :href="localePath('/archive')"
             variant="secondary"
           >
-            RETURN_ARCHIVE
+            {{ t('common.returnArchive') }}
           </UiButton>
         </div>
       </div>
@@ -64,7 +66,7 @@ const currentItem = computed(() =>
       v-else
       class="border border-error_container bg-surface_container_high p-6 text-on_error_container"
     >
-      DATA CAPSULE NOT FOUND
+      {{ t('archive.missing') }}
     </div>
   </section>
 </template>

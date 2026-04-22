@@ -17,16 +17,8 @@ defineProps<Props>()
         {{ title }}
       </h1>
     </div>
-    <div class="hidden items-center gap-8 font-sans text-xs tracking-widest md:flex">
-      <span class="flex items-center gap-2">
-        <span class="h-2 w-2 animate-pulse bg-primary_fixed_dim" />
-        SECURE_LINE
-      </span>
-      <span class="opacity-60">USER: ADMIN_01</span>
-      <UiMaterialIcon
-        name="settings_input_component"
-        size-class="cursor-pointer p-1 text-primary_fixed_dim transition-none hover:bg-primary_fixed_dim hover:text-background"
-      />
+    <div class="flex items-center gap-3 font-sans text-xs tracking-widest md:gap-8">
+      <slot name="actions" />
     </div>
   </header>
 </template>
