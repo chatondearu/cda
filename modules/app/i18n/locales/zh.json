@@ -6,6 +6,9 @@
     "openProject": "打开项目",
     "openRepository": "打开仓库",
     "returnArchive": "返回档案",
+    "returnTimeline": "返回时间线",
+    "returnCareer": "返回履历",
+    "seeMore": "查看详情",
     "openCapsule": "打开胶囊",
     "themeLight": "浅色模式",
     "themeDark": "深色模式",
@@ -56,7 +59,9 @@
     "seoDescription": "ChatonDeAru 创作历程时间线。",
     "heroDescription": "以 ChatonDeAru 名义进行直播与创作的关键里程碑。",
     "sectionTitle": "逻辑流程时间线",
-    "totalUptime": "TOTAL_UPTIME: 124,800_HRS"
+    "totalUptime": "TOTAL_UPTIME: 124,800_HRS",
+    "detailTitle": "时间线条目详情",
+    "missing": "未找到条目"
   },
   "archive": {
     "header": "ARCHIVE_REPOSITORY",
@@ -89,7 +94,9 @@
     "heroDescription": "职业路径与雇主参考页面，刻意不在公开导航中展示。",
     "exportPdf": "导出 PDF",
     "requestAccess": "申请访问简历",
-    "openContact": "打开联系通道"
+    "openContact": "打开联系通道",
+    "detailTitle": "履历条目详情",
+    "missing": "未找到条目"
   },
   "ui": {
     "diagnosticVersion": "DIAGNOSTIC_v4.2",

@@ -6,9 +6,15 @@ interface Props {
   description: string
   tags: string[]
   layout: 'a' | 'b'
+  detailsPath?: string
 }
 
-defineProps<Props>()
+const props = defineProps<Props>()
+const { t } = useI18n()
+const localePath = useLocalePath()
+const detailsUrl = computed(() =>
+  props.detailsPath ? localePath(props.detailsPath) : null,
+)
 </script>
 
 <template>
@@ -39,6 +45,15 @@ defineProps<Props>()
           {{ tag }}
         </span>
       </div>
+      <div v-if="detailsUrl" class="mt-5">
+        <UiButton
+          size="sm"
+          variant="secondary"
+          :to="detailsUrl"
+        >
+          {{ t('common.seeMore') }}
+        </UiButton>
+      </div>
     </div>
   </article>
   <article
@@ -67,6 +82,15 @@ defineProps<Props>()
         >
           {{ tag }}
         </span>
+      </div>
+      <div v-if="detailsUrl" class="mt-5 md:text-right">
+        <UiButton
+          size="sm"
+          variant="secondary"
+          :to="detailsUrl"
+        >
+          {{ t('common.seeMore') }}
+        </UiButton>
       </div>
     </div>
   </article>

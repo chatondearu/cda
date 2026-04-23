@@ -6,6 +6,9 @@
     "openProject": "プロジェクトを開く",
     "openRepository": "リポジトリを開く",
     "returnArchive": "アーカイブに戻る",
+    "returnTimeline": "タイムラインに戻る",
+    "returnCareer": "職務経歴に戻る",
+    "seeMore": "詳細を見る",
     "openCapsule": "カプセルを開く",
     "themeLight": "ライトモード",
     "themeDark": "ダークモード",
@@ -56,7 +59,9 @@
     "seoDescription": "ChatonDeAru のクリエイター年表。",
     "heroDescription": "ChatonDeAru 名義での配信・制作活動の主要マイルストーン。",
     "sectionTitle": "LOGIC_FLOW_CHRONO",
-    "totalUptime": "TOTAL_UPTIME: 124,800_HRS"
+    "totalUptime": "TOTAL_UPTIME: 124,800_HRS",
+    "detailTitle": "TIMELINE_ENTRY_DETAIL",
+    "missing": "ENTRY NOT FOUND"
   },
   "archive": {
     "header": "ARCHIVE_REPOSITORY",
@@ -89,7 +94,9 @@
     "heroDescription": "職歴と雇用実績ページ。公開ナビゲーションから除外。",
     "exportPdf": "PDFをエクスポート",
     "requestAccess": "CVアクセスを申請",
-    "openContact": "連絡チャネルを開く"
+    "openContact": "連絡チャネルを開く",
+    "detailTitle": "CAREER_ENTRY_DETAIL",
+    "missing": "ENTRY NOT FOUND"
   },
   "ui": {
     "diagnosticVersion": "DIAGNOSTIC_v4.2",

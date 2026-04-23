@@ -24,7 +24,7 @@ useHead({
 })
 
 async function exportCareerPdf(): Promise<void> {
-  await downloadCareerPdf(careerItems, profileLinks, contact.value)
+  await downloadCareerPdf(careerItems.value, profileLinks, contact.value)
 }
 </script>
 

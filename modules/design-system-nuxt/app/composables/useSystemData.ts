@@ -13,6 +13,8 @@ export interface TimelineItem {
   tags: string[]
   /** Matches prototype alternating columns / markers */
   layout: 'a' | 'b'
+  /** Optional detail page path (display "see more" only when available). */
+  detailsPath?: string
 }
 
 export interface ArchiveItem {
