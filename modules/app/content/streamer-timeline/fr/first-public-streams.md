@@ -1,17 +1,18 @@
 ---
 slug: first-public-streams
 locale: fr
-order: 3
-period: A RENSEIGNER
+order: 1
+period: "2018-10-23"
 title: FIRST_PUBLIC_STREAMS
-reference: "REF: PLATFORM_ONBOARDING"
-description: Premiers pas en live public, apprentissage du rythme, de l audio/video et des dynamiques de communaute.
+reference: "REF: TWITCH / CHANNEL_CREATION"
+description: Naissance de la chaine Twitch ChatonDeAru, le vrai debut de l aventure en direct.
 tags:
-  - DEBUT
-  - LIVE
+  - TWITCH
+  - CHANNEL
+  - START
 layout: a
 ---
 
-Premieres sessions publiques et apprentissage du format long.
+Le 23 octobre 2018, la chaine ChatonDeAru passe en ligne.
 
-Mise en place des routines de preparation, d'animation et de suivi post-live.
+Au depart c etait simple: partager des sessions sinceres, progresser en public, et construire une communaute a mon rythme.

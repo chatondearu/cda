@@ -2,15 +2,17 @@
 slug: channel-infra-expansion
 locale: en
 order: 2
-period: TO DEFINE
+period: "2021-10-09"
 title: CHANNEL_INFRA_EXPANSION
-reference: "REF: OVERLAYS / BOT / ALERTS"
-description: Build or revamp overlays, alerts, scenes, and chat integrations that shape the stream experience.
+reference: "REF: TWITCHTRACKER / PEAK_RECORD"
+description: Historical peak at 73 viewers, a key traction marker before the long pause.
 tags:
-  - SCENES
-  - API
-  - UX
+  - PEAK
+  - AUDIENCE
+  - MILESTONE
 layout: b
 ---
 
-Infrastructure upgrades focused on scene consistency, automation, and legible real-time information.
+October 9, 2021 is the known public peak record for the channel with 73 viewers.
+
+This milestone is used as a reference benchmark for the Twitch comeback phase.

@@ -1,16 +1,16 @@
 <script setup lang="ts">
 const { t } = useI18n()
 const localePath = useLocalePath()
-const directChannels = [
-  { id: 'email', label: 'EMAIL_CHANNEL', value: 'contact@chatondearu.fr', href: 'mailto:contact@chatondearu.fr' },
-  { id: 'github', label: 'GITHUB_SIGNAL', value: 'github.com/chatondearu', href: 'https://github.com/chatondearu' },
-] as const
+const directChannels = computed(() => [
+  { id: 'email', label: t('contact.channels.emailLabel'), value: 'contact@chatondearu.fr', href: 'mailto:contact@chatondearu.fr' },
+  { id: 'github', label: t('contact.channels.githubLabel'), value: 'github.com/chatondearu', href: 'https://github.com/chatondearu' },
+])
 
-const collaborationProtocol = [
-  'STACK: Vue.js / Nuxt / TypeScript',
-  'DELIVERY: Feature build, migration, diagnostics',
-  'FORMAT: Remote-first, async-friendly',
-] as const
+const collaborationProtocol = computed(() => [
+  t('contact.protocol.stack'),
+  t('contact.protocol.formats'),
+  t('contact.protocol.organization'),
+])
 
 useSeoMeta({
   title: t('contact.seoTitle'),
@@ -30,9 +30,9 @@ useSeoMeta({
   <div>
     <UiHeroCommand icon="hub">
       <template #title>
-        COMMS_GATEWAY:<br>
-        <span class="bg-primary px-2 text-background">[ OPEN_CHANNEL ]</span><br>
-        CONTACT_PROTOCOL
+        {{ t('contact.heroTitleLine1') }}:<br>
+        <span class="bg-primary px-2 text-background">[ CHATONDEARU ]</span><br>
+        {{ t('contact.heroTitleLine3') }}
       </template>
 
       <template #description>
@@ -57,7 +57,7 @@ useSeoMeta({
         <div class="min-w-0">
           <UiSectionHeader
             code="MODULE_02A"
-            title="DIRECT_CHANNELS"
+            :title="t('contact.channelsTitle')"
           >
             <template #right>
               <span class="text-[10px] text-primary/40 font-mono">TLS_ACTIVE</span>
@@ -88,7 +88,7 @@ useSeoMeta({
         <div class="min-w-0">
           <UiSectionHeader
             code="MODULE_02B"
-            title="COLLAB_PROTOCOL"
+            :title="t('contact.protocolTitle')"
           >
             <template #right>
               <span class="text-[10px] text-primary/40 font-mono">SYNC_READY</span>

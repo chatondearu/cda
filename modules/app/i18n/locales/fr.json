@@ -43,25 +43,40 @@
   "home": {
     "seoTitle": "CDA_LAB // LOGICAL MACHINE",
     "seoDescription": "Showcase fullstack, archives techniques et parcours createur de ChatonDeAru.",
-    "heroDescription": "Deploiement d architectures scalables (Vue.js/Nuxt) et orchestration de communautes. A l intersection du developpement logiciel complexe et du broadcast interactif.",
-    "ctaPrimary": "INITIALIZE_PROTOCOL",
-    "ctaSecondary": "VIEW_RAW_DATA"
+    "heroTitleLine1": "JOURNAL_DE_BORD",
+    "heroTitleLine3": "CODE_AND_LIVE",
+    "heroDescription": "Je construis des experiences web solides avec Vue/Nuxt, puis je les raconte en live avec la communaute. Ici, tu trouveras autant de code que d histoire de creation.",
+    "ctaPrimary": "ECRIRE_A_CHATON",
+    "ctaSecondary": "VOIR_MON_PARCOURS"
   },
   "contact": {
     "seoTitle": "CONTACT // CHATONDEARU",
     "seoDescription": "Canaux de contact et protocole de collaboration.",
-    "heroDescription": "Point d entree pour lancer une discussion projet, demander un audit technique, ou planifier une mission de developpement.",
-    "mailAction": "INITIATE_HANDSHAKE",
-    "archiveAction": "REVIEW_ARCHIVE",
-    "slaHint": "SLA_HINT: Premier retour sous 24-72h selon charge active."
+    "heroTitleLine1": "CONTACT_NODE",
+    "heroTitleLine3": "LET_S_TALK",
+    "heroDescription": "Une idee, une mission, une collab ou juste un message sympa ? Le canal est ouvert.",
+    "mailAction": "M_ENVOYER_UN_MESSAGE",
+    "archiveAction": "PARCOURIR_LES_PROJETS",
+    "slaHint": "Je reponds en general sous 24 a 72h, selon la charge et les lives.",
+    "channelsTitle": "CANAUX_DIRECTS",
+    "protocolTitle": "CADRE_DE_COLLAB",
+    "channels": {
+      "emailLabel": "MAIL_DIRECT",
+      "githubLabel": "GITHUB_PUBLIC"
+    },
+    "protocol": {
+      "stack": "Stack principal: Vue.js / Nuxt / TypeScript",
+      "formats": "Formats: feature, refonte, migration, diagnostic",
+      "organization": "Organisation: remote-friendly, asynchrone, concret"
+    }
   },
   "timeline": {
     "seoDescription": "Chronologie du parcours createur ChatonDeAru.",
-    "heroDescription": "Jalons du parcours en tant que streamer et createur sous l alias ChatonDeAru.",
+    "heroDescription": "Les moments qui ont compte: demarrage, pics, pause, et preparation du retour Twitch.",
     "sectionTitle": "LOGIC_FLOW_CHRONO",
-    "totalUptime": "TOTAL_UPTIME: 124,800_HRS",
-    "detailTitle": "TIMELINE_ENTRY_DETAIL",
-    "missing": "ENTRY NOT FOUND"
+    "totalUptime": "DATASET_SYNC: PUBLIC_SOURCES",
+    "detailTitle": "DETAIL_DE_JALON",
+    "missing": "JALON INTROUVABLE"
   },
   "archive": {
     "header": "ARCHIVE_REPOSITORY",

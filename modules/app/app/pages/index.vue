@@ -47,9 +47,9 @@ if (isMeSubdomain) {
     <template v-else>
       <UiHeroCommand>
         <template #title>
-          MISSION BRIEF:<br>
-          <span class="bg-primary px-2 text-background">[ FULLSTACK ]</span><br>
-          ENGINEERING_
+          {{ t('home.heroTitleLine1') }}<br>
+          <span class="bg-primary px-2 text-background">[ CHATONDEARU ]</span><br>
+          {{ t('home.heroTitleLine3') }}
         </template>
 
         <template #description>

@@ -1,18 +1,18 @@
 ---
 slug: broadcast-steady-state
 locale: fr
-order: 1
-period: "A RENSEIGNER — AUJOURD'HUI"
+order: 3
+period: "2022-04 -> 2022-05"
 title: BROADCAST_STEADY_STATE
-reference: "REF: CHATONDEARU / LIVE_STACK"
-description: Rythme actuel des lives, formats recurrents et lien fort entre dev, tooling stream et communaute.
+reference: "REF: TWITCHTRACKER / LAST_RUN"
+description: Derniere serie de lives avant l interruption, avec un rythme regulier et une presence constante.
 tags:
-  - OBS
-  - INTERACTION
-  - COMMUNITY
+  - LIVE_RUN
+  - CONSISTENCY
+  - PRE_PAUSE
 layout: a
 ---
 
-Organisation des formats principaux, calibrage des rendez-vous et alignement avec les chantiers techniques en cours.
+Entre avril et mai 2022, plusieurs lives se suivent avec des pics publics entre 7 et 27 viewers.
 
-Le suivi des retours chat influence directement l'evolution des scenes et des outils utilises en live.
+C est la derniere vraie phase continue avant la pause longue.

@@ -43,24 +43,39 @@
   "home": {
     "seoTitle": "CDA_LAB // LOGICAL MACHINE",
     "seoDescription": "全栈作品、技术档案与创作者历程。",
-    "heroDescription": "部署可扩展的 Vue.js/Nuxt 架构并组织社区运营，连接复杂软件开发与互动直播。",
-    "ctaPrimary": "INITIALIZE_PROTOCOL",
-    "ctaSecondary": "VIEW_RAW_DATA"
+    "heroTitleLine1": "创作航行日志",
+    "heroTitleLine3": "CODE_AND_LIVE",
+    "heroDescription": "我用 Vue/Nuxt 打造可靠的产品，也会在直播里真实分享创作过程与取舍。",
+    "ctaPrimary": "联系_CHATON",
+    "ctaSecondary": "查看我的时间线"
   },
   "contact": {
     "seoTitle": "CONTACT // CHATONDEARU",
     "seoDescription": "联系渠道与协作协议。",
-    "heroDescription": "用于发起项目沟通、技术审计或开发合作规划的入口。",
-    "mailAction": "INITIATE_HANDSHAKE",
-    "archiveAction": "REVIEW_ARCHIVE",
-    "slaHint": "SLA_HINT: 根据当前负载，24-72 小时内首次回复。"
+    "heroTitleLine1": "联系节点",
+    "heroTitleLine3": "LET_S_TALK",
+    "heroDescription": "有想法、项目合作，或者只是想打个招呼？我都欢迎。",
+    "mailAction": "给我发消息",
+    "archiveAction": "查看项目档案",
+    "slaHint": "我通常会在 24 到 72 小时内回复，具体取决于工作量和直播安排。",
+    "channelsTitle": "直接渠道",
+    "protocolTitle": "协作方式",
+    "channels": {
+      "emailLabel": "邮箱直达",
+      "githubLabel": "公开 GitHub"
+    },
+    "protocol": {
+      "stack": "核心技术栈：Vue.js / Nuxt / TypeScript",
+      "formats": "合作类型：功能开发、重构、迁移、诊断",
+      "organization": "协作节奏：远程友好、异步优先、务实推进"
+    }
   },
   "timeline": {
     "seoDescription": "ChatonDeAru 创作历程时间线。",
-    "heroDescription": "以 ChatonDeAru 名义进行直播与创作的关键里程碑。",
+    "heroDescription": "真正重要的阶段：起步、高峰、暂停，以及 Twitch 回归准备。",
     "sectionTitle": "逻辑流程时间线",
-    "totalUptime": "TOTAL_UPTIME: 124,800_HRS",
-    "detailTitle": "时间线条目详情",
+    "totalUptime": "DATASET_SYNC: PUBLIC_SOURCES",
+    "detailTitle": "里程碑详情",
     "missing": "未找到条目"
   },
   "archive": {

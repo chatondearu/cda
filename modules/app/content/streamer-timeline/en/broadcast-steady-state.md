@@ -1,18 +1,18 @@
 ---
 slug: broadcast-steady-state
 locale: en
-order: 1
-period: TO DEFINE — TODAY
+order: 3
+period: "2022-04 -> 2022-05"
 title: BROADCAST_STEADY_STATE
-reference: "REF: CHATONDEARU / LIVE_STACK"
-description: Current streaming cadence, recurring formats, and strong overlap between development, stream tooling, and community.
+reference: "REF: TWITCHTRACKER / LAST_RUN"
+description: Last identified stream run before inactivity, with repeated sessions across several dates.
 tags:
-  - OBS
-  - INTERACTION
-  - COMMUNITY
+  - LIVE_RUN
+  - CONSISTENCY
+  - PRE_PAUSE
 layout: a
 ---
 
-Core recurring formats are now stable and mapped to weekly production slots.
+From April to May 2022, the channel ran multiple sessions with public peaks between 7 and 27 viewers.
 
-Feedback loops from chat are used to prioritize stream tooling improvements.
+This phase is the final known active cycle before the long break.

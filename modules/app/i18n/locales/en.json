@@ -43,24 +43,39 @@
   "home": {
     "seoTitle": "CDA_LAB // LOGICAL MACHINE",
     "seoDescription": "Fullstack showcase, technical archive, and creator timeline.",
-    "heroDescription": "Deployment of scalable architectures (Vue.js/Nuxt) and community orchestration at the intersection of complex software engineering and interactive broadcasting.",
-    "ctaPrimary": "INITIALIZE_PROTOCOL",
-    "ctaSecondary": "VIEW_RAW_DATA"
+    "heroTitleLine1": "SHIP_LOG",
+    "heroTitleLine3": "CODE_AND_LIVE",
+    "heroDescription": "I build reliable Vue/Nuxt products, then share the behind-the-scenes in live sessions with the community.",
+    "ctaPrimary": "MESSAGE_CHATON",
+    "ctaSecondary": "VIEW_MY_TIMELINE"
   },
   "contact": {
     "seoTitle": "CONTACT // CHATONDEARU",
     "seoDescription": "Contact channels and collaboration protocol.",
-    "heroDescription": "Entry point to start a project discussion, request a technical audit, or plan a development mission.",
-    "mailAction": "INITIATE_HANDSHAKE",
-    "archiveAction": "REVIEW_ARCHIVE",
-    "slaHint": "SLA_HINT: First reply in 24-72h depending on current load."
+    "heroTitleLine1": "CONTACT_NODE",
+    "heroTitleLine3": "LET_S_TALK",
+    "heroDescription": "Got an idea, a mission, a collab, or just a message? Channel is open.",
+    "mailAction": "SEND_ME_A_MESSAGE",
+    "archiveAction": "BROWSE_PROJECTS",
+    "slaHint": "I usually reply within 24 to 72h, depending on workload and stream schedule.",
+    "channelsTitle": "DIRECT_CHANNELS",
+    "protocolTitle": "COLLAB_FRAME",
+    "channels": {
+      "emailLabel": "DIRECT_EMAIL",
+      "githubLabel": "PUBLIC_GITHUB"
+    },
+    "protocol": {
+      "stack": "Core stack: Vue.js / Nuxt / TypeScript",
+      "formats": "Formats: feature build, refactor, migration, diagnostics",
+      "organization": "Workflow: remote-friendly, async, practical"
+    }
   },
   "timeline": {
     "seoDescription": "Timeline of ChatonDeAru's creator journey.",
-    "heroDescription": "Milestones from the streamer and creator journey under the ChatonDeAru alias.",
+    "heroDescription": "The moments that mattered: start, peaks, pause, and Twitch comeback prep.",
     "sectionTitle": "LOGIC_FLOW_CHRONO",
-    "totalUptime": "TOTAL_UPTIME: 124,800_HRS",
-    "detailTitle": "TIMELINE_ENTRY_DETAIL",
+    "totalUptime": "DATASET_SYNC: PUBLIC_SOURCES",
+    "detailTitle": "MILESTONE_DETAIL",
     "missing": "ENTRY NOT FOUND"
   },
   "archive": {
