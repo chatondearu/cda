@@ -13,6 +13,7 @@ defineProps<Props>()
 const { isDark, toggleMode } = useThemeMode()
 const { t } = useI18n()
 const localePath = useLocalePath()
+const { telemetry } = useSystemData()
 </script>
 
 <template>
@@ -37,8 +38,8 @@ const localePath = useLocalePath()
         </NuxtLink>
       </div>
       <div class="flex items-center gap-4 font-mono text-xs opacity-30">
-        <span>{{ t('ui.lat') }}</span>
-        <span>{{ t('ui.lon') }}</span>
+        <span>{{ telemetry.latText }}</span>
+        <span>{{ telemetry.lonText }}</span>
       </div>
       <button
         type="button"

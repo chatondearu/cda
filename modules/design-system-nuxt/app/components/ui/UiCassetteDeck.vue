@@ -1,5 +1,49 @@
+<script setup lang="ts">
+const { telemetry } = useSystemData()
+const rootRef = ref<HTMLElement | null>(null)
+const isVisible = ref(false)
+const visibleTrackValue = ref(telemetry.value.track.value)
+const visibleTrackProgress = ref(telemetry.value.track.progress)
+
+if (import.meta.client) {
+  let observer: IntersectionObserver | null = null
+
+  onMounted(() => {
+    observer = new IntersectionObserver(
+      entries => {
+        const [entry] = entries
+        isVisible.value = Boolean(entry?.isIntersecting)
+      },
+      { threshold: 0.3 },
+    )
+
+    if (rootRef.value)
+      observer.observe(rootRef.value)
+  })
+
+  onBeforeUnmount(() => {
+    observer?.disconnect()
+  })
+}
+
+watch(
+  () => telemetry.value.track,
+  (track) => {
+    if (!isVisible.value)
+      return
+
+    visibleTrackValue.value = track.value
+    visibleTrackProgress.value = track.progress
+  },
+  { immediate: true, deep: true },
+)
+</script>
+
 <template>
-  <section class="border-t border-primary/20 bg-surface_container p-8 md:p-16">
+  <section
+    ref="rootRef"
+    class="border-t border-primary/20 bg-surface_container p-8 md:p-16"
+  >
     <div class="relative mx-auto max-w-xl border-4 border-surface_variant bg-surface_container_lowest p-8 shadow-[0_0_40px_rgb(var(--inverse-on-surface)/50%)]">
       <div class="absolute -top-3 left-10 bg-surface_container_lowest px-2 text-[10px] font-bold uppercase text-primary/60">
         CASSETTE_INT // ANALOG_LOG
@@ -68,9 +112,9 @@
           </button>
         </div>
         <UiProgressReadout
-          label="TRACK_04: INTERVIEW_DATA.LOG"
-          value="04:21 / 12:00"
-          :progress="33"
+          :label="telemetry.track.label"
+          :value="visibleTrackValue"
+          :progress="visibleTrackProgress"
         />
       </div>
     </div>

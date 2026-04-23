@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { TabsContent, TabsList, TabsRoot, TabsTrigger } from 'reka-ui'
 const { t } = useI18n()
+const { telemetry } = useSystemData()
 </script>
 
 <template>
@@ -23,15 +24,15 @@ const { t } = useI18n()
       <TabsContent value="core">
         <UiProgressReadout
           :label="t('system.panel.coreLatency')"
-          value="02.1MS"
-          :progress="82"
+          :value="telemetry.latencyText.replace('LATENCY: ', '')"
+          :progress="Math.min(99, Math.max(5, Math.round(telemetry.latencyMs * 8)))"
         />
       </TabsContent>
       <TabsContent value="memory">
         <UiProgressReadout
           :label="t('system.panel.memoryLoad')"
-          value="61%"
-          :progress="61"
+          :value="`${telemetry.memLoadPercent}%`"
+          :progress="telemetry.memLoadPercent"
         />
       </TabsContent>
     </TabsRoot>

@@ -1,5 +1,6 @@
 <script setup lang="ts">
 const { t } = useI18n()
+const { telemetry } = useSystemData()
 </script>
 
 <template>
@@ -11,9 +12,9 @@ const { t } = useI18n()
     <div class="grid gap-6 md:grid-cols-2">
       <UiGlassDiagnosticPanel />
       <div class="space-y-3">
-        <UiSystemBadge :text="t('system.syncNominal')" />
-        <UiSystemBadge :text="t('system.latency')" />
-        <UiSystemBadge :text="t('system.coreTemp')" />
+        <UiSystemBadge :text="`SYNC: ${telemetry.status}`" />
+        <UiSystemBadge :text="telemetry.latencyText" />
+        <UiSystemBadge :text="telemetry.coreTempText" />
       </div>
     </div>
   </section>

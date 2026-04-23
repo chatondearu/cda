@@ -8,6 +8,7 @@ interface Props {
 defineProps<Props>()
 const { t } = useI18n()
 const localePath = useLocalePath()
+const { telemetry } = useSystemData()
 </script>
 
 <template>
@@ -35,8 +36,8 @@ const localePath = useLocalePath()
     </nav>
     <div class="mt-auto px-6">
       <div class="font-mono text-[10px] text-primary_fixed_dim/40">
-        {{ t('ui.coord') }}<br>
-        {{ t('ui.memLoad') }}
+        {{ telemetry.coordText }}<br>
+        {{ telemetry.memLoadText }}
       </div>
     </div>
   </aside>

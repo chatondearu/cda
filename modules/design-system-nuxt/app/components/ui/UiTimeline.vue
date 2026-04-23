@@ -7,6 +7,7 @@ interface Props {
 
 defineProps<Props>()
 const { t } = useI18n()
+const { telemetry } = useSystemData()
 </script>
 
 <template>
@@ -16,7 +17,7 @@ const { t } = useI18n()
       :title="t('timeline.sectionTitle')"
     >
       <template #right>
-        <span class="font-mono text-[10px] text-primary/40">{{ t('timeline.totalUptime') }}</span>
+        <span class="font-mono text-[10px] text-primary/40">{{ telemetry.uptimeText }}</span>
       </template>
     </UiSectionHeader>
     <div class="relative space-y-0">

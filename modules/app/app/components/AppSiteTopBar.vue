@@ -1,15 +1,15 @@
 <script setup lang="ts">
-const { t } = useI18n()
+const { telemetry } = useSystemData()
 </script>
 
 <template>
-  <UiTopBar :title="t('layout.topbarTitle')">
+  <UiTopBar :title="telemetry.statusTitle">
     <template #actions>
       <span class="hidden items-center gap-2 md:flex">
         <span class="h-2 w-2 animate-pulse bg-primary_fixed_dim" />
-        {{ t('ui.secureLine') }}
+        {{ telemetry.secureLineText }}
       </span>
-      <span class="hidden opacity-60 md:inline">{{ t('ui.userAdmin') }}</span>
+      <span class="hidden opacity-60 md:inline">{{ telemetry.userText }}</span>
       <AppSettingsMenu />
     </template>
   </UiTopBar>
