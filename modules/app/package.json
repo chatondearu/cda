@@ -17,6 +17,7 @@
     "lint:fix": "eslint . --fix"
   },
   "dependencies": {
+    "@chatondearu/db": "workspace:*",
     "@chatondearu/design-system-nuxt": "workspace:*",
     "@nuxt/content": "^3.13.0",
     "@nuxtjs/i18n": "^10.1.2",
