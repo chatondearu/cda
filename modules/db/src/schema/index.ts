@@ -1,13 +1,50 @@
 import { relations } from 'drizzle-orm'
 import type { InferInsertModel, InferSelectModel } from 'drizzle-orm'
 
+import { authAccounts, authSessions, authUsers, authVerifications } from './auth'
 import { clanEvents } from './clan-events'
 import { clanRewards } from './clan-rewards'
 import { clans } from './clans'
 import { profiles } from './profiles'
 import { testClanAnswers, testClanQuestions, testClanResponses, tests } from './tests'
 
-export { clanEvents, clanRewards, clans, profiles, testClanAnswers, testClanQuestions, testClanResponses, tests }
+export {
+  authAccounts,
+  authSessions,
+  authUsers,
+  authVerifications,
+  clanEvents,
+  clanRewards,
+  clans,
+  profiles,
+  testClanAnswers,
+  testClanQuestions,
+  testClanResponses,
+  tests,
+}
+
+export const authUsersRelations = relations(authUsers, ({ many, one }) => ({
+  accounts: many(authAccounts),
+  sessions: many(authSessions),
+  profile: one(profiles, {
+    fields: [authUsers.id],
+    references: [profiles.authUserId],
+  }),
+}))
+
+export const authAccountsRelations = relations(authAccounts, ({ one }) => ({
+  user: one(authUsers, {
+    fields: [authAccounts.userId],
+    references: [authUsers.id],
+  }),
+}))
+
+export const authSessionsRelations = relations(authSessions, ({ one }) => ({
+  user: one(authUsers, {
+    fields: [authSessions.userId],
+    references: [authUsers.id],
+  }),
+}))
 
 export const clansRelations = relations(clans, ({ many }) => ({
   profiles: many(profiles),
@@ -16,6 +53,10 @@ export const clansRelations = relations(clans, ({ many }) => ({
 }))
 
 export const profilesRelations = relations(profiles, ({ one }) => ({
+  authUser: one(authUsers, {
+    fields: [profiles.authUserId],
+    references: [authUsers.id],
+  }),
   clan: one(clans, {
     fields: [profiles.clanId],
     references: [clans.id],
@@ -74,6 +115,14 @@ export const testClanResponsesRelations = relations(testClanResponses, ({ one })
 
 export type Clan = InferSelectModel<typeof clans>
 export type NewClan = InferInsertModel<typeof clans>
+export type AuthUser = InferSelectModel<typeof authUsers>
+export type NewAuthUser = InferInsertModel<typeof authUsers>
+export type AuthAccount = InferSelectModel<typeof authAccounts>
+export type NewAuthAccount = InferInsertModel<typeof authAccounts>
+export type AuthSession = InferSelectModel<typeof authSessions>
+export type NewAuthSession = InferInsertModel<typeof authSessions>
+export type AuthVerification = InferSelectModel<typeof authVerifications>
+export type NewAuthVerification = InferInsertModel<typeof authVerifications>
 export type Profile = InferSelectModel<typeof profiles>
 export type NewProfile = InferInsertModel<typeof profiles>
 export type ClanReward = InferSelectModel<typeof clanRewards>

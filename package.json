@@ -20,6 +20,7 @@
     "db:check:migrations": "pnpm --filter @chatondearu/db db:check:migrations",
     "db:seed:dev": "pnpm --filter @chatondearu/db db:seed:dev",
     "db:import:sql": "pnpm --filter @chatondearu/db db:import:sql",
+    "db:link:legacy-auth": "pnpm --filter @chatondearu/db db:link:legacy-auth",
     "lint:fix": "pnpm -r lint:fix",
     "lint:colors": "pnpm --filter @chatondearu/design-system-nuxt lint:colors",
     "sync:archive:github": "node scripts/sync-github-archives.mjs"

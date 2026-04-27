@@ -15,6 +15,62 @@ Optional defaults:
 
 - `drizzle.config.ts` falls back to `postgres://postgres:postgres@localhost:5432/chatondearu` for local tooling convenience.
 
+## Local PostgreSQL with Docker Compose
+
+This repository includes `docker-compose.yml` with a ready-to-use PostgreSQL service.
+
+Start database:
+
+```bash
+docker compose up -d
+```
+
+Check service health:
+
+```bash
+docker compose ps
+```
+
+Stop database:
+
+```bash
+docker compose stop
+```
+
+Remove container (keep data volume):
+
+```bash
+docker compose down
+```
+
+Connection URL for local usage:
+
+```bash
+export DATABASE_URL="postgres://postgres:postgres@localhost:5432/chatondearu"
+```
+
+Then run migrations:
+
+```bash
+nix develop -c pnpm db:migrate
+```
+
+Shortcut helper script:
+
+```bash
+scripts/dev-db.sh start
+scripts/dev-db.sh status
+scripts/dev-db.sh migrate
+```
+
+Other helpers:
+
+```bash
+scripts/dev-db.sh logs
+scripts/dev-db.sh stop
+scripts/dev-db.sh reset
+```
+
 ## Commands
 
 From repository root:
@@ -24,6 +80,8 @@ From repository root:
 - Verify migrations are schema-only: `pnpm db:check:migrations`
 - Run dev/test seed only: `pnpm db:seed:dev`
 - Generate Firestore import SQL: `pnpm db:import:sql`
+- Dry-run profile to auth linking: `pnpm db:link:legacy-auth`
+- Apply profile to auth linking: `pnpm db:link:legacy-auth -- --apply true`
 - Typecheck db package: `pnpm db:typecheck`
 
 ## Data Workflow Contract

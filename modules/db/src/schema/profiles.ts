@@ -1,10 +1,12 @@
 import { boolean, index, integer, pgTable, text, timestamp } from 'drizzle-orm/pg-core'
 
+import { authUsers } from './auth'
 import { clans } from './clans'
 import { rawDataColumn } from './core'
 
 export const profiles = pgTable('profiles', {
   id: text('id').primaryKey(),
+  authUserId: text('auth_user_id').references(() => authUsers.id, { onDelete: 'set null' }).unique(),
   username: text('username'),
   displayName: text('display_name'),
   email: text('email'),
@@ -35,4 +37,5 @@ export const profiles = pgTable('profiles', {
 }, table => ({
   usernameIdx: index('profiles_username_idx').on(table.username),
   clanIdIdx: index('profiles_clan_id_idx').on(table.clanId),
+  authUserIdIdx: index('profiles_auth_user_id_idx').on(table.authUserId),
 }))
