@@ -13,7 +13,8 @@
     "db:migrate": "drizzle-kit migrate",
     "db:check:migrations": "tsx scripts/check-migrations-structure.ts",
     "db:seed:dev": "tsx src/seed/dev.ts",
-    "db:import:sql": "tsx scripts/import-firestore.ts"
+    "db:import:sql": "tsx scripts/import-firestore.ts",
+    "db:link:legacy-auth": "tsx scripts/link-legacy-profiles-auth.ts"
   },
   "dependencies": {
     "drizzle-orm": "latest",
