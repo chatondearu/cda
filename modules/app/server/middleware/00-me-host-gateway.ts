@@ -1,3 +1,5 @@
+import process from 'node:process'
+
 /**
  * CV / "me" dedicated host: avoid i18n loop (/ <-> /en) and keep a single entry at /.
  * - Sets cda_locale=fr so @nuxtjs/i18n does not send users to /en on the root.
