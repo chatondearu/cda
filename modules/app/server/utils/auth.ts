@@ -1,6 +1,8 @@
+import process from 'node:process'
+
 import { createDb } from '@chatondearu/db'
-import { drizzleAdapter } from 'better-auth/adapters/drizzle'
 import { betterAuth } from 'better-auth'
+import { drizzleAdapter } from 'better-auth/adapters/drizzle'
 
 const betterAuthSecret = process.env.BETTER_AUTH_SECRET
 
