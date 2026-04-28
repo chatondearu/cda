@@ -15,7 +15,7 @@ Monorepo pnpm pour les modules `@chatondearu/*` (app Nuxt + futurs packages).
 direnv allow
 ```
 
-2. Installer les dépendances du workspace:
+1. Installer les dépendances du workspace:
 
 ```bash
 nix develop -c pnpm install
@@ -39,7 +39,7 @@ nix develop -c pnpm --filter @chatondearu/app preview
 ## Notes
 
 - **Nix env**: le devshell est défini dans `flake.nix` et verrouillé par `flake.lock`.
-- **Monorepo**: les packages sont déclarés dans `pnpm-workspace.yaml` via `modules/*`.
+- **Monorepo**: les packages sont déclarés dans `pnpm-workspace.yaml` via `modules/`*.
 - **Version pinning**: Node `24.x` et pnpm `10.33.x` sont alignés entre Nix et `package.json`.
 - **pnpm**: si tu vois un warning “Ignored build scripts”, tu peux autoriser les builds nécessaires via:
 

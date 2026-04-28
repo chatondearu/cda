@@ -34,6 +34,8 @@ Linked business profile model:
 - `TWITCH_CLIENT_ID`
 - `TWITCH_CLIENT_SECRET`
 
+For local Nuxt development, define these in `modules/app/.env` (see `modules/app/.env.example`).
+
 ## OAuth callback endpoints
 
 Better Auth is mounted at `/api/auth/*`.
