@@ -12,10 +12,22 @@
     "generate": "pnpm --filter @chatondearu/app generate",
     "preview": "pnpm --filter @chatondearu/app preview",
     "postinstall": "pnpm --filter @chatondearu/app postinstall",
+    "prepare": "husky",
     "lint": "pnpm -r lint",
     "typecheck": "pnpm --filter @chatondearu/app typecheck",
+    "check:ci": "pnpm lint && pnpm typecheck",
+    "db:typecheck": "pnpm --filter @chatondearu/db typecheck",
+    "db:generate": "pnpm --filter @chatondearu/db db:generate",
+    "db:migrate": "pnpm --filter @chatondearu/db db:migrate",
+    "db:check:migrations": "pnpm --filter @chatondearu/db db:check:migrations",
+    "db:seed:dev": "pnpm --filter @chatondearu/db db:seed:dev",
+    "db:import:sql": "pnpm --filter @chatondearu/db db:import:sql",
+    "db:link:legacy-auth": "pnpm --filter @chatondearu/db db:link:legacy-auth",
     "lint:fix": "pnpm -r lint:fix",
     "lint:colors": "pnpm --filter @chatondearu/design-system-nuxt lint:colors",
     "sync:archive:github": "node scripts/sync-github-archives.mjs"
+  },
+  "devDependencies": {
+    "husky": "latest"
   }
 }

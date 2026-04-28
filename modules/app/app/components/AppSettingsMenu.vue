@@ -36,7 +36,7 @@ function onThemeToggle(close: () => void) {
     <template #trigger="{ open, toggle }">
       <UiButton
         variant="tertiary"
-        class="!p-1 !text-primary_fixed_dim transition-none hover:!bg-primary_fixed_dim hover:!text-background"
+        class="transition-none !p-1 !text-primary_fixed_dim hover:!bg-primary_fixed_dim hover:!text-background"
         :aria-expanded="open"
         aria-haspopup="menu"
         :aria-label="t('common.settings')"
@@ -50,18 +50,18 @@ function onThemeToggle(close: () => void) {
     </template>
     <template #default="{ close }">
       <div
-        class="w-56 max-w-[calc(100vw-1rem)] border border-primary_fixed_dim/30 bg-surface_container p-3 sm:w-64"
+        class="max-w-[calc(100vw-1rem)] w-56 border border-primary_fixed_dim/30 bg-surface_container p-3 sm:w-64"
         role="menu"
       >
-        <p class="mb-2 text-[10px] text-primary/70 font-mono uppercase tracking-widest">
+        <p class="mb-2 text-[10px] text-primary/70 tracking-widest font-mono uppercase">
           {{ t('common.language') }}
         </p>
-        <div class="mb-3 grid grid-cols-2 gap-2">
+        <div class="grid grid-cols-2 mb-3 gap-2">
           <UiButton
             v-for="option in localeOptions"
             :key="option.code"
             :variant="option.code === locale ? 'primary' : 'secondary'"
-            class="w-full justify-center !px-2 !py-1 !text-[10px] !font-mono uppercase tracking-widest"
+            class="w-full justify-center tracking-widest uppercase !px-2 !py-1 !text-[10px] !font-mono"
             @click="changeLocale(option.code)"
           >
             {{ option.label }}
@@ -69,7 +69,7 @@ function onThemeToggle(close: () => void) {
         </div>
         <UiButton
           variant="secondary"
-          class="w-full justify-center !px-2 !py-1 !text-[10px] uppercase tracking-widest"
+          class="w-full justify-center tracking-widest uppercase !px-2 !py-1 !text-[10px]"
           @click="onThemeToggle(close)"
         >
           <span class="inline-flex items-center gap-2">

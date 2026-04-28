@@ -1,0 +1,22 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: cda-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: chatondearu
+    ports:
+      - "5432:5432"
+    volumes:
+      - cda_postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d chatondearu"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+      start_period: 5s
+
+volumes:
+  cda_postgres_data:
