@@ -39,7 +39,12 @@ const footerLinks = computed(() => [
     <template v-else>
       <AppSiteTopBar />
       <div class="min-h-screen flex pt-16">
-        <UiSideNav :items="navItems" />
+        <UiSideNav :items="navItems">
+          <template #brand>
+            <AppSiteBrandLogo size-class="h-12 w-12" />
+            <div class="mt-4 h-px w-full bg-primary_fixed_dim/20" />
+          </template>
+        </UiSideNav>
         <main class="flex flex-1 flex-col overflow-x-hidden pb-20 md:pb-0">
           <div class="flex-1">
             <slot />
