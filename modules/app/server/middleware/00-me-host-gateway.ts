@@ -5,6 +5,8 @@
  *
  * public.meHost must match the Host header (e.g. rlienard.fr) — set NUXT_PUBLIC_ME_HOST in prod.
  */
+import process from 'node:process'
+
 const PREFIXED_LOCALES = ['/en', '/zh', '/ja'] as const
 
 function pathHasLocalePrefix(pathname: string): boolean {

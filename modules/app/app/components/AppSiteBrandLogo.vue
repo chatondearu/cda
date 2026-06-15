@@ -20,7 +20,8 @@ const { t } = useI18n()
     <img
       src="/images/logo_base.svg"
       alt=""
-      :class="[sizeClass, 'object-contain']"
+      class="object-contain"
+      :class="sizeClass"
       width="36"
       height="36"
     >

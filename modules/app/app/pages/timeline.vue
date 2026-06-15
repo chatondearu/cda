@@ -21,7 +21,6 @@ useSeoMeta({
   twitterImage: '[twitter:image]',
   twitterCard: 'summary',
 })
-
 </script>
 
 <template>
