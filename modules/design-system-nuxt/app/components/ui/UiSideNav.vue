@@ -14,10 +14,12 @@ const { telemetry } = useSystemData()
 <template>
   <aside class="sticky top-16 hidden h-[calc(100dvh-4rem)] w-64 shrink-0 flex-col border-r border-primary_fixed_dim/20 bg-surface_container_lowest py-8 md:flex">
     <div class="mb-10 px-6">
-      <h2 class="font-sans text-xs font-black uppercase tracking-widest text-primary_fixed_dim">
-        {{ t('ui.diagnosticVersion') }}
-      </h2>
-      <div class="mt-2 h-px w-full bg-primary_fixed_dim/20" />
+      <slot name="brand">
+        <h2 class="font-sans text-xs font-black uppercase tracking-widest text-primary_fixed_dim">
+          {{ t('ui.diagnosticVersion') }}
+        </h2>
+        <div class="mt-2 h-px w-full bg-primary_fixed_dim/20" />
+      </slot>
     </div>
     <nav class="flex flex-1 flex-col">
       <NuxtLink

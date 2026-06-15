@@ -4,6 +4,9 @@ const { telemetry } = useSystemData()
 
 <template>
   <UiTopBar :title="telemetry.statusTitle">
+    <template #leading>
+      <AppSiteBrandLogo />
+    </template>
     <template #actions>
       <span class="hidden items-center gap-2 md:flex">
         <span class="h-2 w-2 animate-pulse bg-primary_fixed_dim" />

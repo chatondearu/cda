@@ -14,13 +14,6 @@ useHead({
   meta: [
     { name: 'robots', content: 'noindex, nofollow' },
   ],
-  link: [
-    {
-      rel: 'icon',
-      type: 'image/png',
-      href: '/favicon.png',
-    },
-  ],
 })
 
 async function exportCareerPdf(): Promise<void> {
