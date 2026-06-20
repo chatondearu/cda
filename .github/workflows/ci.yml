@@ -32,3 +32,9 @@ jobs:
 
       - name: Typecheck
         run: pnpm typecheck
+
+      - name: Typecheck db module
+        run: pnpm db:typecheck
+
+      - name: Verify migrations are schema-only
+        run: pnpm db:check:migrations
