@@ -1,8 +1,9 @@
 import process from 'node:process'
 
-import { createDb } from '@chatondearu/db'
 import { betterAuth } from 'better-auth'
 import { drizzleAdapter } from 'better-auth/adapters/drizzle'
+
+import { db } from './db'
 
 const betterAuthSecret = process.env.BETTER_AUTH_SECRET
 
@@ -14,7 +15,7 @@ export const auth = betterAuth({
   secret: betterAuthSecret,
   baseURL: process.env.BETTER_AUTH_URL,
   basePath: '/api/auth',
-  database: drizzleAdapter(createDb(), { provider: 'pg' }),
+  database: drizzleAdapter(db, { provider: 'pg' }),
   emailAndPassword: {
     enabled: true,
     minPasswordLength: 8,
