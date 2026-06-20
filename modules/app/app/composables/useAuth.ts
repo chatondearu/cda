@@ -1,5 +1,9 @@
 import { createAuthClient } from 'better-auth/vue'
 
+/**
+ * Single entry point for the Better Auth client.
+ * Forwards cookies during SSR so the session is resolved server-side.
+ */
 export function useAuth() {
   const url = useRequestURL()
   const headers = import.meta.server ? useRequestHeaders(['cookie']) : undefined
@@ -9,11 +13,3 @@ export function useAuth() {
     fetchOptions: { headers },
   })
 }
-
-export const authClient = createAuthClient()
-export const {
-  signIn,
-  signOut,
-  signUp,
-  useSession,
-} = authClient
