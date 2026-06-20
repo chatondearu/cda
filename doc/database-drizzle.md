@@ -71,6 +71,29 @@ scripts/dev-db.sh stop
 scripts/dev-db.sh reset
 ```
 
+## Full dev stack
+
+Start PostgreSQL and the Nuxt app together, with an automatic check for
+pending migrations:
+
+```bash
+nix develop -c pnpm dev:full
+```
+
+Behavior:
+
+1. Starts the PostgreSQL container and waits until it is ready.
+2. Compares migration files on disk with applied migrations.
+3. If migrations are pending, prompts to apply them (`AUTO_MIGRATE=ask`, default).
+4. Starts the Nuxt app in watch mode.
+
+Override the prompt with `AUTO_MIGRATE`:
+
+```bash
+AUTO_MIGRATE=yes nix develop -c pnpm dev:full   # always apply pending migrations
+AUTO_MIGRATE=no nix develop -c pnpm dev:full    # never apply, just start
+```
+
 ## Commands
 
 From repository root:

@@ -8,6 +8,7 @@
   },
   "scripts": {
     "dev": "pnpm --filter @chatondearu/app dev",
+    "dev:full": "bash scripts/dev.sh",
     "build": "pnpm --filter @chatondearu/app build",
     "generate": "pnpm --filter @chatondearu/app generate",
     "preview": "pnpm --filter @chatondearu/app preview",
