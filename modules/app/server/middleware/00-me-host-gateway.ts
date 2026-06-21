@@ -1,3 +1,5 @@
+import process from 'node:process'
+
 /**
  * CV / "me" dedicated host: avoid i18n loop (/ <-> /en) and keep a single entry at /.
  * - Sets cda_locale=fr so @nuxtjs/i18n does not send users to /en on the root.
@@ -5,7 +7,6 @@
  *
  * public.meHost must match the Host header (e.g. rlienard.fr) — set NUXT_PUBLIC_ME_HOST in prod.
  */
-import process from 'node:process'
 
 const PREFIXED_LOCALES = ['/en', '/zh', '/ja'] as const
 

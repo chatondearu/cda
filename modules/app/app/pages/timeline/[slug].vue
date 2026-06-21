@@ -25,7 +25,7 @@ const { data: timelineDoc } = await useStreamerTimelineDetail()
       <p class="mt-1 text-xs text-primary/60 font-mono">
         {{ timelineDoc.reference }}
       </p>
-      <div class="prose prose-invert mt-6 max-w-none text-on_surface_variant">
+      <div class="mt-6 max-w-none text-on_surface_variant prose prose-invert">
         <ContentRenderer :value="timelineDoc" />
       </div>
       <div class="mt-8">

@@ -25,6 +25,7 @@ logs
 
 .direnv/
 .pnpm/
+modules/db/generated/*.sql
 
 # One-off Firestore migration dumps (may contain sensitive data)
 tmp/
