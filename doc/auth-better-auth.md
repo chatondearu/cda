@@ -46,6 +46,23 @@ Use your public app URL as base:
 - `${BETTER_AUTH_URL}/api/auth/callback/discord`
 - `${BETTER_AUTH_URL}/api/auth/callback/twitch`
 
+## Automatic profile provisioning
+
+On user creation, a Better Auth `databaseHooks.user.create.after` hook
+provisions the linked business profile:
+
+- Implemented in `@chatondearu/db` as `ensureProfileForAuthUser(db, user)`.
+- Wired in `modules/app/server/utils/auth.ts`.
+
+Resolution order:
+
+1. Profile already linked to the auth user → no-op (idempotent).
+2. Unlinked legacy profile matched by email → linked via `profiles.auth_user_id`.
+3. Otherwise a new profile is created (`id = user.id`, email/displayName/photo from the auth user).
+
+Failures are logged and never block signup. Discord/Twitch-id matching for
+legacy accounts that differ by email remains handled by the batch linking script below.
+
 ## Legacy profile linking
 
 Use the dedicated script after auth tables are populated:

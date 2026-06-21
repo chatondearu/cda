@@ -1,5 +1,6 @@
 import process from 'node:process'
 
+import { ensureProfileForAuthUser } from '@chatondearu/db'
 import { betterAuth } from 'better-auth'
 import { drizzleAdapter } from 'better-auth/adapters/drizzle'
 
@@ -30,6 +31,21 @@ export const auth = betterAuth({
     twitch: {
       clientId: process.env.TWITCH_CLIENT_ID as string,
       clientSecret: process.env.TWITCH_CLIENT_SECRET as string,
+    },
+  },
+  databaseHooks: {
+    user: {
+      create: {
+        after: async (user) => {
+          // Provision the linked business profile; never block signup on failure.
+          try {
+            await ensureProfileForAuthUser(db, user)
+          }
+          catch (error) {
+            console.error('[auth] Failed to provision profile for user', user.id, error)
+          }
+        },
+      },
     },
   },
 })

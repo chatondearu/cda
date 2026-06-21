@@ -1,3 +1,6 @@
 export { createDb, createPool } from './client'
+export type { Database } from './client'
+export type { AuthUserLike } from './profiles/ensure-profile'
+export { ensureProfileForAuthUser } from './profiles/ensure-profile'
 export * as schema from './schema'
 export * from './schema'

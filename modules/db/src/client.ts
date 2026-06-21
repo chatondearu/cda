@@ -15,3 +15,5 @@ export function createDb(connectionString = process.env.DATABASE_URL) {
   const pool = createPool(connectionString)
   return drizzle(pool, { schema })
 }
+
+export type Database = ReturnType<typeof createDb>
