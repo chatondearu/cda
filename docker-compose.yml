@@ -1,6 +1,6 @@
 services:
   postgres:
-    image: postgres:16
+    image: postgres:18
     container_name: cda-postgres
     restart: unless-stopped
     environment:
@@ -10,7 +10,9 @@ services:
     ports:
       - "5432:5432"
     volumes:
-      - cda_postgres_data:/var/lib/postgresql/data
+      # PG18+ moved PGDATA to /var/lib/postgresql/<major>/docker and the
+      # declared VOLUME to /var/lib/postgresql — mount the parent accordingly.
+      - cda_postgres_data:/var/lib/postgresql
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U postgres -d chatondearu"]
       interval: 5s
