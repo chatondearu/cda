@@ -331,6 +331,33 @@ async function run() {
     'tests/clans/responses',
   ]
 
+  // Track primary keys of parent tables (processed before their children above)
+  // so we can null out foreign keys pointing at rows missing from the dump.
+  // Legacy event/response data references authors/clans that no longer exist;
+  // `raw_data` and denormalized *_display_name columns preserve the lost link.
+  type ParentTable = 'clans' | 'profiles' | 'clan_rewards' | 'tests'
+  const knownIds: Record<ParentTable, Set<string>> = {
+    clans: new Set(),
+    profiles: new Set(),
+    clan_rewards: new Set(),
+    tests: new Set(),
+  }
+  const fkColumns: Record<string, Array<{ column: string, ref: ParentTable }>> = {
+    profiles: [{ column: 'clan_id', ref: 'clans' }],
+    clan_events: [
+      { column: 'clan_id', ref: 'clans' },
+      { column: 'author_id', ref: 'profiles' },
+      { column: 'clan_reward_id', ref: 'clan_rewards' },
+    ],
+    test_clan_questions: [{ column: 'test_id', ref: 'tests' }],
+    test_clan_answers: [{ column: 'test_id', ref: 'tests' }],
+    test_clan_responses: [
+      { column: 'test_id', ref: 'tests' },
+      { column: 'result_clan_id', ref: 'clans' },
+    ],
+  }
+  let nulledRefs = 0
+
   for (const collectionPath of tableOrder) {
     const collection = manifest.collections.find(item => item.relativePath === collectionPath)
     if (!collection)
@@ -342,6 +369,18 @@ async function run() {
 
     for (const doc of docs) {
       const mapped = mapDocument(collectionPath, doc)
+
+      for (const fk of fkColumns[mapped.table] ?? []) {
+        const value = mapped.row[fk.column]
+        if (typeof value === 'string' && !knownIds[fk.ref].has(value)) {
+          mapped.row[fk.column] = null
+          nulledRefs += 1
+        }
+      }
+
+      if (mapped.table === 'clans' || mapped.table === 'profiles' || mapped.table === 'clan_rewards' || mapped.table === 'tests')
+        knownIds[mapped.table].add(String(mapped.row.id))
+
       sections.push(buildUpsert(mapped.table, mapped.row))
     }
   }
@@ -352,6 +391,8 @@ async function run() {
   await writeFile(outputPath, `${sections.join('\n')}\n`, 'utf8')
 
   console.info(`Import SQL generated at ${outputPath}`)
+  if (nulledRefs > 0)
+    console.info(`Nulled ${nulledRefs} orphan foreign key reference(s) absent from the dump.`)
 }
 
 run().catch((error: unknown) => {
