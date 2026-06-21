@@ -127,6 +127,7 @@
   "auth": {
     "session": "SESSION",
     "login": "CONNEXION",
-    "logout": "DÉCONNEXION"
+    "logout": "DÉCONNEXION",
+    "account": "COMPTE"
   }
 }

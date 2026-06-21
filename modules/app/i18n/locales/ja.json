@@ -127,6 +127,7 @@
   "auth": {
     "session": "セッション",
     "login": "ログイン",
-    "logout": "ログアウト"
+    "logout": "ログアウト",
+    "account": "アカウント"
   }
 }

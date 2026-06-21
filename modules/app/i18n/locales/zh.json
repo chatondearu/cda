@@ -127,6 +127,7 @@
   "auth": {
     "session": "会话",
     "login": "登录",
-    "logout": "退出"
+    "logout": "退出",
+    "account": "账户"
   }
 }
