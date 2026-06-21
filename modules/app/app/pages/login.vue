@@ -1,8 +1,16 @@
 <script setup lang="ts">
 const { t } = useI18n({ useScope: 'local' })
 const localePath = useLocalePath()
+const route = useRoute()
 const auth = useAuth()
 const session = auth.useSession()
+
+/** Only allow internal absolute paths to prevent open redirects. */
+function sanitizeRedirect(value: unknown): string | null {
+  if (typeof value !== 'string' || !value.startsWith('/') || value.startsWith('//'))
+    return null
+  return value
+}
 
 type Mode = 'signin' | 'signup'
 const mode = ref<Mode>('signin')
@@ -13,7 +21,7 @@ const pending = ref(false)
 const errorMessage = ref('')
 
 const currentUser = computed(() => session.value?.data?.user ?? null)
-const callbackURL = computed(() => localePath('/'))
+const callbackURL = computed(() => sanitizeRedirect(route.query.redirect) ?? localePath('/'))
 
 function toggleMode() {
   mode.value = mode.value === 'signin' ? 'signup' : 'signin'

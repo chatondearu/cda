@@ -96,12 +96,23 @@ function onThemeToggle(close: () => void) {
           <p class="mb-2 text-[10px] text-primary/70 tracking-widest font-mono uppercase">
             {{ t('auth.session') }}
           </p>
-          <p
+          <NuxtLink
             v-if="currentUser"
-            class="mb-2 break-all text-[10px] text-primary/60 font-mono"
+            :to="localePath('/account')"
+            class="mb-2 block break-all text-[10px] text-primary/60 font-mono transition-none hover:text-primary"
+            @click="close"
           >
             {{ currentUser.email }}
-          </p>
+          </NuxtLink>
+          <UiButton
+            v-if="currentUser"
+            variant="secondary"
+            class="mb-2 w-full justify-center tracking-widest uppercase !px-2 !py-1 !text-[10px]"
+            :to="localePath('/account')"
+            @click="close"
+          >
+            {{ t('auth.account') }}
+          </UiButton>
           <UiButton
             v-if="currentUser"
             variant="secondary"
