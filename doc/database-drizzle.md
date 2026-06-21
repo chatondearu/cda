@@ -133,9 +133,74 @@ Generate SQL file with explicit paths:
 pnpm --filter @chatondearu/db db:import:sql -- --input ../../tmp/firestore-dump --output ./generated/firestore-import.sql
 ```
 
-Then execute the generated SQL manually against your target PostgreSQL database.
+Then execute the generated SQL manually against your target PostgreSQL database:
+
+```bash
+docker exec -i cda-postgres psql -U postgres -d chatondearu -v ON_ERROR_STOP=1 \
+  < modules/db/generated/firestore-import.sql
+```
+
+## Validated data runbook (migrate → import → link)
+
+End-to-end pipeline validated locally against PostgreSQL 18. Reproducible steps:
+
+1. **Clean database + schema**
+
+   ```bash
+   docker compose up -d postgres
+   nix develop -c pnpm db:migrate
+   ```
+
+2. **Generate and apply the import**
+
+   ```bash
+   nix develop -c pnpm db:import:sql
+   docker exec -i cda-postgres psql -U postgres -d chatondearu -v ON_ERROR_STOP=1 \
+     < modules/db/generated/firestore-import.sql
+   ```
+
+3. **Sanity checks** (reference counts from the current dump)
+
+   | Table                 | Rows |
+   | --------------------- | ---: |
+   | clans                 |    3 |
+   | profiles              |   88 |
+   | clan_rewards          |   10 |
+   | clan_events           |  918 |
+   | tests                 |    1 |
+   | test_clan_questions   |   17 |
+   | test_clan_answers     |   17 |
+   | test_clan_responses   |   46 |
+
+4. **Link legacy profiles to auth users**
+
+   ```bash
+   nix develop -c pnpm db:link:legacy-auth                 # dry-run (no writes)
+   nix develop -c pnpm db:link:legacy-auth -- --apply true # persist links
+   ```
+
+   On a fresh DB with no auth users, the dry-run reports `linkedProfiles: 0`
+   (all 88 profiles unlinked). Linking happens once real users sign in (by
+   `email`, then `discord`, then `twitch` account id).
+
+### Orphan foreign keys
+
+Legacy `clan_events` / `test_clan_responses` reference authors and clans that no
+longer exist in the dump. The import generator (`scripts/import-firestore.ts`)
+nulls out foreign keys whose target row is absent (columns are nullable), so the
+import applies cleanly while `raw_data` and `*_display_name` columns preserve the
+original values.
+
+### OAuth smoke test (pending)
+
+The live Discord/Twitch login smoke test requires provider credentials
+(`DISCORD_CLIENT_ID/SECRET`, `TWITCH_CLIENT_ID/SECRET`) and configured callbacks.
+Once set in `.env`, sign in, then re-run `db:link:legacy-auth --apply true` to
+attach the matching legacy profile.
 
 ## Notes
 
 - Import SQL generation is idempotent with `ON CONFLICT ("id") DO UPDATE`.
 - Unknown or flexible Firestore payloads are preserved in `raw_data` JSONB columns.
+- The import nulls orphan foreign keys (targets missing from the dump) to keep
+  referential integrity without losing denormalized data.
