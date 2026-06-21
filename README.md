@@ -36,6 +36,16 @@ nix develop -c pnpm build
 nix develop -c pnpm --filter @chatondearu/app preview
 ```
 
+## Déploiement
+
+- Build via **Dockerfile** multi-stage (remplace nixpacks), migrations DB appliquées au démarrage.
+- Guide complet: [`doc/deployment-coolify.md`](doc/deployment-coolify.md).
+
+```bash
+docker build -t cda-app:local .
+docker run --rm -p 3000:3000 cda-app:local   # http://localhost:3000
+```
+
 ## Notes
 
 - **Nix env**: le devshell est défini dans `flake.nix` et verrouillé par `flake.lock`.
