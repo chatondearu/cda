@@ -123,5 +123,10 @@
     "lat": "LAT: 34.0522 N",
     "lon": "LON: 118.2437 W",
     "initializingDeepSystems": "深層システムを初期化中"
+  },
+  "auth": {
+    "session": "セッション",
+    "login": "ログイン",
+    "logout": "ログアウト"
   }
 }
