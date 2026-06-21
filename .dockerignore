@@ -1,0 +1,33 @@
+# Dependencies & build outputs
+**/node_modules
+**/.nuxt
+**/.output
+**/.nitro
+**/.cache
+**/.data
+**/dist
+
+# Nix / direnv
+.direnv
+.devenv
+
+# VCS & editor
+.git
+.github
+.idea
+.fleet
+.vscode
+.cursor
+
+# Local env & secrets
+**/.env
+**/.env.*
+!**/.env.example
+
+# One-off data dumps & generated SQL
+tmp
+modules/db/generated/*.sql
+
+# Logs & misc
+*.log
+.DS_Store
