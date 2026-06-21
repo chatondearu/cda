@@ -123,5 +123,10 @@
     "lat": "LAT: 34.0522 N",
     "lon": "LON: 118.2437 W",
     "initializingDeepSystems": "正在初始化深层系统"
+  },
+  "auth": {
+    "session": "会话",
+    "login": "登录",
+    "logout": "退出"
   }
 }

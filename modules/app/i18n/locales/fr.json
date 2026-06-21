@@ -123,5 +123,10 @@
     "lat": "LAT: 34.0522 N",
     "lon": "LON: 118.2437 W",
     "initializingDeepSystems": "Initializing Deep Systems"
+  },
+  "auth": {
+    "session": "SESSION",
+    "login": "CONNEXION",
+    "logout": "DÉCONNEXION"
   }
 }

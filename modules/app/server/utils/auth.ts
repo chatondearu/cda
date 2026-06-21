@@ -1,6 +1,6 @@
 import process from 'node:process'
 
-import { ensureProfileForAuthUser } from '@chatondearu/db'
+import { authAccounts, authSessions, authUsers, authVerifications, ensureProfileForAuthUser } from '@chatondearu/db'
 import { betterAuth } from 'better-auth'
 import { drizzleAdapter } from 'better-auth/adapters/drizzle'
 
@@ -16,7 +16,16 @@ export const auth = betterAuth({
   secret: betterAuthSecret,
   baseURL: process.env.BETTER_AUTH_URL,
   basePath: '/api/auth',
-  database: drizzleAdapter(db, { provider: 'pg' }),
+  database: drizzleAdapter(db, {
+    provider: 'pg',
+    // Map Better Auth models to our prefixed Drizzle table exports.
+    schema: {
+      user: authUsers,
+      session: authSessions,
+      account: authAccounts,
+      verification: authVerifications,
+    },
+  }),
   emailAndPassword: {
     enabled: true,
     minPasswordLength: 8,
