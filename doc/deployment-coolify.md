@@ -8,7 +8,7 @@ are applied **automatically at container startup**.
 
 - **App image** (`/Dockerfile`): builds the Nuxt app and produces a slim, self-contained
   Nitro server (`node .output/server/index.mjs`) on Node 24 Alpine.
-- **Database**: a separate PostgreSQL 16 resource (Coolify-managed).
+- **Database**: a separate PostgreSQL 18 resource (Coolify-managed).
 - **Migrations**: a Nitro startup plugin (`server/plugins/00.db-migrate.ts`) applies pending
   Drizzle migrations from `/app/drizzle` before serving traffic. It only uses runtime deps
   (`drizzle-orm`, `pg`) — no `drizzle-kit` in the image.
@@ -42,7 +42,7 @@ are applied **automatically at container startup**.
 ## Coolify setup
 
 1. **PostgreSQL resource**
-   - Create a *PostgreSQL 16* database in the project.
+   - Create a *PostgreSQL 18* database in the project.
    - Copy its **internal** connection string for `DATABASE_URL`.
 
 2. **Application resource** (from this Git repo)
