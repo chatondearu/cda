@@ -22,10 +22,14 @@
 
 - `UiPageFrame`: global shell wrapper and ambient grid.
 - `UiSectionHeader`: section title and optional reference code.
-- `UiRefCode`: mono micro-label for references.
-- `UiNoiseLabel`: non-critical metadata traces.
-- `UiCornerMarks`: module corner markers for priority zones.
 - `UiDotGridOverlay`: reusable background noise layer.
+
+### HUD
+
+- `HudRefCode`: mono micro-label for references.
+- `HudNoiseLabel`: non-critical metadata traces.
+- `HudCornerMarks`: module corner markers for priority zones.
+- `HudCrosshair`: empty-state target marker.
 
 ### Actions and Inputs
 
@@ -55,7 +59,6 @@
 ### Overlay and Feedback
 
 - `UiGlassDiagnosticPanel`: blur-backed diagnostics using Reka-UI tabs.
-- `UiEmptyCrosshair`: empty-state target marker.
 - `UiSystemBadge`: compact system key-value indicator.
 
 ## Accessibility Baseline

@@ -18,7 +18,8 @@ Nuxt layer for the `CDA_LAB` / Logical Machine design system (CDA: ChatonDeAru).
 ## Structure
 
 - `app/assets/css/design-system.css`: Material Symbols base class, scanline, layout resets, and root theme variables (`:root.dark` / `:root.light`).
-- `app/components/ui/*`: v1 UI components.
+- `app/components/ui/*`: application UI components.
+- `app/components/hud/*`: micro-graphic HUD primitives (decorative density).
 - `app/composables/useSystemData.ts`: starter data contracts and mock content.
 - `app/composables/useThemeMode.ts`: single source for theme mode state, persistence, and html class toggling.
 
@@ -51,8 +52,9 @@ pnpm story:dev
 
 ## V1 Component Inventory
 
-- Foundations: `UiPageFrame`, `UiSectionHeader`, `UiRefCode`, `UiNoiseLabel`, `UiCornerMarks`, `UiDotGridOverlay`
+- Foundations: `UiPageFrame`, `UiSectionHeader`, `UiDotGridOverlay`
+- HUD (micro-graphics): `HudNoiseLabel`, `HudRefCode`, `HudCornerMarks`, `HudCrosshair`
 - Actions and Inputs: `UiButton`, `UiCommandInput`, `UiStatusChip`
 - Navigation: `UiTopBar`, `UiSideNav`, `UiMobileDockNav`, `UiFooterLinks`
 - Content Modules: `UiHeroCommand`, `UiTimeline`, `UiTimelineItem`, `UiArchiveCard`, `UiCassetteDeck`, `UiProgressReadout`
-- Overlay and Feedback: `UiGlassDiagnosticPanel`, `UiEmptyCrosshair`, `UiSystemBadge`
+- Overlay and Feedback: `UiGlassDiagnosticPanel`, `UiSystemBadge`
