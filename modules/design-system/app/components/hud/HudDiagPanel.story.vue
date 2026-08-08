@@ -18,7 +18,7 @@ const state = reactive({
 <template>
   <Story title="HUD / HudDiagPanel">
     <Variant title="Default">
-      <div class="w-96 bg-background p-8">
+      <div class="w-full max-w-96 bg-background p-8">
         <HudDiagPanel
           :access="state.access"
           :log="state.log"
@@ -39,7 +39,7 @@ const state = reactive({
     </Variant>
 
     <Variant title="Denied, no ASCII">
-      <div class="w-96 bg-background p-8">
+      <div class="w-full max-w-96 bg-background p-8">
         <HudDiagPanel
           :access="{ granted: false, detail: 'INVALID CREDENTIALS' }"
           :log="{ entries: ['SYSTEM BOOT', 'ACCESS ATTEMPT', 'LOCKOUT ARMED'] }"
@@ -48,7 +48,7 @@ const state = reactive({
     </Variant>
 
     <Variant title="Stack">
-      <div class="flex w-96 flex-col gap-3 bg-background p-8">
+      <div class="flex w-full max-w-96 flex-col gap-3 bg-background p-8">
         <HudDiagPanel
           :access="{ granted: true, detail: 'CLEARANCE LVL 3' }"
           :log="{ lines: [{ t: '000', message: 'SYSTEM BOOT' }, { t: '014', message: 'UPLINK ESTABLISHED' }] }"

@@ -10,7 +10,7 @@ const state = reactive({
 <template>
   <Story title="HUD / HudCornerStack">
     <Variant title="Default">
-      <div class="w-80 border border-outline_variant/20 bg-background p-8">
+      <div class="w-full max-w-80 border border-outline_variant/20 bg-background p-8">
         <HudCornerStack
           :org="state.org"
           :serial="state.serial"
@@ -38,7 +38,7 @@ const state = reactive({
     </Variant>
 
     <Variant title="Grid">
-      <div class="grid grid-cols-2 gap-3 border border-outline_variant/20 bg-background p-8">
+      <div class="grid grid-cols-1 gap-3 border border-outline_variant/20 bg-background p-8 sm:grid-cols-2">
         <HudCornerStack
           :org="{ name: 'LOGICAL MACHINE DIV.', meta: 'SECTOR 7' }"
           :serial="{ serial: 'LM-2984-XX', caption: 'ISSUED 2026' }"
