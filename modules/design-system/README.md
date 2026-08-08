@@ -67,6 +67,7 @@ same mechanism as the dark/light sync. See `HUD / Motion` for a live demo strip.
 - HUD (gauges): `HudRingGauge`, `HudSegmentedBar`, `HudDualBus`
 - HUD (signal): `HudWaveform`, `HudRadarRing`, `HudTickLadder`
 - HUD (data readouts): `HudCoordReadout`, `HudAngleReadout`, `HudPacketLoss`, `HudPulseReadout`
+- HUD (marks & stamps): `HudWarningPlate`, `HudChecksumStamp`, `HudBuildStamp`, `HudHotZone`
 - Actions and Inputs: `UiButton`, `UiCommandInput`, `UiStatusChip`
 - Navigation: `UiTopBar`, `UiSideNav`, `UiMobileDockNav`, `UiFooterLinks`
 - Content Modules: `UiHeroCommand`, `UiTimeline`, `UiTimelineItem`, `UiArchiveCard`, `UiCassetteDeck`, `UiProgressReadout`
