@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import type { RouteLocationRaw } from 'vue-router'
+
 defineOptions({ inheritAttrs: false })
 
 interface Props {
@@ -39,13 +41,21 @@ const isLink = computed(() => {
   return Object.keys(attrs).some(key => nuxtLinkAttrKeys.has(key))
 })
 
-const localizedTo = computed(() => {
+const localizedTo = computed((): RouteLocationRaw | undefined => {
   const rawTo = props.to ?? attrs.to
-  if (typeof rawTo !== 'string')
-    return rawTo
-  if (!rawTo.startsWith('/'))
-    return rawTo
-  return localePath(rawTo)
+  if (rawTo == null)
+    return undefined
+  if (typeof rawTo === 'string') {
+    if (!rawTo.startsWith('/'))
+      return rawTo
+    return localePath(rawTo)
+  }
+  return rawTo as RouteLocationRaw
+})
+
+const linkHref = computed(() => {
+  const value = props.href ?? attrs.href
+  return typeof value === 'string' ? value : undefined
 })
 
 const classes: Record<string, string> = {
@@ -70,7 +80,7 @@ const passthroughAttrs = computed(() => {
     v-if="isLink"
     v-bind="passthroughAttrs"
     :to="localizedTo"
-    :href="props.href ?? attrs.href"
+    :href="linkHref"
     :class="mergedClass"
   >
     <slot />

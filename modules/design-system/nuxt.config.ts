@@ -3,8 +3,13 @@ import { fileURLToPath } from 'node:url'
 
 const currentDir = dirname(fileURLToPath(import.meta.url))
 
+// Keep outside `modules/` so Nuxt layer auto-scan never registers it for the app.
+const histoireStubModule = process.env.HISTOIRE
+  ? [join(currentDir, 'histoire/nuxt-module')]
+  : []
+
 export default defineNuxtConfig({
-  modules: ['@unocss/nuxt'],
+  modules: ['@unocss/nuxt', ...histoireStubModule],
   unocss: {
     configFile: join(currentDir, 'uno.config.ts'),
   },

@@ -69,7 +69,7 @@ git commit -m "refactor(design-system): rename design-system-nuxt to design-syst
 **Files:**
 - Create: `modules/design-system/histoire.config.ts`
 - Create: `modules/design-system/histoire.setup.ts`
-- Create: `modules/design-system/modules/histoire-stubs/index.ts` (Nuxt module, HISTOIRE-only)
+- Create: `modules/design-system/histoire/nuxt-module/` (Nuxt module, HISTOIRE-only; outside `modules/` to avoid auto-scan)
 - Modify: `modules/design-system/nuxt.config.ts` (register stub module when `process.env.HISTOIRE`)
 - Modify: `modules/design-system/package.json` (deps + story scripts)
 

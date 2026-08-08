@@ -8,7 +8,10 @@
   },
   "scripts": {
     "lint:colors": "node ./scripts/check-no-hardcoded-colors.mjs",
-    "lint": "pnpm lint:colors"
+    "lint": "pnpm lint:colors",
+    "story:dev": "HISTOIRE=true histoire dev",
+    "story:build": "HISTOIRE=true histoire build",
+    "story:preview": "HISTOIRE=true histoire preview"
   },
   "dependencies": {
     "@floating-ui/vue": "^1.1.11",
@@ -17,5 +20,12 @@
     "@unocss/reset": "^66.6.8",
     "reka-ui": "latest",
     "unocss": "^66.6.8"
+  },
+  "devDependencies": {
+    "@histoire/plugin-nuxt": "1.0.0-beta.1",
+    "@histoire/plugin-vue": "1.0.0-beta.1",
+    "histoire": "1.0.0-beta.1",
+    "nuxt": "^4.4.2",
+    "vue": "latest"
   }
 }
