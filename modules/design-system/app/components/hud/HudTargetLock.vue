@@ -15,7 +15,10 @@ const statusLabel = computed(() => (props.locked ? 'LOCK ON' : 'ACQUIRING'))
 
 <template>
   <div class="flex flex-col items-center gap-2">
-    <div class="relative h-20 w-20">
+    <div
+      class="relative h-20 w-20"
+      :class="{ 'hud-motion-target hud-anim-lock-pulse': locked }"
+    >
       <span
         class="absolute left-0 top-0 h-3 w-3 border-l-2 border-t-2"
         :class="borderTone"

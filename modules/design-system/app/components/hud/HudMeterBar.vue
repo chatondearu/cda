@@ -18,7 +18,7 @@ const clampedProgress = computed(() => Math.min(Math.max(props.progress, 0), 100
     </div>
     <div class="relative h-px w-full bg-primary/10">
       <div
-        class="absolute left-0 top-0 h-full bg-primary"
+        class="hud-motion-target hud-anim-meter-fill absolute left-0 top-0 h-full bg-primary"
         :style="{ width: `${clampedProgress}%` }"
       />
     </div>
