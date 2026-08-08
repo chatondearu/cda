@@ -40,7 +40,7 @@ useSeoMeta({
     <UiTimeline :items="[...streamerItems]" />
     <section class="px-8 pb-12 md:px-14">
       <div class="border border-primary_fixed_dim/20 bg-surface_container p-6">
-        <UiCornerMarks />
+        <HudCornerMarks />
         <p class="text-xs text-primary tracking-[0.18em] font-mono uppercase">
           {{ t('timelinePage.verifiedDataTitle') }}
         </p>

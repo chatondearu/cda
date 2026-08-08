@@ -18,7 +18,7 @@ const currentItem = computed(() =>
       v-if="currentItem"
       class="max-w-3xl border border-primary_fixed_dim/20 bg-surface_container p-6"
     >
-      <UiCornerMarks />
+      <HudCornerMarks />
       <h1 class="text-2xl text-primary font-black tracking-[0.1em] uppercase">
         {{ currentItem.title }}
       </h1>
@@ -26,8 +26,8 @@ const currentItem = computed(() =>
         {{ currentItem.description }}
       </p>
       <div class="mt-5 flex items-center gap-4">
-        <UiRefCode :code="currentItem.capsule" />
-        <UiRefCode
+        <HudRefCode :code="currentItem.capsule" />
+        <HudRefCode
           tone="emphasis"
           :code="`TECH: ${currentItem.tech}`"
         />
