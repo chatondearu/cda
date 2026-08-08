@@ -288,3 +288,18 @@ body {
 :root.hud-motion .hud-motion-target.hud-anim-segment-fill {
   transition: background-color 280ms ease-out, border-color 280ms ease-out;
 }
+
+/* HudWaveform: scan sweep overlay (reuses hud-scan-sweep keyframe) */
+:root.hud-motion .hud-motion-target.hud-anim-waveform-sweep {
+  animation: hud-scan-sweep 2800ms linear infinite;
+}
+
+/* HudRadarRing: continuous sweep rotation (reuses hud-slow-rotate keyframe) */
+:root.hud-motion .hud-motion-target.hud-anim-radar-sweep {
+  animation: hud-slow-rotate 4000ms linear infinite;
+}
+
+/* HudTickLadder: rung activation transition */
+:root.hud-motion .hud-motion-target.hud-anim-tick-active {
+  transition: background-color 280ms ease-out;
+}
