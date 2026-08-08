@@ -278,3 +278,13 @@ body {
 :root.hud-motion .hud-motion-target.hud-anim-barcode-sweep {
   animation: hud-scan-sweep 2400ms linear infinite;
 }
+
+/* HudRingGauge: arc fill transition */
+:root.hud-motion .hud-motion-target.hud-anim-ring-fill {
+  transition: stroke-dasharray 420ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* HudSegmentedBar: cell activation transition */
+:root.hud-motion .hud-motion-target.hud-anim-segment-fill {
+  transition: background-color 280ms ease-out, border-color 280ms ease-out;
+}
