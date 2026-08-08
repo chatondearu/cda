@@ -1,7 +1,7 @@
 import process from 'node:process'
 
 export default defineNuxtConfig({
-  extends: ['../design-system-nuxt'],
+  extends: ['../design-system'],
   runtimeConfig: {
     public: {
       /** Canonical primary site URL — set with NUXT_PUBLIC_SITE_URL */

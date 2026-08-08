@@ -1,4 +1,4 @@
-import type { ArchiveItem } from '../../../design-system-nuxt/app/composables/useSystemData'
+import type { ArchiveItem } from '../../../design-system/app/composables/useSystemData'
 
 const ARCHIVE_LIST_KEY = 'content-archive-list'
 

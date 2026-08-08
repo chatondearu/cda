@@ -25,7 +25,8 @@
     "db:import:sql": "pnpm --filter @chatondearu/db db:import:sql",
     "db:link:legacy-auth": "pnpm --filter @chatondearu/db db:link:legacy-auth",
     "lint:fix": "pnpm -r lint:fix",
-    "lint:colors": "pnpm --filter @chatondearu/design-system-nuxt lint:colors",
+    "lint:colors": "pnpm --filter @chatondearu/design-system lint:colors",
+    "story:dev": "pnpm --filter @chatondearu/design-system story:dev",
     "sync:archive:github": "node scripts/sync-github-archives.mjs"
   },
   "devDependencies": {

@@ -1,1 +1,1 @@
-export { default } from '../design-system-nuxt/uno.config'
+export { default } from '../design-system/uno.config'

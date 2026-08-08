@@ -1,4 +1,4 @@
-# @chatondearu/design-system-nuxt
+# @chatondearu/design-system
 
 Nuxt layer for the `CDA_LAB` / Logical Machine design system (CDA: ChatonDeAru).
 
@@ -27,7 +27,7 @@ Nuxt layer for the `CDA_LAB` / Logical Machine design system (CDA: ChatonDeAru).
 - Never use hardcoded colors in UI components (`#...`, `black`, `white`, custom rgb/rgba).
 - Prefer semantic utilities only (`text-primary`, `bg-surface_container`, `border-outline_variant/20`, etc.).
 - If a new color is needed, add/update token variables in `design-system.css` first, then expose through `uno.config.ts`.
-- Run `pnpm --filter @chatondearu/design-system-nuxt lint:colors` to enforce the rule automatically.
+- Run `pnpm --filter @chatondearu/design-system lint:colors` to enforce the rule automatically.
 
 ## Install in a Nuxt app
 
@@ -35,8 +35,18 @@ In the app `nuxt.config.ts`:
 
 ```ts
 export default defineNuxtConfig({
-  extends: ['../design-system-nuxt'],
+  extends: ['../design-system'],
 })
+```
+
+## Histoire
+
+Interactive playground for UI primitives:
+
+```bash
+pnpm --filter @chatondearu/design-system story:dev
+# or from repo root:
+pnpm story:dev
 ```
 
 ## V1 Component Inventory

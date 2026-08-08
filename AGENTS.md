@@ -25,7 +25,7 @@ You are an expert fullstack/frontend developer specialized in Nuxt 3/4, the Vue.
 - **Comments:** Keep inline code comments brief and focused on the *why*, not the *what*.
 - **UnoCSS First:** Prefer UnoCSS utility classes in the template over writing custom CSS blocks, unless it's for complex global effects (like the CRT scanlines).
 - **No Hardcoded Colors:** Never use hex (`#...`), named colors (`black`, `white`), or raw rgb/rgba values in Vue templates/components. Use Uno semantic tokens only (`bg-surface_container`, `text-primary`, `border-outline_variant/20`, etc.).
-- **Theme Token Source:** Define color values in CSS variables inside `modules/design-system-nuxt/app/assets/css/design-system.css`, then map Uno theme colors to `rgb(var(--token) / <alpha-value>)` in `modules/design-system-nuxt/uno.config.ts`.
+- **Theme Token Source:** Define color values in CSS variables inside `modules/design-system/app/assets/css/design-system.css`, then map Uno theme colors to `rgb(var(--token) / <alpha-value>)` in `modules/design-system/uno.config.ts`.
 - **Dark/Light Contract:** Theme switching must rely on classes on `document.documentElement` (`dark` or `light`) and CSS variable scopes (`:root.dark`, `:root.light`). Do not reintroduce component-level color conditionals.
 
 ## 5. EXECUTION PROTOCOL
@@ -55,7 +55,7 @@ You are an expert fullstack/frontend developer specialized in Nuxt 3/4, the Vue.
    - `content.experimental.sqliteConnector = 'native'`
 6. Keep `nuxt-studio` enabled in dev only to avoid production build failures when repository metadata is not configured.
 7. New shared/publishable packages must use the `@chatondearu/*` namespace.
-8. For design-system mode switching, use the shared composable `modules/design-system-nuxt/app/composables/useThemeMode.ts` (single source of truth for persistence and DOM class toggling).
+8. For design-system mode switching, use the shared composable `modules/design-system/app/composables/useThemeMode.ts` (single source of truth for persistence and DOM class toggling).
 
 ## 8. I18N RULES (NUXT)
 

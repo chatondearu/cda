@@ -24,8 +24,8 @@ The palette is rooted in the high-contrast environment of a deep-space vessel. I
 
 - **Token-only implementation:** all UI colors must be semantic tokens (`background`, `surface_container_*`, `primary`, `outline`, etc.) consumed through Uno classes.
 - **No hardcoded color values:** never use hex, named colors, or ad-hoc rgb/rgba in component templates.
-- **Single source of truth:** dark/light values are defined as CSS variables in `modules/design-system-nuxt/app/assets/css/design-system.css`.
-- **Uno binding:** `modules/design-system-nuxt/uno.config.ts` must map colors to `rgb(var(--token) / <alpha-value>)`.
+- **Single source of truth:** dark/light values are defined as CSS variables in `modules/design-system/app/assets/css/design-system.css`.
+- **Uno binding:** `modules/design-system/uno.config.ts` must map colors to `rgb(var(--token) / <alpha-value>)`.
 - **Mode switch contract:** theme mode is controlled only via root classes (`:root.dark`, `:root.light`) and not via per-component custom logic.
 
  

@@ -1,4 +1,4 @@
-import type { TimelineItem } from '../../../design-system-nuxt/app/composables/useSystemData'
+import type { TimelineItem } from '../../../design-system/app/composables/useSystemData'
 
 export interface CareerProfileLink {
   id: string
