@@ -13,11 +13,17 @@ const { t } = useI18n({
     <p class="mt-2 text-[10px] text-primary/45 tracking-[0.2em] font-sans uppercase">
       {{ t('subtitle') }}
     </p>
-    <div class="mt-12 min-h-[42vh] flex flex-col items-center justify-center gap-5 border border-outline_variant/20 bg-surface_container/20 p-10">
+    <div class="relative mt-12 min-h-[42vh] flex flex-col items-center justify-center gap-5 border border-outline_variant/20 bg-surface_container/20 p-10">
+      <HudCornerMarks />
       <HudCrosshair />
       <p class="max-w-md text-center text-[10px] text-primary/40 tracking-[0.2em] font-sans uppercase">
         {{ t('empty') }}
       </p>
+      <HudStatusLine
+        label="BUFFER"
+        status="standby"
+      />
+      <HudNoiseLabel label="NO_ENTRIES_DETECTED // STANDBY" />
     </div>
   </section>
 </template>
