@@ -303,3 +303,20 @@ body {
 :root.hud-motion .hud-motion-target.hud-anim-tick-active {
   transition: background-color 280ms ease-out;
 }
+
+/* HudPulseReadout: heartbeat blip; duration is overridden per-instance
+ * via inline style (`animation-duration`) so the beat rate follows bpm. */
+@keyframes hud-pulse-blip {
+  0%, 100% {
+    opacity: 0.35;
+    transform: scale(0.85);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.15);
+  }
+}
+
+:root.hud-motion .hud-motion-target.hud-anim-pulse-blip {
+  animation: hud-pulse-blip 900ms ease-in-out infinite;
+}
