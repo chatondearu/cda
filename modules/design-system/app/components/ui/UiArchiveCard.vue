@@ -12,9 +12,9 @@ const localePath = useLocalePath()
 
 <template>
   <article class="group relative border border-primary/10 bg-surface_container_high p-6 transition-colors hover:border-primary/50">
-    <UiCornerMarks />
+    <HudCornerMarks />
     <div class="mb-4 flex items-start justify-between">
-      <UiRefCode :code="item.capsule" />
+      <HudRefCode :code="item.capsule" />
       <UiStatusChip
         :label="item.status === 'unfinished' ? t('archive.status.unfinished') : t('archive.status.nominal')"
         :variant="item.status === 'unfinished' ? 'error' : 'secondary'"
@@ -32,7 +32,7 @@ const localePath = useLocalePath()
       {{ item.description }}
     </p>
     <div class="flex items-center justify-between">
-      <UiRefCode
+      <HudRefCode
         tone="emphasis"
         :code="`TECH: ${item.tech}`"
       />
