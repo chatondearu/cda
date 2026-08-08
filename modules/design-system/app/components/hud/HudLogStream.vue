@@ -27,6 +27,8 @@ const resolvedLines = computed<HudLogLine[]>(() => {
     <div
       v-for="(line, index) in resolvedLines"
       :key="`${line.t}-${index}`"
+      class="hud-motion-target hud-anim-log-line"
+      :style="{ '--hud-line-index': index }"
     >
       T+{{ line.t }} {{ line.message }}
     </div>
