@@ -22,6 +22,7 @@ Nuxt layer for the `CDA_LAB` / Logical Machine design system (CDA: ChatonDeAru).
 - `app/components/hud/*`: micro-graphic HUD primitives (decorative density).
 - `app/composables/useSystemData.ts`: starter data contracts and mock content.
 - `app/composables/useThemeMode.ts`: single source for theme mode state, persistence, and html class toggling.
+- `app/composables/useHudSeed.ts`: deterministic seed hashing/PRNG helpers for HUD noise components (`HudAsciiBlock`, `HudBarcodeStrip`).
 
 ## Theme Guardrails
 
@@ -53,7 +54,7 @@ pnpm story:dev
 ## V1 Component Inventory
 
 - Foundations: `UiPageFrame`, `UiSectionHeader`, `UiDotGridOverlay`
-- HUD (micro-graphics): `HudNoiseLabel`, `HudRefCode`, `HudCornerMarks`, `HudCrosshair`, `HudStatusLine`, `HudLogStream`, `HudMeterBar`, `HudCodeReadout`, `HudCompass`, `HudReticle`, `HudTargetLock`, `HudBadge`, `HudSerialBlock`, `HudAccessBanner`, `HudOrgLabel`
+- HUD (micro-graphics): `HudNoiseLabel`, `HudRefCode`, `HudCornerMarks`, `HudCrosshair`, `HudStatusLine`, `HudLogStream`, `HudMeterBar`, `HudCodeReadout`, `HudCompass`, `HudReticle`, `HudTargetLock`, `HudBadge`, `HudSerialBlock`, `HudAccessBanner`, `HudOrgLabel`, `HudAsciiBlock`, `HudScanBuffer`, `HudBarcodeStrip`
 - Actions and Inputs: `UiButton`, `UiCommandInput`, `UiStatusChip`
 - Navigation: `UiTopBar`, `UiSideNav`, `UiMobileDockNav`, `UiFooterLinks`
 - Content Modules: `UiHeroCommand`, `UiTimeline`, `UiTimelineItem`, `UiArchiveCard`, `UiCassetteDeck`, `UiProgressReadout`
