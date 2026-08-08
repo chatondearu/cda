@@ -56,6 +56,7 @@ pnpm story:dev
 - Foundations: `UiPageFrame`, `UiSectionHeader`, `UiDotGridOverlay`
 - HUD (micro-graphics): `HudNoiseLabel`, `HudRefCode`, `HudCornerMarks`, `HudCrosshair`, `HudStatusLine`, `HudLogStream`, `HudMeterBar`, `HudCodeReadout`, `HudCompass`, `HudReticle`, `HudTargetLock`, `HudBadge`, `HudSerialBlock`, `HudAccessBanner`, `HudOrgLabel`, `HudAsciiBlock`, `HudScanBuffer`, `HudBarcodeStrip`
 - HUD (composites): `HudTelemetryCluster`, `HudCornerStack`, `HudDiagPanel`
+- HUD (sheet): `HudSheet`
 - Actions and Inputs: `UiButton`, `UiCommandInput`, `UiStatusChip`
 - Navigation: `UiTopBar`, `UiSideNav`, `UiMobileDockNav`, `UiFooterLinks`
 - Content Modules: `UiHeroCommand`, `UiTimeline`, `UiTimelineItem`, `UiArchiveCard`, `UiCassetteDeck`, `UiProgressReadout`
