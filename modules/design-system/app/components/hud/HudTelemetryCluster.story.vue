@@ -12,7 +12,7 @@ const state = reactive({
 <template>
   <Story title="HUD / HudTelemetryCluster">
     <Variant title="Default">
-      <div class="w-72 bg-background p-8">
+      <div class="w-full max-w-72 bg-background p-8">
         <HudTelemetryCluster
           :title="state.title"
           :meter="state.meter"
@@ -59,7 +59,7 @@ const state = reactive({
     </Variant>
 
     <Variant title="Grid">
-      <div class="grid grid-cols-2 gap-3 bg-background p-8">
+      <div class="grid grid-cols-1 gap-3 bg-background p-8 sm:grid-cols-2">
         <HudTelemetryCluster
           title="CORE CLUSTER"
           :meter="{ label: 'CORE TEMP', value: '72%', progress: 72 }"
