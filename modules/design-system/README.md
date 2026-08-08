@@ -53,7 +53,7 @@ pnpm story:dev
 ## V1 Component Inventory
 
 - Foundations: `UiPageFrame`, `UiSectionHeader`, `UiDotGridOverlay`
-- HUD (micro-graphics): `HudNoiseLabel`, `HudRefCode`, `HudCornerMarks`, `HudCrosshair`, `HudStatusLine`, `HudLogStream`, `HudMeterBar`, `HudCodeReadout`
+- HUD (micro-graphics): `HudNoiseLabel`, `HudRefCode`, `HudCornerMarks`, `HudCrosshair`, `HudStatusLine`, `HudLogStream`, `HudMeterBar`, `HudCodeReadout`, `HudCompass`, `HudReticle`, `HudTargetLock`
 - Actions and Inputs: `UiButton`, `UiCommandInput`, `UiStatusChip`
 - Navigation: `UiTopBar`, `UiSideNav`, `UiMobileDockNav`, `UiFooterLinks`
 - Content Modules: `UiHeroCommand`, `UiTimeline`, `UiTimelineItem`, `UiArchiveCard`, `UiCassetteDeck`, `UiProgressReadout`
