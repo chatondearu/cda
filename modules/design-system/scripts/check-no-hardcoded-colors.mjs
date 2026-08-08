@@ -1,7 +1,7 @@
 import { readdir, readFile } from 'node:fs/promises'
 import { join } from 'node:path'
 
-const UI_COMPONENTS_DIR = join(process.cwd(), 'app/components/ui')
+const COMPONENTS_DIR = join(process.cwd(), 'app/components')
 
 const forbiddenPatterns = [
   {
@@ -19,7 +19,17 @@ const forbiddenPatterns = [
 ]
 
 async function getVueFiles(dir) {
-  const entries = await readdir(dir, { withFileTypes: true })
+  let entries
+  try {
+    entries = await readdir(dir, { withFileTypes: true })
+  }
+  catch (error) {
+    if (error && typeof error === 'object' && 'code' in error && error.code === 'ENOENT')
+      return []
+
+    throw error
+  }
+
   const files = await Promise.all(entries.map(async (entry) => {
     const fullPath = join(dir, entry.name)
     if (entry.isDirectory())
@@ -65,7 +75,7 @@ function findViolations(source) {
 }
 
 async function main() {
-  const files = await getVueFiles(UI_COMPONENTS_DIR)
+  const files = await getVueFiles(COMPONENTS_DIR)
   const errors = []
 
   for (const filePath of files) {
@@ -79,7 +89,7 @@ async function main() {
   }
 
   if (!errors.length) {
-    console.log('Color guard: no hardcoded colors found in UI components.')
+    console.log(`Color guard: no hardcoded colors found in ${files.length} component files (ui + hud).`)
     process.exit(0)
   }
 

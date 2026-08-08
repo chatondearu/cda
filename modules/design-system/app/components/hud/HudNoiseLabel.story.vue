@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import UiNoiseLabel from './UiNoiseLabel.vue'
+import HudNoiseLabel from './HudNoiseLabel.vue'
 
 const state = reactive({
   label: 'Signal noise',
@@ -7,10 +7,10 @@ const state = reactive({
 </script>
 
 <template>
-  <Story title="Foundations / UiNoiseLabel">
+  <Story title="HUD / HudNoiseLabel">
     <Variant title="Default">
       <div class="bg-background p-8">
-        <UiNoiseLabel :label="state.label" />
+        <HudNoiseLabel :label="state.label" />
       </div>
 
       <template #controls>

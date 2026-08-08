@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import UiRefCode from './UiRefCode.vue'
+import HudRefCode from './HudRefCode.vue'
 
 const state = reactive({
   code: 'REF.CDA.001',
@@ -8,10 +8,10 @@ const state = reactive({
 </script>
 
 <template>
-  <Story title="Foundations / UiRefCode">
+  <Story title="HUD / HudRefCode">
     <Variant title="Default">
       <div class="bg-background p-8">
-        <UiRefCode
+        <HudRefCode
           :code="state.code"
           :tone="state.tone"
         />
