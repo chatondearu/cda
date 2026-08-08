@@ -68,6 +68,7 @@ same mechanism as the dark/light sync. See `HUD / Motion` for a live demo strip.
 - HUD (signal): `HudWaveform`, `HudRadarRing`, `HudTickLadder`
 - HUD (data readouts): `HudCoordReadout`, `HudAngleReadout`, `HudPacketLoss`, `HudPulseReadout`
 - HUD (marks & stamps): `HudWarningPlate`, `HudChecksumStamp`, `HudBuildStamp`, `HudHotZone`
+- HUD (structure): `HudNodeGraph`, `HudBracketFrame`, `HudConduit` — see `HUD / ForgeSheetDemo` for a dense composite sheet assembling gauges, signal, and marks components (mobile stack still works)
 - Actions and Inputs: `UiButton`, `UiCommandInput`, `UiStatusChip`
 - Navigation: `UiTopBar`, `UiSideNav`, `UiMobileDockNav`, `UiFooterLinks`
 - Content Modules: `UiHeroCommand`, `UiTimeline`, `UiTimelineItem`, `UiArchiveCard`, `UiCassetteDeck`, `UiProgressReadout`
