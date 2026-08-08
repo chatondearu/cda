@@ -63,9 +63,10 @@ same mechanism as the dark/light sync. See `HUD / Motion` for a live demo strip.
 - HUD (micro-graphics): `HudNoiseLabel`, `HudRefCode`, `HudCornerMarks`, `HudCrosshair`, `HudStatusLine`, `HudLogStream`, `HudMeterBar`, `HudCodeReadout`, `HudCompass`, `HudReticle`, `HudTargetLock`, `HudBadge`, `HudSerialBlock`, `HudAccessBanner`, `HudOrgLabel`, `HudAsciiBlock`, `HudScanBuffer`, `HudBarcodeStrip`
 - HUD (composites): `HudTelemetryCluster`, `HudCornerStack`, `HudDiagPanel`
 - HUD (sheet): `HudSheet`
-- HUD (motion): global `useHudMotion` switch wired into `HudMeterBar`, `HudLogStream`, `HudScanBuffer`, `HudTargetLock`, `HudCrosshair`, `HudBarcodeStrip` — see `HUD / Motion` story
+- HUD (motion): global `useHudMotion` switch wired into `HudMeterBar`, `HudLogStream`, `HudScanBuffer`, `HudTargetLock`, `HudCrosshair`, `HudBarcodeStrip`, `HudPulseReadout` — see `HUD / Motion` story
 - HUD (gauges): `HudRingGauge`, `HudSegmentedBar`, `HudDualBus`
 - HUD (signal): `HudWaveform`, `HudRadarRing`, `HudTickLadder`
+- HUD (data readouts): `HudCoordReadout`, `HudAngleReadout`, `HudPacketLoss`, `HudPulseReadout`
 - Actions and Inputs: `UiButton`, `UiCommandInput`, `UiStatusChip`
 - Navigation: `UiTopBar`, `UiSideNav`, `UiMobileDockNav`, `UiFooterLinks`
 - Content Modules: `UiHeroCommand`, `UiTimeline`, `UiTimelineItem`, `UiArchiveCard`, `UiCassetteDeck`, `UiProgressReadout`
