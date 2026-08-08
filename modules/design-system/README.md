@@ -23,6 +23,7 @@ Nuxt layer for the `CDA_LAB` / Logical Machine design system (CDA: ChatonDeAru).
 - `app/composables/useSystemData.ts`: starter data contracts and mock content.
 - `app/composables/useThemeMode.ts`: single source for theme mode state, persistence, and html class toggling.
 - `app/composables/useHudSeed.ts`: deterministic seed hashing/PRNG helpers for HUD noise components (`HudAsciiBlock`, `HudBarcodeStrip`).
+- `app/composables/useHudMotion.ts`: single source for the global HUD animation switch (`hud-motion` / `hud-motion-off` html class, `localStorage['cda-hud-motion']`); `prefers-reduced-motion` always wins.
 
 ## Theme Guardrails
 
@@ -51,12 +52,18 @@ pnpm --filter @chatondearu/design-system story:dev
 pnpm story:dev
 ```
 
+A floating **HUD MOTION** / **MOTION OFF** control sits bottom-right of the Histoire sandbox. It toggles
+the global `useHudMotion` switch (persisted in `localStorage['cda-hud-motion']`) across every story —
+same mechanism as the dark/light sync. See `HUD / Motion` for a live demo strip. OS-level
+`prefers-reduced-motion` always overrides it back off.
+
 ## V1 Component Inventory
 
 - Foundations: `UiPageFrame`, `UiSectionHeader`, `UiDotGridOverlay`
 - HUD (micro-graphics): `HudNoiseLabel`, `HudRefCode`, `HudCornerMarks`, `HudCrosshair`, `HudStatusLine`, `HudLogStream`, `HudMeterBar`, `HudCodeReadout`, `HudCompass`, `HudReticle`, `HudTargetLock`, `HudBadge`, `HudSerialBlock`, `HudAccessBanner`, `HudOrgLabel`, `HudAsciiBlock`, `HudScanBuffer`, `HudBarcodeStrip`
 - HUD (composites): `HudTelemetryCluster`, `HudCornerStack`, `HudDiagPanel`
 - HUD (sheet): `HudSheet`
+- HUD (motion): global `useHudMotion` switch wired into `HudMeterBar`, `HudLogStream`, `HudScanBuffer`, `HudTargetLock`, `HudCrosshair`, `HudBarcodeStrip` — see `HUD / Motion` story
 - Actions and Inputs: `UiButton`, `UiCommandInput`, `UiStatusChip`
 - Navigation: `UiTopBar`, `UiSideNav`, `UiMobileDockNav`, `UiFooterLinks`
 - Content Modules: `UiHeroCommand`, `UiTimeline`, `UiTimelineItem`, `UiArchiveCard`, `UiCassetteDeck`, `UiProgressReadout`

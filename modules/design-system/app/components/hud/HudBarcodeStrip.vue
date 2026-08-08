@@ -23,12 +23,14 @@ const barWidths = computed(() => {
 </script>
 
 <template>
-  <div class="flex h-8 items-stretch gap-0.5 border border-primary/20 bg-surface_container_lowest px-2 py-1">
+  <div class="relative flex h-8 items-stretch gap-0.5 overflow-hidden border border-primary/20 bg-surface_container_lowest px-2 py-1">
     <span
       v-for="(width, index) in barWidths"
       :key="index"
       class="bg-primary/60"
       :style="{ width: `${width}px` }"
     />
+
+    <span class="hud-motion-target hud-anim-barcode-sweep pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-primary/10" />
   </div>
 </template>

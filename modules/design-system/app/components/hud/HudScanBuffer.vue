@@ -15,5 +15,7 @@ defineProps<Props>()
     >
       {{ String(index).padStart(2, '0') }} {{ line }}
     </div>
+
+    <div class="hud-motion-target hud-anim-scan-cursor mt-0.5 h-2.5 w-1.5 bg-primary/60" />
   </div>
 </template>

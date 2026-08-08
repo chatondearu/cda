@@ -149,3 +149,132 @@ body {
   mix-blend-mode: multiply;
   z-index: 100;
 }
+
+/* ============================================================
+ * HUD motion system (Lot 9)
+ *
+ * Global switch, driven by `useHudMotion`: `<html class="hud-motion">`
+ * (on) vs `<html class="hud-motion-off">` / absence of `hud-motion` (off).
+ * Animated HUD elements opt in via `.hud-motion-target` plus one of the
+ * `.hud-anim-*` modifiers below. Kill switches always take priority so a
+ * disabled/reduced-motion element never keeps mid-animation state.
+ * ============================================================ */
+
+:root:not(.hud-motion) .hud-motion-target,
+:root.hud-motion-off .hud-motion-target {
+  animation: none !important;
+  transition: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hud-motion-target {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* HudMeterBar: fill width transition */
+:root.hud-motion .hud-motion-target.hud-anim-meter-fill {
+  transition: width 420ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* HudLogStream: staggered fade/slide-in per line, indexed via --hud-line-index */
+@keyframes hud-fade-slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(-2px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+:root.hud-motion .hud-motion-target.hud-anim-log-line {
+  animation: hud-fade-slide-in 320ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: calc(var(--hud-line-index, 0) * 60ms);
+}
+
+/* HudScanBuffer: blinking cursor row */
+@keyframes hud-cursor-blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.15;
+  }
+}
+
+:root.hud-motion .hud-motion-target.hud-anim-scan-cursor {
+  animation: hud-cursor-blink 1200ms steps(2, jump-none) infinite;
+}
+
+/* HudTargetLock: pulse border/marker opacity while locked */
+@keyframes hud-lock-pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.45;
+  }
+}
+
+:root.hud-motion .hud-motion-target.hud-anim-lock-pulse {
+  animation: hud-lock-pulse 1400ms ease-in-out infinite;
+}
+
+/* HudCrosshair: slow rotate (brackets) / breathe (dot, subtle on circle) */
+@keyframes hud-slow-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes hud-breathe {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.15);
+  }
+}
+
+@keyframes hud-breathe-subtle {
+  0%, 100% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+:root.hud-motion .hud-motion-target.hud-anim-crosshair-rotate {
+  animation: hud-slow-rotate 18s linear infinite;
+}
+
+:root.hud-motion .hud-motion-target.hud-anim-crosshair-breathe {
+  animation: hud-breathe 2600ms ease-in-out infinite;
+}
+
+:root.hud-motion .hud-motion-target.hud-anim-crosshair-breathe-subtle {
+  animation: hud-breathe-subtle 3400ms ease-in-out infinite;
+}
+
+/* HudBarcodeStrip: scan sweep overlay */
+@keyframes hud-scan-sweep {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+:root.hud-motion .hud-motion-target.hud-anim-barcode-sweep {
+  animation: hud-scan-sweep 2400ms linear infinite;
+}
