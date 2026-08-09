@@ -22,7 +22,7 @@ Nuxt layer for the `CDA_LAB` / Logical Machine design system (CDA: ChatonDeAru).
 - `app/components/hud/*`: micro-graphic HUD primitives (decorative density).
 - `app/composables/useSystemData.ts`: starter data contracts and mock content.
 - `app/composables/useThemeMode.ts`: single source for theme mode state, persistence, and html class toggling.
-- `app/composables/useHudSeed.ts`: deterministic seed hashing/PRNG helpers for HUD noise components (`HudAsciiBlock`, `HudBarcodeStrip`, `HudWaveform`, `HudDenseBar`, `HudQrCode`, `HudBlockArt`).
+- `app/composables/useHudSeed.ts`: deterministic seed hashing/PRNG helpers for HUD noise components (`HudAsciiBlock`, `HudBarcodeStrip`, `HudWaveform`, `HudDenseBar`, `HudQrCode`, `HudBlockArt`, `HudSparkline`, `HudGraph`, `HudHistogram`, `HudSpectrum`, `HudOscilloscope`, `HudScatter`, `HudGantt`, `HudEcg`).
 - `app/composables/useHudMotion.ts`: single source for the global HUD animation switch (`hud-motion` / `hud-motion-off` html class, `localStorage['cda-hud-motion']`); `prefers-reduced-motion` always wins.
 
 ## Theme Guardrails
@@ -79,7 +79,8 @@ missing) lives in `docs/superpowers/plans/2026-08-10-hud-forge-modules-map.md`.
 - `hud/icons/`: `HudIcon` (geometric variants: diamond, chevron, hash, triangle, cross, ring), `HudGlyph`
   (abstract sigil/rune/circuit marks), `HudIconLabel` (bracket label row pairing a `HudIcon` with a
   label/value)
-- `hud/charts/`: `HudWaveform`, `HudRingGauge`, `HudPulseReadout`
+- `hud/charts/`: `HudWaveform`, `HudRingGauge`, `HudPulseReadout`, `HudSparkline`, `HudGraph`,
+  `HudHistogram`, `HudSpectrum`, `HudOscilloscope`, `HudScatter`, `HudGantt`, `HudEcg`
 - `hud/aiming/`: `HudTargetLock`, `HudCrosshair`, `HudCompass`, `HudRadarRing`, `HudWarningPlate`, `HudNodeGraph`, `HudAngleReadout`, `HudReticle`, `HudTickLadder`, `HudConduit`
 - `hud/specimen/`: `HudChecksumStamp`, `HudBuildStamp`, `HudMeterBar`, `HudSegmentedBar`, `HudDualBus`, `HudCoordReadout`, `HudPacketLoss`
 - `hud/tactical/`: `HudHotZone`

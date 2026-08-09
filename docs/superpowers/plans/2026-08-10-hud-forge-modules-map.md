@@ -83,8 +83,22 @@ close the ICONS density gap (no further ICONS Forge ids outstanding).
 | waveform | `HudWaveform` | Covered |
 | donut | `HudRingGauge` | Covered |
 | pulse/ecg | `HudPulseReadout` | Covered |
+| sparkline | `HudSparkline` | Covered (Lot 20) |
+| graph | `HudGraph` | Covered (Lot 20) |
+| histogram | `HudHistogram` | Covered (Lot 20) |
+| spectrum | `HudSpectrum` | Covered (Lot 20) |
+| oscilloscope | `HudOscilloscope` | Covered (Lot 20) |
+| scatter | `HudScatter` | Covered (Lot 20) |
+| gantt | `HudGantt` | Covered (Lot 20) |
+| ecg (trace) | `HudEcg` | Covered (Lot 20) |
 
-Gap-fill candidates: TBD in Lot 20.
+Lot 20 gap fill complete — `HudSparkline` (compact SVG line trace with fill/marker options),
+`HudGraph` (gridded SVG line + area chart with label caption), `HudHistogram` (bell-biased seeded bar
+distribution), `HudSpectrum` (segmented tri-tone equalizer columns), `HudOscilloscope` (gridded scope
+trace centered on a baseline), `HudScatter` (seeded SVG point cloud with outlier tone), `HudGantt`
+(seeded horizontal timeline tracks), `HudEcg` (fixed PQRST cycle trace with seeded per-beat jitter and
+bpm-driven sweep, distinct from `HudPulseReadout`'s single blip) added to close remaining CHARTS density
+gaps (no further CHARTS Forge ids outstanding).
 
 ## AIMING
 
