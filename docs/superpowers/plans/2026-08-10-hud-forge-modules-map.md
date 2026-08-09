@@ -140,8 +140,25 @@ remaining AIMING density gaps (no further AIMING Forge ids outstanding).
 | progress | `HudMeterBar`, `HudSegmentedBar`, `HudDualBus` | Covered |
 | geocoord | `HudCoordReadout` | Covered |
 | packet | `HudPacketLoss` | Covered |
+| globe | `HudGlobe` | Covered (Lot 22) |
+| compliance | `HudCompliance` | Covered (Lot 22) |
+| bigarrow | `HudBigArrow` | Covered (Lot 22) |
+| speclabel | `HudSpecLabel` | Covered (Lot 22) |
+| window | `HudWindow` | Covered (Lot 22) |
+| filetree | `HudFileTree` | Covered (Lot 22) |
+| emblems | `HudEmblems` | Covered (Lot 22) |
+| indexnum | `HudIndexNum` | Covered (Lot 22) |
+| callout | `HudCallout` | Covered (Lot 22) |
+| caretags | `HudCareTags` | Covered (Lot 22) |
 
-Gap-fill candidates: TBD in Lot 22.
+Lot 22 gap fill complete — `HudGlobe` (orthographic lat/lon marker readout), `HudCompliance` (regulatory
+seal panel: pass/fail/pending), `HudBigArrow` (large flat directional signage arrow, distinct from
+`aiming/HudArrow`'s rotating bearing vector), `HudSpecLabel` (specimen spec-sheet tag: title/code header +
+key-value rows), `HudWindow` (chrome frame primitive with title bar/status dot + body slot), `HudFileTree`
+(flattened directory tree readout with box-drawing connectors), `HudEmblems` (row of abstract seal/sigil/
+bar/node insignia marks), `HudIndexNum` (zero-padded catalog index tag), `HudCallout` (leader-line
+annotation callout, 4 directions), `HudCareTags` (chain-of-custody/handling tag panel) added to close
+remaining SPECIMEN density gaps (no further SPECIMEN Forge ids outstanding).
 
 ## TACTICAL
 

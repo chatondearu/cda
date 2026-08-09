@@ -83,7 +83,9 @@ missing) lives in `docs/superpowers/plans/2026-08-10-hud-forge-modules-map.md`.
   `HudHistogram`, `HudSpectrum`, `HudOscilloscope`, `HudScatter`, `HudGantt`, `HudEcg`
 - `hud/aiming/`: `HudTargetLock`, `HudCrosshair`, `HudCompass`, `HudRadarRing`, `HudWarningPlate`, `HudNodeGraph`, `HudAngleReadout`, `HudReticle`, `HudTickLadder`, `HudConduit`, `HudArrow`, `HudMeasure`,
   `HudAxis`, `HudScope`, `HudProtractor`, `HudRadialBurst`, `HudKnobs`, `HudOrbit`
-- `hud/specimen/`: `HudChecksumStamp`, `HudBuildStamp`, `HudMeterBar`, `HudSegmentedBar`, `HudDualBus`, `HudCoordReadout`, `HudPacketLoss`
+- `hud/specimen/`: `HudChecksumStamp`, `HudBuildStamp`, `HudMeterBar`, `HudSegmentedBar`, `HudDualBus`, `HudCoordReadout`, `HudPacketLoss`,
+  `HudGlobe`, `HudCompliance`, `HudBigArrow`, `HudSpecLabel`, `HudWindow`, `HudFileTree`, `HudEmblems`, `HudIndexNum`, `HudCallout`,
+  `HudCareTags`
 - `hud/tactical/`: `HudHotZone`
 - `hud/composites/`: `HudTelemetryCluster`, `HudCornerStack`, `HudDiagPanel`, `HudSheet`, `ForgeSheetDemo` (dense composite sheet assembling gauges, signal, and marks components — mobile stack still works), `HudMotion` (story-only motion demo strip)
 - HUD (motion): global `useHudMotion` switch wired into `HudMeterBar`, `HudLogStream`, `HudScanBuffer`, `HudTargetLock`, `HudCrosshair`, `HudBarcodeStrip`, `HudPulseReadout` — see `HUD / COMPOSITES / Motion` story
