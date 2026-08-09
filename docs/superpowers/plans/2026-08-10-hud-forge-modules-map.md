@@ -37,11 +37,16 @@ Lot 16 gap fill complete — `HudHeader`, `HudBigNum`, `HudKanji`, `HudBracketWo
 
 | Forge id | Hud component | Status |
 |----------|---------------|--------|
-| statusbox | `HudStatusLine`, `HudAccessBanner` | Covered |
+| statusbox | `HudStatusLine`, `HudAccessBanner`, `HudStatusBox` | Covered |
 | cornerbox | `HudCornerMarks`, `HudBracketFrame` | Covered |
 | serial/badge | `HudSerialBlock`, `HudBadge` | Covered |
+| table | `HudTable` | Covered (Lot 17) |
+| chips | `HudChips` | Covered (Lot 17) |
+| labelbox | `HudLabelBox` | Covered (Lot 17) |
 
-Gap-fill candidates: TBD in Lot 17.
+Lot 17 gap fill complete — `HudStatusBox` (bordered status panel with metric rows), `HudTable` (dense
+micro table), `HudChips` (bracket-style status chip row), `HudLabelBox` (notched label/value field) added
+to close remaining BOXES density gaps.
 
 ## CODES
 
