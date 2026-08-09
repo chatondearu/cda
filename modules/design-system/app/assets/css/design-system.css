@@ -320,3 +320,42 @@ body {
 :root.hud-motion .hud-motion-target.hud-anim-pulse-blip {
   animation: hud-pulse-blip 900ms ease-in-out infinite;
 }
+
+/* HudMeasure: value marker slide transition */
+:root.hud-motion .hud-motion-target.hud-anim-measure-slide {
+  transition: left 320ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* HudAxis: gimbal dot drift transition */
+:root.hud-motion .hud-motion-target.hud-anim-axis-drift {
+  transition:
+    left 320ms cubic-bezier(0.16, 1, 0.3, 1),
+    top 320ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* HudProtractor: pointer sweep transition */
+:root.hud-motion .hud-motion-target.hud-anim-protractor-sweep {
+  transition: transform 320ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* HudKnobs: dial pointer turn transition */
+:root.hud-motion .hud-motion-target.hud-anim-knob-turn {
+  transition: transform 240ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* HudOrbit: node revolves around its ring; duration is overridden per-instance
+ * via inline style (further orbits spin slower). The starting angle is carried
+ * through `--hud-orbit-start` (also set as the element's static `transform`)
+ * so the disabled/reduced-motion state still rests at the correct position. */
+@keyframes hud-orbit-spin {
+  from {
+    transform: rotate(var(--hud-orbit-start, 0deg));
+  }
+  to {
+    transform: rotate(calc(var(--hud-orbit-start, 0deg) + 360deg));
+  }
+}
+
+:root.hud-motion .hud-motion-target.hud-anim-orbit-spin {
+  animation: hud-orbit-spin linear infinite;
+}

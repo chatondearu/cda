@@ -112,12 +112,25 @@ Forge group `HUD` → folder `aiming/`, Histoire `HUD / AIMING / …`.
 | rangerings | `HudRadarRing` | Covered |
 | hazard | `HudWarningPlate` | Covered |
 | nodelink | `HudNodeGraph` | Covered |
-| angle/protractor | `HudAngleReadout` | Covered |
+| angle/protractor | `HudAngleReadout`, `HudProtractor` | Covered |
 | reticle | `HudReticle` | Covered |
 | tickladder | `HudTickLadder` | Covered |
 | conduit | `HudConduit` | Covered |
+| arrow/vector | `HudArrow` | Covered (Lot 21) |
+| measure/caliper | `HudMeasure` | Covered (Lot 21) |
+| axis/gimbal | `HudAxis` | Covered (Lot 21) |
+| scope | `HudScope` | Covered (Lot 21) |
+| radialburst | `HudRadialBurst` | Covered (Lot 21) |
+| knobs | `HudKnobs` | Covered (Lot 21) |
+| orbit | `HudOrbit` | Covered (Lot 21) |
 
-Gap-fill candidates: TBD in Lot 21.
+Lot 21 gap fill complete — `HudArrow` (rotating bearing/vector pointer), `HudMeasure` (ruler/caliper strip
+with tick marks and a sliding value marker), `HudAxis` (dual-axis gimbal position indicator), `HudScope`
+(scope-view reticle: crosshair + mil-dots + optional rotating outer ring), `HudProtractor` (full-circle
+degree dial, distinct from the compact `HudAngleReadout` widget), `HudRadialBurst` (radiating spoke burst
+with an optional highlighted/pulsing bearing spoke), `HudKnobs` (row of elevation/windage-style adjustment
+dials), `HudOrbit` (concentric rings with nodes that can revolve, duration scaling per ring) added to close
+remaining AIMING density gaps (no further AIMING Forge ids outstanding).
 
 ## SPECIMEN
 
