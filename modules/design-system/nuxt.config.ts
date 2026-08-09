@@ -10,6 +10,14 @@ const histoireStubModule = process.env.HISTOIRE
 
 export default defineNuxtConfig({
   modules: ['@unocss/nuxt', ...histoireStubModule],
+  // `hud/` nests components by Forge category (text/, boxes/, aiming/, ...).
+  // `pathPrefix: false` keeps short auto-import names (`HudCrosshair`, not `HudAimingCrosshair`).
+  // The trailing `~/components` entry restores default scanning (with directory-based
+  // prefixing) for every other directory, e.g. `ui/`.
+  components: [
+    { path: join(currentDir, './app/components/hud'), pathPrefix: false },
+    join(currentDir, './app/components'),
+  ],
   unocss: {
     configFile: join(currentDir, 'uno.config.ts'),
   },
