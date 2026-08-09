@@ -67,9 +67,14 @@ further CODES Forge ids outstanding).
 
 | Forge id | Hud component | Status |
 |----------|---------------|--------|
-| — | — | Missing (no Hud* component yet) |
+| icon (geometric) | `HudIcon` | Covered (Lot 19) |
+| glyph (abstract mark) | `HudGlyph` | Covered (Lot 19) |
+| iconlabel | `HudIconLabel` | Covered (Lot 19) |
 
-The `icons/` folder is created empty in Lot 15 (structure only). Full gap-fill is Lot 19.
+Lot 19 gap fill complete — `HudIcon` (geometric SVG primitive: diamond, chevron, hash, triangle, cross,
+ring — deliberately not a Material Symbols icon set), `HudGlyph` (abstract sigil/rune/circuit/node/fracture
+line-art marks), `HudIconLabel` (bracket label row composing a `HudIcon` with a label/value pair) added to
+close the ICONS density gap (no further ICONS Forge ids outstanding).
 
 ## CHARTS
 
