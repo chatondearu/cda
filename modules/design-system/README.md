@@ -69,7 +69,9 @@ same mechanism as the dark/light sync. See `HUD / Motion` for a live demo strip.
 
 Nested one level deep (`hud/<category>/HudName.vue`) with `pathPrefix: false` in `nuxt.config.ts`, so
 auto-import names stay short (`HudCrosshair`, not `HudAimingCrosshair`). Full Forge↔Hud mapping (covered +
-missing) lives in `docs/superpowers/plans/2026-08-10-hud-forge-modules-map.md`.
+missing) lives in `docs/superpowers/plans/2026-08-10-hud-forge-modules-map.md`. All non-IMAGE Forge
+modules are covered as of Lot 24 (final HUD lot) — see `HUD / Catalog` in Histoire for a dense index of
+every group.
 
 - `hud/text/`: `HudNoiseLabel`, `HudOrgLabel`, `HudCodeReadout`, `HudLogStream`, `HudRefCode`, `HudHeader`,
   `HudBigNum`, `HudKanji`, `HudBracketWord`, `HudLetterChips`, `HudCircleText`
@@ -88,5 +90,5 @@ missing) lives in `docs/superpowers/plans/2026-08-10-hud-forge-modules-map.md`.
   `HudCareTags`
 - `hud/tactical/`: `HudHotZone`, `HudMilSymbol`, `HudPlacard`, `HudSafetySign`, `HudMilGrid`, `HudThreatPanel`,
   `HudComms`
-- `hud/composites/`: `HudTelemetryCluster`, `HudCornerStack`, `HudDiagPanel`, `HudSheet`, `ForgeSheetDemo` (dense composite sheet assembling gauges, signal, and marks components — mobile stack still works), `HudMotion` (story-only motion demo strip)
+- `hud/composites/`: `HudTelemetryCluster`, `HudCornerStack`, `HudDiagPanel`, `HudSheet`, `ForgeSheetDemo` (dense composite sheet assembling gauges, signal, aiming, tactical, and specimen modules — mobile stack still works), `HudMotion` (story-only motion demo strip), `HudCatalog` (story-only `HUD / Catalog` index: one card per Forge group with live representative samples plus the full component name list)
 - HUD (motion): global `useHudMotion` switch wired into `HudMeterBar`, `HudLogStream`, `HudScanBuffer`, `HudTargetLock`, `HudCrosshair`, `HudBarcodeStrip`, `HudPulseReadout` — see `HUD / COMPOSITES / Motion` story

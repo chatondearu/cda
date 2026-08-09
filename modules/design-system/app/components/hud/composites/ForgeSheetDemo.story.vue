@@ -1,22 +1,17 @@
 <script setup lang="ts">
 import HudAngleReadout from '../aiming/HudAngleReadout.vue'
+import HudScope from '../aiming/HudScope.vue'
 import HudBracketFrame from '../boxes/HudBracketFrame.vue'
-import HudBuildStamp from '../specimen/HudBuildStamp.vue'
-import HudChecksumStamp from '../specimen/HudChecksumStamp.vue'
-import HudConduit from '../aiming/HudConduit.vue'
+import HudEcg from '../charts/HudEcg.vue'
+import HudRingGauge from '../charts/HudRingGauge.vue'
+import HudCallout from '../specimen/HudCallout.vue'
 import HudCoordReadout from '../specimen/HudCoordReadout.vue'
 import HudDualBus from '../specimen/HudDualBus.vue'
-import HudHotZone from '../tactical/HudHotZone.vue'
-import HudNodeGraph from '../aiming/HudNodeGraph.vue'
-import HudPacketLoss from '../specimen/HudPacketLoss.vue'
-import HudPulseReadout from '../charts/HudPulseReadout.vue'
-import HudRadarRing from '../aiming/HudRadarRing.vue'
-import HudRingGauge from '../charts/HudRingGauge.vue'
 import HudSegmentedBar from '../specimen/HudSegmentedBar.vue'
+import HudThreatPanel from '../tactical/HudThreatPanel.vue'
+import HudBigNum from '../text/HudBigNum.vue'
+import HudCircleText from '../text/HudCircleText.vue'
 import HudSheet from './HudSheet.vue'
-import HudTickLadder from '../aiming/HudTickLadder.vue'
-import HudWarningPlate from '../aiming/HudWarningPlate.vue'
-import HudWaveform from '../charts/HudWaveform.vue'
 
 const structureNodes = [
   { id: 'n1', label: 'CORE-04' },
@@ -32,26 +27,38 @@ const structureNodes = [
         <HudSheet label="FORGE SHEET // DEMO-01">
           <template #tl>
             <div class="flex w-full max-w-xs flex-col gap-2">
+              <HudBigNum
+                value="72"
+                unit="%"
+                label="CORE LOAD"
+              />
               <HudBracketFrame variant="corners">
                 <HudNodeGraph
                   :nodes="structureNodes"
                   active-id="n2"
                 />
               </HudBracketFrame>
-              <HudRingGauge
-                :value="72"
-                label="CORE"
-              />
-              <HudSegmentedBar
-                :segments="6"
-                :active="4"
-                label="LOAD"
-              />
+              <div class="flex flex-wrap gap-2">
+                <HudRingGauge
+                  :value="72"
+                  label="CORE"
+                />
+                <HudSegmentedBar
+                  :segments="6"
+                  :active="4"
+                  label="LOAD"
+                />
+              </div>
             </div>
           </template>
 
           <template #tr>
             <div class="flex w-full max-w-xs flex-col gap-2">
+              <HudEcg
+                seed="FORGE-04"
+                :bpm="96"
+                label="PULSE"
+              />
               <HudWaveform
                 seed="FORGE-04"
                 :bars="20"
@@ -77,10 +84,20 @@ const structureNodes = [
                   :right="{ label: 'BUS B', value: '23.8V' }"
                 />
               </HudBracketFrame>
-              <div class="h-6 w-24">
-                <HudConduit
-                  orientation="h"
-                  label="CORE"
+              <div class="flex flex-wrap items-center justify-center gap-3">
+                <div class="h-6 w-24">
+                  <HudConduit
+                    orientation="h"
+                    label="CORE"
+                  />
+                </div>
+                <HudScope
+                  :magnification="4"
+                  :mil-dots="3"
+                />
+                <HudCircleText
+                  text="FORGE-04 • FORGE-04 • "
+                  :size="56"
                 />
               </div>
             </div>
@@ -106,6 +123,10 @@ const structureNodes = [
                 label="REACTOR BAY"
                 active
               />
+              <HudThreatPanel
+                level="high"
+                designation="SEC-07"
+              />
             </div>
           </template>
 
@@ -124,6 +145,11 @@ const structureNodes = [
                 <HudPacketLoss :percent="3.2" />
               </div>
               <HudPulseReadout :bpm="82" />
+              <HudCallout
+                label="ANOMALY"
+                detail="SEE LOG 032"
+                direction="left"
+              />
             </div>
           </template>
         </HudSheet>
@@ -135,26 +161,38 @@ const structureNodes = [
         <HudSheet label="FORGE SHEET // DEMO-01">
           <template #tl>
             <div class="flex w-full max-w-xs flex-col gap-2">
+              <HudBigNum
+                value="72"
+                unit="%"
+                label="CORE LOAD"
+              />
               <HudBracketFrame variant="corners">
                 <HudNodeGraph
                   :nodes="structureNodes"
                   active-id="n2"
                 />
               </HudBracketFrame>
-              <HudRingGauge
-                :value="72"
-                label="CORE"
-              />
-              <HudSegmentedBar
-                :segments="6"
-                :active="4"
-                label="LOAD"
-              />
+              <div class="flex flex-wrap gap-2">
+                <HudRingGauge
+                  :value="72"
+                  label="CORE"
+                />
+                <HudSegmentedBar
+                  :segments="6"
+                  :active="4"
+                  label="LOAD"
+                />
+              </div>
             </div>
           </template>
 
           <template #tr>
             <div class="flex w-full max-w-xs flex-col gap-2">
+              <HudEcg
+                seed="FORGE-04"
+                :bpm="96"
+                label="PULSE"
+              />
               <HudWaveform
                 seed="FORGE-04"
                 :bars="20"
@@ -180,10 +218,20 @@ const structureNodes = [
                   :right="{ label: 'BUS B', value: '23.8V' }"
                 />
               </HudBracketFrame>
-              <div class="h-6 w-24">
-                <HudConduit
-                  orientation="h"
-                  label="CORE"
+              <div class="flex flex-wrap items-center justify-center gap-3">
+                <div class="h-6 w-24">
+                  <HudConduit
+                    orientation="h"
+                    label="CORE"
+                  />
+                </div>
+                <HudScope
+                  :magnification="4"
+                  :mil-dots="3"
+                />
+                <HudCircleText
+                  text="FORGE-04 • FORGE-04 • "
+                  :size="56"
                 />
               </div>
             </div>
@@ -209,6 +257,10 @@ const structureNodes = [
                 label="REACTOR BAY"
                 active
               />
+              <HudThreatPanel
+                level="high"
+                designation="SEC-07"
+              />
             </div>
           </template>
 
@@ -227,6 +279,11 @@ const structureNodes = [
                 <HudPacketLoss :percent="3.2" />
               </div>
               <HudPulseReadout :bpm="82" />
+              <HudCallout
+                label="ANOMALY"
+                detail="SEE LOG 032"
+                direction="left"
+              />
             </div>
           </template>
         </HudSheet>
