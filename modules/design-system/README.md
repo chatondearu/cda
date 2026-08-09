@@ -76,7 +76,9 @@ missing) lives in `docs/superpowers/plans/2026-08-10-hud-forge-modules-map.md`.
 - `hud/boxes/`: `HudStatusLine`, `HudAccessBanner`, `HudCornerMarks`, `HudBracketFrame`, `HudBadge`, `HudSerialBlock`,
   `HudStatusBox`, `HudTable`, `HudChips`, `HudLabelBox`
 - `hud/codes/`: `HudBarcodeStrip`, `HudAsciiBlock`, `HudScanBuffer`, `HudDenseBar`, `HudQrCode`, `HudBlockArt`
-- `hud/icons/`: — (empty, gap-fill in Lot 19)
+- `hud/icons/`: `HudIcon` (geometric variants: diamond, chevron, hash, triangle, cross, ring), `HudGlyph`
+  (abstract sigil/rune/circuit marks), `HudIconLabel` (bracket label row pairing a `HudIcon` with a
+  label/value)
 - `hud/charts/`: `HudWaveform`, `HudRingGauge`, `HudPulseReadout`
 - `hud/aiming/`: `HudTargetLock`, `HudCrosshair`, `HudCompass`, `HudRadarRing`, `HudWarningPlate`, `HudNodeGraph`, `HudAngleReadout`, `HudReticle`, `HudTickLadder`, `HudConduit`
 - `hud/specimen/`: `HudChecksumStamp`, `HudBuildStamp`, `HudMeterBar`, `HudSegmentedBar`, `HudDualBus`, `HudCoordReadout`, `HudPacketLoss`
