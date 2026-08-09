@@ -73,7 +73,8 @@ missing) lives in `docs/superpowers/plans/2026-08-10-hud-forge-modules-map.md`.
 
 - `hud/text/`: `HudNoiseLabel`, `HudOrgLabel`, `HudCodeReadout`, `HudLogStream`, `HudRefCode`, `HudHeader`,
   `HudBigNum`, `HudKanji`, `HudBracketWord`, `HudLetterChips`, `HudCircleText`
-- `hud/boxes/`: `HudStatusLine`, `HudAccessBanner`, `HudCornerMarks`, `HudBracketFrame`, `HudBadge`, `HudSerialBlock`
+- `hud/boxes/`: `HudStatusLine`, `HudAccessBanner`, `HudCornerMarks`, `HudBracketFrame`, `HudBadge`, `HudSerialBlock`,
+  `HudStatusBox`, `HudTable`, `HudChips`, `HudLabelBox`
 - `hud/codes/`: `HudBarcodeStrip`, `HudAsciiBlock`, `HudScanBuffer`
 - `hud/icons/`: — (empty, gap-fill in Lot 19)
 - `hud/charts/`: `HudWaveform`, `HudRingGauge`, `HudPulseReadout`
