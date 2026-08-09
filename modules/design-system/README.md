@@ -60,16 +60,24 @@ same mechanism as the dark/light sync. See `HUD / Motion` for a live demo strip.
 ## V1 Component Inventory
 
 - Foundations: `UiPageFrame`, `UiSectionHeader`, `UiDotGridOverlay`
-- HUD (micro-graphics): `HudNoiseLabel`, `HudRefCode`, `HudCornerMarks`, `HudCrosshair`, `HudStatusLine`, `HudLogStream`, `HudMeterBar`, `HudCodeReadout`, `HudCompass`, `HudReticle`, `HudTargetLock`, `HudBadge`, `HudSerialBlock`, `HudAccessBanner`, `HudOrgLabel`, `HudAsciiBlock`, `HudScanBuffer`, `HudBarcodeStrip`
-- HUD (composites): `HudTelemetryCluster`, `HudCornerStack`, `HudDiagPanel`
-- HUD (sheet): `HudSheet`
-- HUD (motion): global `useHudMotion` switch wired into `HudMeterBar`, `HudLogStream`, `HudScanBuffer`, `HudTargetLock`, `HudCrosshair`, `HudBarcodeStrip`, `HudPulseReadout` — see `HUD / Motion` story
-- HUD (gauges): `HudRingGauge`, `HudSegmentedBar`, `HudDualBus`
-- HUD (signal): `HudWaveform`, `HudRadarRing`, `HudTickLadder`
-- HUD (data readouts): `HudCoordReadout`, `HudAngleReadout`, `HudPacketLoss`, `HudPulseReadout`
-- HUD (marks & stamps): `HudWarningPlate`, `HudChecksumStamp`, `HudBuildStamp`, `HudHotZone`
-- HUD (structure): `HudNodeGraph`, `HudBracketFrame`, `HudConduit` — see `HUD / ForgeSheetDemo` for a dense composite sheet assembling gauges, signal, and marks components (mobile stack still works)
 - Actions and Inputs: `UiButton`, `UiCommandInput`, `UiStatusChip`
 - Navigation: `UiTopBar`, `UiSideNav`, `UiMobileDockNav`, `UiFooterLinks`
 - Content Modules: `UiHeroCommand`, `UiTimeline`, `UiTimelineItem`, `UiArchiveCard`, `UiCassetteDeck`, `UiProgressReadout`
 - Overlay and Feedback: `UiGlassDiagnosticPanel`, `UiSystemBadge`
+
+### HUD (`app/components/hud/*`, organized by Forge module category)
+
+Nested one level deep (`hud/<category>/HudName.vue`) with `pathPrefix: false` in `nuxt.config.ts`, so
+auto-import names stay short (`HudCrosshair`, not `HudAimingCrosshair`). Full Forge↔Hud mapping (covered +
+missing) lives in `docs/superpowers/plans/2026-08-10-hud-forge-modules-map.md`.
+
+- `hud/text/`: `HudNoiseLabel`, `HudOrgLabel`, `HudCodeReadout`, `HudLogStream`, `HudRefCode`
+- `hud/boxes/`: `HudStatusLine`, `HudAccessBanner`, `HudCornerMarks`, `HudBracketFrame`, `HudBadge`, `HudSerialBlock`
+- `hud/codes/`: `HudBarcodeStrip`, `HudAsciiBlock`, `HudScanBuffer`
+- `hud/icons/`: — (empty, gap-fill in Lot 19)
+- `hud/charts/`: `HudWaveform`, `HudRingGauge`, `HudPulseReadout`
+- `hud/aiming/`: `HudTargetLock`, `HudCrosshair`, `HudCompass`, `HudRadarRing`, `HudWarningPlate`, `HudNodeGraph`, `HudAngleReadout`, `HudReticle`, `HudTickLadder`, `HudConduit`
+- `hud/specimen/`: `HudChecksumStamp`, `HudBuildStamp`, `HudMeterBar`, `HudSegmentedBar`, `HudDualBus`, `HudCoordReadout`, `HudPacketLoss`
+- `hud/tactical/`: `HudHotZone`
+- `hud/composites/`: `HudTelemetryCluster`, `HudCornerStack`, `HudDiagPanel`, `HudSheet`, `ForgeSheetDemo` (dense composite sheet assembling gauges, signal, and marks components — mobile stack still works), `HudMotion` (story-only motion demo strip)
+- HUD (motion): global `useHudMotion` switch wired into `HudMeterBar`, `HudLogStream`, `HudScanBuffer`, `HudTargetLock`, `HudCrosshair`, `HudBarcodeStrip`, `HudPulseReadout` — see `HUD / COMPOSITES / Motion` story
