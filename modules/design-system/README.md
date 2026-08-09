@@ -71,7 +71,8 @@ Nested one level deep (`hud/<category>/HudName.vue`) with `pathPrefix: false` in
 auto-import names stay short (`HudCrosshair`, not `HudAimingCrosshair`). Full Forge↔Hud mapping (covered +
 missing) lives in `docs/superpowers/plans/2026-08-10-hud-forge-modules-map.md`.
 
-- `hud/text/`: `HudNoiseLabel`, `HudOrgLabel`, `HudCodeReadout`, `HudLogStream`, `HudRefCode`
+- `hud/text/`: `HudNoiseLabel`, `HudOrgLabel`, `HudCodeReadout`, `HudLogStream`, `HudRefCode`, `HudHeader`,
+  `HudBigNum`, `HudKanji`, `HudBracketWord`, `HudLetterChips`, `HudCircleText`
 - `hud/boxes/`: `HudStatusLine`, `HudAccessBanner`, `HudCornerMarks`, `HudBracketFrame`, `HudBadge`, `HudSerialBlock`
 - `hud/codes/`: `HudBarcodeStrip`, `HudAsciiBlock`, `HudScanBuffer`
 - `hud/icons/`: — (empty, gap-fill in Lot 19)
