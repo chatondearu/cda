@@ -54,8 +54,14 @@ to close remaining BOXES density gaps.
 |----------|---------------|--------|
 | barcode | `HudBarcodeStrip` | Covered |
 | noise | `HudAsciiBlock`, `HudScanBuffer` | Covered |
+| densebar | `HudDenseBar` | Covered (Lot 18) |
+| qrcode | `HudQrCode` | Covered (Lot 18) |
+| blockart | `HudBlockArt` | Covered (Lot 18) |
 
-Gap-fill candidates: TBD in Lot 18.
+Lot 18 gap fill complete — `HudDenseBar` (multi-row seeded density strip), `HudQrCode` (pure-SVG seeded
+matrix with QR-style finder patterns, from `payload` or `seed`), `HudBlockArt` (seeded, optionally
+mirrored identicon-style block grid via `useHudSeed`) added to close remaining CODES density gaps (no
+further CODES Forge ids outstanding).
 
 ## ICONS
 

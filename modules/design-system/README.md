@@ -22,7 +22,7 @@ Nuxt layer for the `CDA_LAB` / Logical Machine design system (CDA: ChatonDeAru).
 - `app/components/hud/*`: micro-graphic HUD primitives (decorative density).
 - `app/composables/useSystemData.ts`: starter data contracts and mock content.
 - `app/composables/useThemeMode.ts`: single source for theme mode state, persistence, and html class toggling.
-- `app/composables/useHudSeed.ts`: deterministic seed hashing/PRNG helpers for HUD noise components (`HudAsciiBlock`, `HudBarcodeStrip`, `HudWaveform`).
+- `app/composables/useHudSeed.ts`: deterministic seed hashing/PRNG helpers for HUD noise components (`HudAsciiBlock`, `HudBarcodeStrip`, `HudWaveform`, `HudDenseBar`, `HudQrCode`, `HudBlockArt`).
 - `app/composables/useHudMotion.ts`: single source for the global HUD animation switch (`hud-motion` / `hud-motion-off` html class, `localStorage['cda-hud-motion']`); `prefers-reduced-motion` always wins.
 
 ## Theme Guardrails
@@ -75,7 +75,7 @@ missing) lives in `docs/superpowers/plans/2026-08-10-hud-forge-modules-map.md`.
   `HudBigNum`, `HudKanji`, `HudBracketWord`, `HudLetterChips`, `HudCircleText`
 - `hud/boxes/`: `HudStatusLine`, `HudAccessBanner`, `HudCornerMarks`, `HudBracketFrame`, `HudBadge`, `HudSerialBlock`,
   `HudStatusBox`, `HudTable`, `HudChips`, `HudLabelBox`
-- `hud/codes/`: `HudBarcodeStrip`, `HudAsciiBlock`, `HudScanBuffer`
+- `hud/codes/`: `HudBarcodeStrip`, `HudAsciiBlock`, `HudScanBuffer`, `HudDenseBar`, `HudQrCode`, `HudBlockArt`
 - `hud/icons/`: — (empty, gap-fill in Lot 19)
 - `hud/charts/`: `HudWaveform`, `HudRingGauge`, `HudPulseReadout`
 - `hud/aiming/`: `HudTargetLock`, `HudCrosshair`, `HudCompass`, `HudRadarRing`, `HudWarningPlate`, `HudNodeGraph`, `HudAngleReadout`, `HudReticle`, `HudTickLadder`, `HudConduit`
