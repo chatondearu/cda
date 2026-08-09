@@ -86,6 +86,7 @@ missing) lives in `docs/superpowers/plans/2026-08-10-hud-forge-modules-map.md`.
 - `hud/specimen/`: `HudChecksumStamp`, `HudBuildStamp`, `HudMeterBar`, `HudSegmentedBar`, `HudDualBus`, `HudCoordReadout`, `HudPacketLoss`,
   `HudGlobe`, `HudCompliance`, `HudBigArrow`, `HudSpecLabel`, `HudWindow`, `HudFileTree`, `HudEmblems`, `HudIndexNum`, `HudCallout`,
   `HudCareTags`
-- `hud/tactical/`: `HudHotZone`
+- `hud/tactical/`: `HudHotZone`, `HudMilSymbol`, `HudPlacard`, `HudSafetySign`, `HudMilGrid`, `HudThreatPanel`,
+  `HudComms`
 - `hud/composites/`: `HudTelemetryCluster`, `HudCornerStack`, `HudDiagPanel`, `HudSheet`, `ForgeSheetDemo` (dense composite sheet assembling gauges, signal, and marks components — mobile stack still works), `HudMotion` (story-only motion demo strip)
 - HUD (motion): global `useHudMotion` switch wired into `HudMeterBar`, `HudLogStream`, `HudScanBuffer`, `HudTargetLock`, `HudCrosshair`, `HudBarcodeStrip`, `HudPulseReadout` — see `HUD / COMPOSITES / Motion` story

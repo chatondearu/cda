@@ -165,8 +165,21 @@ remaining SPECIMEN density gaps (no further SPECIMEN Forge ids outstanding).
 | Forge id | Hud component | Status |
 |----------|---------------|--------|
 | hotzone | `HudHotZone` | Covered |
+| milsymbol | `HudMilSymbol` | Covered (Lot 23) |
+| placard | `HudPlacard` | Covered (Lot 23) |
+| safetysign | `HudSafetySign` | Covered (Lot 23) |
+| milgrid | `HudMilGrid` | Covered (Lot 23) |
+| threatpanel | `HudThreatPanel` | Covered (Lot 23) |
+| comms | `HudComms` | Covered (Lot 23) |
 
-Gap-fill candidates: TBD in Lot 23.
+Lot 23 gap fill complete — `HudMilSymbol` (APP-6-style affiliation frame: friend/hostile/neutral/unknown,
+with optional echelon/designation text), `HudPlacard` (riveted equipment nameplate: title/code/spec lines,
+tone-coded border), `HudSafetySign` (ISO-style pictogram sign: mandatory/prohibition/warning/info shapes),
+`HudMilGrid` (MGRS-style grid reference readout: lettered/numbered cell matrix with a highlighted target
+cell), `HudThreatPanel` (segmented threat-level ladder: low/moderate/high/critical, pulsing top segment at
+critical), `HudComms` (comms channel panel: frequency readout, segmented signal bars, encrypted indicator,
+link/no-link/scanning status) added to close remaining TACTICAL density gaps (no further TACTICAL Forge ids
+outstanding).
 
 ## COMPOSITES (cross-category assemblies)
 
