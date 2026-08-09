@@ -23,8 +23,15 @@ text/ boxes/ codes/ icons/ charts/ aiming/ specimen/ tactical/ composites/
 | hexcode | `HudCodeReadout` | Covered |
 | termlog | `HudLogStream` | Covered |
 | refcode | `HudRefCode` | Covered |
+| header | `HudHeader` | Covered (Lot 16) |
+| bignum | `HudBigNum` | Covered (Lot 16) |
+| kanji/glyph | `HudKanji` | Covered (Lot 16) |
+| bracketword | `HudBracketWord` | Covered (Lot 16) |
+| letterchips | `HudLetterChips` | Covered (Lot 16) |
+| circletext | `HudCircleText` | Covered (Lot 16) |
 
-Gap-fill candidates: TBD in Lot 16 (no additional TEXT Forge ids identified in the stacked plan).
+Lot 16 gap fill complete — `HudHeader`, `HudBigNum`, `HudKanji`, `HudBracketWord`, `HudLetterChips`,
+`HudCircleText` added to close remaining TEXT density gaps (no further TEXT Forge ids outstanding).
 
 ## BOXES
 
