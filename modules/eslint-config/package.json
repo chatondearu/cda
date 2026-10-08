@@ -13,8 +13,8 @@
     "access": "public"
   },
   "dependencies": {
-    "@antfu/eslint-config": "latest",
-    "@unocss/eslint-plugin": "latest"
+    "@antfu/eslint-config": "8.2.0",
+    "@unocss/eslint-plugin": "66.6.8"
   },
   "peerDependencies": {
     "eslint": "^9.0.0"

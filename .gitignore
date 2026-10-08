@@ -28,3 +28,4 @@ logs
 
 # One-off Firestore migration dumps (may contain sensitive data)
 tmp/
+.orch/
