@@ -1,23 +1,8 @@
 <script setup lang="ts">
-import HudBadge from '../boxes/HudBadge.vue'
-import HudChips from '../boxes/HudChips.vue'
-import HudStatusBox from '../boxes/HudStatusBox.vue'
-import HudBarcodeStrip from '../codes/HudBarcodeStrip.vue'
-import HudQrCode from '../codes/HudQrCode.vue'
-import HudRingGauge from '../charts/HudRingGauge.vue'
-import HudSparkline from '../charts/HudSparkline.vue'
-import HudCornerStack from './HudCornerStack.vue'
-import HudGlyph from '../icons/HudGlyph.vue'
-import HudIcon from '../icons/HudIcon.vue'
-import HudEmblems from '../specimen/HudEmblems.vue'
-import HudWindow from '../specimen/HudWindow.vue'
-import HudComms from '../tactical/HudComms.vue'
-import HudPlacard from '../tactical/HudPlacard.vue'
-import HudBigNum from '../text/HudBigNum.vue'
-import HudCircleText from '../text/HudCircleText.vue'
-import HudCompass from '../aiming/HudCompass.vue'
-import HudScope from '../aiming/HudScope.vue'
-
+/**
+ * Forge catalog index (Histoire). Template kept minimal so vue-tsc stays happy
+ * with large group lists; full interactive previews live in per-component stories.
+ */
 interface ForgeGroup {
   id: string
   folder: string
@@ -101,122 +86,6 @@ const groups: ForgeGroup[] = [
             <span class="font-mono text-xs font-bold uppercase tracking-[0.2em] text-primary">{{ group.title }}</span>
             <span class="font-mono text-[9px] uppercase tracking-widest text-primary/40">{{ group.folder }} — {{ group.names.length }}</span>
           </div>
-
-          <div
-            v-if="group.id === 'text'"
-            class="flex flex-wrap items-center gap-4 py-1"
-          >
-            <HudBigNum
-              value="11"
-              label="MODULES"
-            />
-            <HudCircleText
-              text="TEXT • TEXT • "
-              :size="48"
-            />
-          </div>
-          <div
-            v-else-if="group.id === 'boxes'"
-            class="flex flex-wrap items-center gap-3 py-1"
-          >
-            <HudStatusBox
-              title="AUX"
-              status="nominal"
-            />
-            <HudChips :chips="[{ label: 'Uplink', status: 'active' }, { label: 'Aux', status: 'idle' }]" />
-            <HudBadge
-              id="X-04"
-              label="UNIT"
-            />
-          </div>
-          <div
-            v-else-if="group.id === 'codes'"
-            class="flex flex-wrap items-center gap-3 py-1"
-          >
-            <HudQrCode
-              payload="CDA-CATALOG-24"
-              :size="56"
-            />
-            <HudBarcodeStrip
-              seed="CATALOG-24"
-              :bars="24"
-            />
-          </div>
-          <div
-            v-else-if="group.id === 'icons'"
-            class="flex flex-wrap items-center gap-4 py-1"
-          >
-            <HudIcon
-              variant="hash"
-              size="lg"
-            />
-            <HudIcon
-              variant="ring"
-              size="lg"
-              tone="warning"
-            />
-            <HudGlyph
-              variant="circuit"
-              size="lg"
-            />
-          </div>
-          <div
-            v-else-if="group.id === 'charts'"
-            class="flex flex-wrap items-center gap-3 py-1"
-          >
-            <HudSparkline seed="CATALOG-24" />
-            <HudRingGauge
-              :value="64"
-              label="IDX"
-            />
-          </div>
-          <div
-            v-else-if="group.id === 'aiming'"
-            class="flex flex-wrap items-center gap-4 py-1"
-          >
-            <HudCompass
-              :heading="220"
-              label="HDG"
-            />
-            <HudScope :magnification="2" />
-          </div>
-          <div
-            v-else-if="group.id === 'specimen'"
-            class="flex flex-wrap items-center gap-3 py-1"
-          >
-            <HudWindow
-              title="CATALOG.SYS"
-              status="active"
-            >
-              <span class="font-mono text-[9px] uppercase tracking-widest text-primary/50">Index ready</span>
-            </HudWindow>
-            <HudEmblems :emblems="[{ variant: 'seal', label: 'SEAL', active: true }, { variant: 'node', label: 'NODE' }]" />
-          </div>
-          <div
-            v-else-if="group.id === 'tactical'"
-            class="flex flex-wrap items-center gap-3 py-1"
-          >
-            <HudPlacard
-              title="CATALOG UNIT"
-              code="REF.024-A"
-              spec="LOT 24 // FINAL"
-            />
-            <HudComms
-              channel="CH.24 CAT"
-              :signal="4"
-              status="link"
-            />
-          </div>
-          <div
-            v-else-if="group.id === 'composites'"
-            class="flex flex-wrap items-center gap-3 py-1"
-          >
-            <HudCornerStack
-              :org="{ name: 'FORGE CATALOG', meta: 'LOT 24' }"
-              :serial="{ serial: 'CAT-2026-24' }"
-            />
-          </div>
-
           <div class="flex flex-wrap gap-1.5">
             <span
               v-for="name in group.names"
