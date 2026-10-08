@@ -27,6 +27,8 @@
   },
   "devDependencies": {
     "@chatondearu/eslint-config": "workspace:*",
-    "eslint": "^9.0.0"
+    "eslint": "^9.0.0",
+    "typescript": "6.0.2",
+    "vue-tsc": "3.3.12"
   }
 }

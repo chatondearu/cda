@@ -63,6 +63,14 @@ const passthroughAttrs = computed(() => {
   const { class: _drop, ...rest } = attrs as Record<string, unknown>
   return rest
 })
+
+// Resolve href in script — template attrs access is typed as unknown under vue-tsc 3
+const linkHref = computed(() => {
+  if (props.href)
+    return props.href
+  const fromAttrs = (attrs as Record<string, unknown>).href
+  return typeof fromAttrs === 'string' ? fromAttrs : undefined
+})
 </script>
 
 <template>
@@ -70,7 +78,7 @@ const passthroughAttrs = computed(() => {
     v-if="isLink"
     v-bind="passthroughAttrs"
     :to="localizedTo"
-    :href="props.href ?? attrs.href"
+    :href="linkHref"
     :class="mergedClass"
   >
     <slot />
