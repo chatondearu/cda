@@ -22,8 +22,8 @@ const featuredArchiveItems = computed(() =>
 
 if (isMeSubdomain) {
   useSeoMeta({
-    title: t('home.meSeoTitle'),
-    description: t('home.meSeoDescription'),
+    title: () => t('home.meSeoTitle'),
+    description: () => t('home.meSeoDescription'),
     robots: 'noindex, nofollow',
   })
 
@@ -37,6 +37,12 @@ if (isMeSubdomain) {
         href: `https://${meHost}/`,
       },
     ],
+  })
+}
+else {
+  usePageSeo({
+    title: () => t('home.seoTitle'),
+    description: () => t('home.seoDescription'),
   })
 }
 </script>

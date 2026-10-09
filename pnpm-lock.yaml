@@ -27,7 +27,7 @@ importers:
         specifier: ^10.1.2
         version: 10.2.4(@emnapi/core@1.10.0)(@emnapi/runtime@1.10.0)(@vue/compiler-dom@3.5.41)(db0@0.3.4(better-sqlite3@12.9.0)(drizzle-orm@0.45.2(@opentelemetry/api@1.9.0)(@types/pg@8.20.0)(better-sqlite3@12.9.0)(kysely@0.28.16)(pg@8.20.0)))(eslint@9.39.4(jiti@2.6.1))(ioredis@5.10.1)(magicast@0.5.2)(rollup@4.60.1)(typescript@5.8.3)(vue@3.5.32(typescript@5.8.3))
       better-auth:
-        specifier: 1.6.9
+        specifier: latest
         version: 1.6.9(@opentelemetry/api@1.9.0)(better-sqlite3@12.9.0)(drizzle-kit@0.31.10)(drizzle-orm@0.45.2(@opentelemetry/api@1.9.0)(@types/pg@8.20.0)(better-sqlite3@12.9.0)(kysely@0.28.16)(pg@8.20.0))(pg@8.20.0)(vue@3.5.32(typescript@5.8.3))
       jspdf:
         specifier: ^4.2.1
@@ -3390,8 +3390,8 @@ packages:
   alien-signals@1.0.13:
     resolution: {integrity: sha512-OGj9yyTnJEttvzhTUWuscOvtqxq5vrhF7vL9oS0xJ2mK0ItPYP1/y+vCFebfxoEyAz0++1AIwJ5CMr+Fk3nDmg==}
 
-  alien-signals@3.1.2:
-    resolution: {integrity: sha512-d9dYqZTS90WLiU0I5c6DHj/HcKkF8ZyGN3G5x8wSbslulz70KOxaqCT0hQCo9KOyhVqzqGojvNdJXoTumZOtcw==}
+  alien-signals@3.2.1:
+    resolution: {integrity: sha512-I8FjmltrfnDFoZedi5CG8DghVYNhzb/Ijluz7tCSJH0xpd0484Kowhbb1XDYOxfJpU1p5wnM2X54dA+IfGyD1g==}
 
   ansi-regex@5.0.1:
     resolution: {integrity: sha512-quJQXlTSUGL2LH9SUXo8VwsY4soanhgo6LNSm84E1LBcE8s3O0wpdiRzyR9z/ZZJMlMWv37qOOb9pdJlMUEKFQ==}
@@ -10843,7 +10843,7 @@ snapshots:
       '@volar/language-core': 2.4.28
       '@vue/compiler-dom': 3.5.41
       '@vue/shared': 3.5.41
-      alien-signals: 3.1.2
+      alien-signals: 3.2.1
       muggle-string: 0.4.1
       path-browserify: 1.0.1
       picomatch: 4.0.4
@@ -11057,7 +11057,7 @@ snapshots:
 
   alien-signals@1.0.13: {}
 
-  alien-signals@3.1.2: {}
+  alien-signals@3.2.1: {}
 
   ansi-regex@5.0.1: {}
 
