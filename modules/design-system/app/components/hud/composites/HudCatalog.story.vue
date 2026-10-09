@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import HudCatalogGroupRow from './HudCatalogGroupRow.vue'
+
 interface ForgeGroup {
   id: string
   folder: string
@@ -73,24 +75,11 @@ const groups: ForgeGroup[] = [
           <span class="font-mono text-[9px] uppercase tracking-widest text-primary/40">{{ groups.length }} GROUPS</span>
         </div>
 
-        <div
-          v-for="entry in groups"
-          :key="entry.id"
-          class="flex flex-col gap-2 border border-t-0 border-outline_variant/20 bg-surface_container_lowest px-4 py-3"
-        >
-          <div class="flex items-baseline justify-between">
-            <span class="font-mono text-xs font-bold uppercase tracking-[0.2em] text-primary">{{ entry.title }}</span>
-            <span class="font-mono text-[9px] uppercase tracking-widest text-primary/40">{{ entry.folder }} — {{ entry.names.length }}</span>
-          </div>
-
-          <div class="flex flex-wrap gap-1.5">
-            <span
-              v-for="chipName in entry.names"
-              :key="chipName"
-              class="border border-outline_variant/25 px-1.5 py-0.5 font-mono text-[9px] uppercase tracking-wide text-primary/60"
-            >{{ chipName }}</span>
-          </div>
-        </div>
+        <HudCatalogGroupRow
+          v-for="forgeGroup in groups"
+          :key="forgeGroup.id"
+          :group="forgeGroup"
+        />
       </div>
     </Variant>
   </Story>
