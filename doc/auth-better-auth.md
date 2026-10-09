@@ -13,6 +13,9 @@ This project uses Better Auth as a **Twitch-first community gateway** with:
 Public showcase pages remain usable without auth; restricted modules go through
 this login terminal (`/login`).
 
+**Career CV access is separate:** a Twitch/Discord community session does **not**
+unlock `/rx-quiet/catnip-buffer/career`. See [`doc/career-access.md`](./career-access.md).
+
 ## Server wiring
 
 - Auth config: `modules/app/server/utils/auth.ts`

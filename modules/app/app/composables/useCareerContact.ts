@@ -8,27 +8,44 @@ export interface CareerContactFields {
   location: string
 }
 
+const emptyContact: CareerContactFields = {
+  fullName: '',
+  email: '',
+  phone: '',
+  location: '',
+}
+
 /**
- * Career contact strings from runtime config (.env / deployment env).
- * Uses NUXT_PUBLIC_* keys — values are inlined for client-side PDF export (not secret from the browser).
+ * Career contact strings from the server-only API (requires CV grant).
+ * PII is not exposed via NUXT_PUBLIC_* runtime config.
  */
 export function useCareerContact(): {
   contact: ComputedRef<CareerContactFields>
   hasContact: ComputedRef<boolean>
+  pending: ComputedRef<boolean>
 } {
-  const config = useRuntimeConfig()
+  const requestFetch = useRequestFetch()
+  const { data, status } = useAsyncData(
+    'career-contact',
+    async () => {
+      try {
+        return await requestFetch<CareerContactFields>('/api/career/contact')
+      }
+      catch {
+        return emptyContact
+      }
+    },
+    { default: () => emptyContact },
+  )
 
-  const contact = computed<CareerContactFields>(() => ({
-    fullName: String(config.public.careerFullName ?? '').trim(),
-    email: String(config.public.careerEmail ?? '').trim(),
-    phone: String(config.public.careerPhone ?? '').trim(),
-    location: String(config.public.careerLocation ?? '').trim(),
-  }))
+  const contact = computed<CareerContactFields>(() => data.value ?? emptyContact)
 
   const hasContact = computed(() => {
     const c = contact.value
-    return Boolean(c.email || c.phone || c.location)
+    return Boolean(c.email || c.phone || c.location || c.fullName)
   })
 
-  return { contact, hasContact }
+  const pending = computed(() => status.value === 'pending')
+
+  return { contact, hasContact, pending }
 }

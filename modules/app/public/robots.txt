@@ -1,1 +1,22 @@
+# Crawl policy for chatondearu.fr (public showcase).
+# Auth / career surfaces also use noindex meta and route headers.
+# Sitemap generation is intentionally deferred (follow-up).
 
+User-agent: *
+Allow: /
+
+Disallow: /rx-quiet/
+Disallow: /login
+Disallow: /account
+
+Disallow: /en/rx-quiet/
+Disallow: /en/login
+Disallow: /en/account
+
+Disallow: /zh/rx-quiet/
+Disallow: /zh/login
+Disallow: /zh/account
+
+Disallow: /ja/rx-quiet/
+Disallow: /ja/login
+Disallow: /ja/account

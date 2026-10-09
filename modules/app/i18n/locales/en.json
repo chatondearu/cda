@@ -26,6 +26,15 @@
       "archive": "CORE_DUMP"
     }
   },
+  "privacy": {
+    "umami": {
+      "ariaLabel": "Analytics consent",
+      "title": "TELEMETRY_GATE // UMAMI",
+      "body": "Optional privacy-friendly analytics (Umami) may run on this host. Accept to load the script; decline keeps tracking off. Choice is stored locally.",
+      "accept": "ACCEPT",
+      "decline": "DECLINE"
+    }
+  },
   "nav": {
     "home": "HOME_BASE",
     "timeline": "TIMELINE_LOG",
@@ -71,6 +80,7 @@
     }
   },
   "timeline": {
+    "seoTitle": "CHRONO_LOG // CHATONDEARU",
     "seoDescription": "Timeline of ChatonDeAru's creator journey.",
     "heroDescription": "The moments that mattered: start, peaks, pause, and Twitch comeback prep.",
     "sectionTitle": "LOGIC_FLOW_CHRONO",
@@ -111,7 +121,24 @@
     "requestAccess": "REQUEST_CV_ACCESS",
     "openContact": "OPEN_CONTACT_CHANNEL",
     "detailTitle": "CAREER_ENTRY_DETAIL",
-    "missing": "ENTRY NOT FOUND"
+    "missing": "ENTRY NOT FOUND",
+    "access": {
+      "seoTitle": "CV_GATE // ACCESS",
+      "seoDescription": "Protected access to the professional log.",
+      "titleLine1": "SIDE_CHANNEL_LOCK",
+      "titleLine3": "CREDENTIAL_REQUIRED",
+      "description": "This CV surface requires an access token or an explicitly allowlisted account. Community Twitch login does not unlock the CV.",
+      "tokenSection": "REDEEM_TOKEN",
+      "tokenHint": "GRANT ≠ SESSION",
+      "communityNotEnough": "A Twitch / Discord community session is not enough. Use the provided token, or an account on the CV allowlist.",
+      "tokenLabel": "ACCESS_TOKEN",
+      "tokenPlaceholder": "paste token",
+      "tokenSubmit": "UNLOCK_CV",
+      "tokenSubmitting": "VERIFYING…",
+      "tokenRequired": "Token required.",
+      "tokenInvalid": "Invalid or expired token.",
+      "backHome": "RETURN_BASE"
+    }
   },
   "ui": {
     "diagnosticVersion": "DIAGNOSTIC_v4.2",

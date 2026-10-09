@@ -26,6 +26,15 @@
       "archive": "CORE_DUMP"
     }
   },
+  "privacy": {
+    "umami": {
+      "ariaLabel": "分析の同意",
+      "title": "TELEMETRY_GATE // UMAMI",
+      "body": "このホストでは任意のプライバシー配慮型分析（Umami）を有効にできます。同意するとスクリプトを読み込み、拒否すると追跡しません。選択はローカルに保存されます。",
+      "accept": "同意する",
+      "decline": "拒否する"
+    }
+  },
   "nav": {
     "home": "ホーム",
     "timeline": "タイムライン",
@@ -71,6 +80,7 @@
     }
   },
   "timeline": {
+    "seoTitle": "CHRONO_LOG // CHATONDEARU",
     "seoDescription": "ChatonDeAru のクリエイター年表。",
     "heroDescription": "始まり、ピーク、休止、そしてTwitch復帰準備までの重要な節目。",
     "sectionTitle": "LOGIC_FLOW_CHRONO",
@@ -111,7 +121,24 @@
     "requestAccess": "CVアクセスを申請",
     "openContact": "連絡チャネルを開く",
     "detailTitle": "CAREER_ENTRY_DETAIL",
-    "missing": "ENTRY NOT FOUND"
+    "missing": "ENTRY NOT FOUND",
+    "access": {
+      "seoTitle": "CV_GATE // ACCESS",
+      "seoDescription": "職務経歴ログへの保護されたアクセス。",
+      "titleLine1": "SIDE_CHANNEL_LOCK",
+      "titleLine3": "CREDENTIAL_REQUIRED",
+      "description": "このCV面にはアクセストークン、または明示的に許可されたアカウントが必要です。コミュニティのTwitchログインだけではCVは解除されません。",
+      "tokenSection": "REDEEM_TOKEN",
+      "tokenHint": "GRANT ≠ SESSION",
+      "communityNotEnough": "Twitch / Discordのコミュニティセッションだけでは不十分です。提供されたトークン、またはCV許可リスト上のアカウントを使用してください。",
+      "tokenLabel": "ACCESS_TOKEN",
+      "tokenPlaceholder": "トークンを貼り付け",
+      "tokenSubmit": "UNLOCK_CV",
+      "tokenSubmitting": "VERIFYING…",
+      "tokenRequired": "トークンが必要です。",
+      "tokenInvalid": "無効または期限切れのトークンです。",
+      "backHome": "RETURN_BASE"
+    }
   },
   "ui": {
     "diagnosticVersion": "DIAGNOSTIC_v4.2",

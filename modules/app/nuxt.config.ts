@@ -3,6 +3,20 @@ import process from 'node:process'
 export default defineNuxtConfig({
   extends: ['../design-system'],
   runtimeConfig: {
+    /**
+     * Server-only career PII + grant controls (NUXT_CAREER_*).
+     * Never mirror these under `public` — contact is served via /api/career/contact after grant.
+     */
+    careerFullName: '',
+    careerEmail: '',
+    careerPhone: '',
+    careerLocation: '',
+    /** Comma-separated one-time / shared CV unlock tokens */
+    careerAccessTokens: '',
+    /** Comma-separated auth user emails or ids allowed to view CV (session alone is not enough) */
+    careerAllowlist: '',
+    /** Optional HMAC secret for the CV grant cookie; falls back to BETTER_AUTH_SECRET */
+    careerAccessSecret: '',
     public: {
       /** Canonical primary site URL — set with NUXT_PUBLIC_SITE_URL */
       siteUrl: 'https://chatondearu.fr',
@@ -14,11 +28,6 @@ export default defineNuxtConfig({
       redirectHostsEn: '',
       /** Dedicated host used for the CV access gateway — set with NUXT_PUBLIC_ME_HOST */
       meHost: 'rlienard.fr',
-      /** Set via NUXT_PUBLIC_CAREER_* — keep real values in .env (gitignored), not in repo */
-      careerFullName: '',
-      careerEmail: '',
-      careerPhone: '',
-      careerLocation: '',
       /** Umami — NUXT_PUBLIC_UMAMI_*; omit or leave empty to disable tracking */
       umamiScriptUrl: '',
       umamiWebsiteId: '',
@@ -71,6 +80,41 @@ export default defineNuxtConfig({
   compatibilityDate: '2026-04-16',
   routeRules: {
     '/rx-quiet/catnip-buffer/career': {
+      headers: {
+        'x-robots-tag': 'noindex, nofollow',
+      },
+    },
+    '/rx-quiet/catnip-buffer/career/**': {
+      headers: {
+        'x-robots-tag': 'noindex, nofollow',
+      },
+    },
+    '/en/rx-quiet/catnip-buffer/career': {
+      headers: {
+        'x-robots-tag': 'noindex, nofollow',
+      },
+    },
+    '/en/rx-quiet/catnip-buffer/career/**': {
+      headers: {
+        'x-robots-tag': 'noindex, nofollow',
+      },
+    },
+    '/zh/rx-quiet/catnip-buffer/career': {
+      headers: {
+        'x-robots-tag': 'noindex, nofollow',
+      },
+    },
+    '/zh/rx-quiet/catnip-buffer/career/**': {
+      headers: {
+        'x-robots-tag': 'noindex, nofollow',
+      },
+    },
+    '/ja/rx-quiet/catnip-buffer/career': {
+      headers: {
+        'x-robots-tag': 'noindex, nofollow',
+      },
+    },
+    '/ja/rx-quiet/catnip-buffer/career/**': {
       headers: {
         'x-robots-tag': 'noindex, nofollow',
       },

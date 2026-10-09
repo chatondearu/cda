@@ -26,6 +26,15 @@
       "archive": "CORE_DUMP"
     }
   },
+  "privacy": {
+    "umami": {
+      "ariaLabel": "分析同意",
+      "title": "TELEMETRY_GATE // UMAMI",
+      "body": "本主机可启用可选的隐私友好分析（Umami）。接受后加载脚本；拒绝则保持关闭。选择保存在本地。",
+      "accept": "接受",
+      "decline": "拒绝"
+    }
+  },
   "nav": {
     "home": "主页",
     "timeline": "时间线",
@@ -71,6 +80,7 @@
     }
   },
   "timeline": {
+    "seoTitle": "CHRONO_LOG // CHATONDEARU",
     "seoDescription": "ChatonDeAru 创作历程时间线。",
     "heroDescription": "真正重要的阶段：起步、高峰、暂停，以及 Twitch 回归准备。",
     "sectionTitle": "逻辑流程时间线",
@@ -111,7 +121,24 @@
     "requestAccess": "申请访问简历",
     "openContact": "打开联系通道",
     "detailTitle": "履历条目详情",
-    "missing": "未找到条目"
+    "missing": "未找到条目",
+    "access": {
+      "seoTitle": "CV_GATE // ACCESS",
+      "seoDescription": "受保护的职业履历访问入口。",
+      "titleLine1": "SIDE_CHANNEL_LOCK",
+      "titleLine3": "CREDENTIAL_REQUIRED",
+      "description": "此简历页面需要访问令牌或明确列入允许名单的账户。社区 Twitch 登录不会自动解锁简历。",
+      "tokenSection": "REDEEM_TOKEN",
+      "tokenHint": "GRANT ≠ SESSION",
+      "communityNotEnough": "仅有 Twitch / Discord 社区会话不够。请使用提供的令牌，或使用简历允许名单中的账户。",
+      "tokenLabel": "ACCESS_TOKEN",
+      "tokenPlaceholder": "粘贴令牌",
+      "tokenSubmit": "UNLOCK_CV",
+      "tokenSubmitting": "VERIFYING…",
+      "tokenRequired": "需要令牌。",
+      "tokenInvalid": "令牌无效或已过期。",
+      "backHome": "RETURN_BASE"
+    }
   },
   "ui": {
     "diagnosticVersion": "DIAGNOSTIC_v4.2",
