@@ -34,10 +34,16 @@ are applied **automatically at container startup**.
 | `NUXT_PUBLIC_SITE_URL`   |   reco   | Canonical site URL.                                                |
 | `NUXT_PUBLIC_ME_HOST`    |    no    | Host for the CV access gateway.                                    |
 | `NUXT_PUBLIC_REDIRECT_HOSTS_EN` | no | Comma-separated hosts redirected to `/en`.                       |
-| `NUXT_PUBLIC_CAREER_*`   |    no    | CV/contact values inlined for PDF export.                          |
+| `NUXT_CAREER_FULL_NAME` / `EMAIL` / `PHONE` / `LOCATION` | no | Server-only CV contact PII (not `NUXT_PUBLIC_*`). |
+| `NUXT_CAREER_ACCESS_TOKENS` | no | Comma-separated CV unlock tokens.                               |
+| `NUXT_CAREER_ALLOWLIST`  |    no    | Comma-separated auth emails/ids allowed to view CV.                |
+| `NUXT_CAREER_ACCESS_SECRET` | no | Optional HMAC secret for CV grant cookie.                       |
 | `NUXT_PUBLIC_UMAMI_*`    |    no    | Analytics; leave empty to disable.                                 |
 | `DISCORD_CLIENT_ID` / `DISCORD_CLIENT_SECRET` | no | Discord OAuth.                                       |
 | `TWITCH_CLIENT_ID` / `TWITCH_CLIENT_SECRET`   | no | Twitch OAuth.                                        |
+
+See also: [`doc/career-access.md`](./career-access.md) for the CV grant model
+(community session ≠ CV access).
 
 ## Coolify setup
 

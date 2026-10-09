@@ -112,7 +112,24 @@
     "requestAccess": "REQUEST_CV_ACCESS",
     "openContact": "OPEN_CONTACT_CHANNEL",
     "detailTitle": "CAREER_ENTRY_DETAIL",
-    "missing": "ENTRY NOT FOUND"
+    "missing": "ENTRY NOT FOUND",
+    "access": {
+      "seoTitle": "CV_GATE // ACCESS",
+      "seoDescription": "Acces protege au journal professionnel.",
+      "titleLine1": "SIDE_CHANNEL_LOCK",
+      "titleLine3": "CREDENTIAL_REQUIRED",
+      "description": "Cette surface CV exige un jeton d acces ou un compte explicitement autorise. La connexion communaute Twitch ne debloque pas le CV.",
+      "tokenSection": "REDEEM_TOKEN",
+      "tokenHint": "GRANT ≠ SESSION",
+      "communityNotEnough": "Une session Twitch / Discord communautaire ne suffit pas. Utilisez le jeton fourni, ou un compte present dans la allowlist CV.",
+      "tokenLabel": "ACCESS_TOKEN",
+      "tokenPlaceholder": "coller le jeton",
+      "tokenSubmit": "UNLOCK_CV",
+      "tokenSubmitting": "VERIFYING…",
+      "tokenRequired": "Jeton requis.",
+      "tokenInvalid": "Jeton invalide ou expire.",
+      "backHome": "RETURN_BASE"
+    }
   },
   "ui": {
     "diagnosticVersion": "DIAGNOSTIC_v4.2",

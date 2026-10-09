@@ -1,4 +1,8 @@
 <script setup lang="ts">
+definePageMeta({
+  middleware: ['career-access'],
+})
+
 const { t } = useI18n()
 const careerItems = useCareerTimeline()
 const { profileLinks } = useCareerProfileLinks()
