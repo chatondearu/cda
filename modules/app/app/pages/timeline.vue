@@ -10,16 +10,9 @@ const verifiedStats = computed(() => [
   { label: t('timelinePage.stats.followersTracker'), value: `${metrics.twitchTrackerFollowers}` },
 ])
 
-useSeoMeta({
-  description: t('timeline.seoDescription'),
-  ogTitle: '[og:title]',
-  ogDescription: '[og:description]',
-  ogImage: '[og:image]',
-  ogUrl: '[og:url]',
-  twitterTitle: '[twitter:title]',
-  twitterDescription: '[twitter:description]',
-  twitterImage: '[twitter:image]',
-  twitterCard: 'summary',
+usePageSeo({
+  title: () => t('timeline.seoTitle'),
+  description: () => t('timeline.seoDescription'),
 })
 </script>
 
