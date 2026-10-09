@@ -1,9 +1,13 @@
 <script setup lang="ts">
 const config = useRuntimeConfig()
+const { trackingAllowed } = useUmamiConsent()
 
 useHead(() => {
-  const src = config.public.umamiScriptUrl
-  const websiteId = config.public.umamiWebsiteId
+  if (!trackingAllowed.value)
+    return {}
+
+  const src = String(config.public.umamiScriptUrl ?? '').trim()
+  const websiteId = String(config.public.umamiWebsiteId ?? '').trim()
   if (!src || !websiteId)
     return {}
 
@@ -24,4 +28,5 @@ useHead(() => {
   <NuxtLayout>
     <NuxtPage />
   </NuxtLayout>
+  <AppUmamiConsentNotice />
 </template>

@@ -35,7 +35,7 @@ are applied **automatically at container startup**.
 | `NUXT_PUBLIC_ME_HOST`    |    no    | Host for the CV access gateway.                                    |
 | `NUXT_PUBLIC_REDIRECT_HOSTS_EN` | no | Comma-separated hosts redirected to `/en`.                       |
 | `NUXT_PUBLIC_CAREER_*`   |    no    | CV/contact values inlined for PDF export.                          |
-| `NUXT_PUBLIC_UMAMI_*`    |    no    | Analytics; leave empty to disable.                                 |
+| `NUXT_PUBLIC_UMAMI_*`    |    no    | Analytics; leave empty to disable. When set, a consent gate loads before the script (see `doc/security-headers.md`). |
 | `DISCORD_CLIENT_ID` / `DISCORD_CLIENT_SECRET` | no | Discord OAuth.                                       |
 | `TWITCH_CLIENT_ID` / `TWITCH_CLIENT_SECRET`   | no | Twitch OAuth.                                        |
 
