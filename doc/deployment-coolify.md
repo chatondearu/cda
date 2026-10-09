@@ -38,7 +38,7 @@ are applied **automatically at container startup**.
 | `NUXT_CAREER_ACCESS_TOKENS` | no | Comma-separated CV unlock tokens.                               |
 | `NUXT_CAREER_ALLOWLIST`  |    no    | Comma-separated auth emails/ids allowed to view CV.                |
 | `NUXT_CAREER_ACCESS_SECRET` | no | Optional HMAC secret for CV grant cookie.                       |
-| `NUXT_PUBLIC_UMAMI_*`    |    no    | Analytics; leave empty to disable.                                 |
+| `NUXT_PUBLIC_UMAMI_*`    |    no    | Analytics; leave empty to disable. When set, a consent gate loads before the script (see `doc/security-headers.md`). |
 | `DISCORD_CLIENT_ID` / `DISCORD_CLIENT_SECRET` | no | Discord OAuth.                                       |
 | `TWITCH_CLIENT_ID` / `TWITCH_CLIENT_SECRET`   | no | Twitch OAuth.                                        |
 

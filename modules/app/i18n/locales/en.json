@@ -26,6 +26,15 @@
       "archive": "CORE_DUMP"
     }
   },
+  "privacy": {
+    "umami": {
+      "ariaLabel": "Analytics consent",
+      "title": "TELEMETRY_GATE // UMAMI",
+      "body": "Optional privacy-friendly analytics (Umami) may run on this host. Accept to load the script; decline keeps tracking off. Choice is stored locally.",
+      "accept": "ACCEPT",
+      "decline": "DECLINE"
+    }
+  },
   "nav": {
     "home": "HOME_BASE",
     "timeline": "TIMELINE_LOG",
