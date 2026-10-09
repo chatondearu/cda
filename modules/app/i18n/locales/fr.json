@@ -26,6 +26,15 @@
       "archive": "CORE_DUMP"
     }
   },
+  "privacy": {
+    "umami": {
+      "ariaLabel": "Consentement analytique",
+      "title": "TELEMETRY_GATE // UMAMI",
+      "body": "Des statistiques optionnelles et respectueuses de la vie privee (Umami) peuvent s executer sur cet hote. Accepter charge le script ; refuser garde le suivi desactive. Le choix est stocke localement.",
+      "accept": "ACCEPTER",
+      "decline": "REFUSER"
+    }
+  },
   "nav": {
     "home": "BASE_ACCUEIL",
     "timeline": "CHRONO_LOG",
@@ -71,6 +80,7 @@
     }
   },
   "timeline": {
+    "seoTitle": "CHRONO_LOG // CHATONDEARU",
     "seoDescription": "Chronologie du parcours createur ChatonDeAru.",
     "heroDescription": "Les moments qui ont compte: demarrage, pics, pause, et preparation du retour Twitch.",
     "sectionTitle": "LOGIC_FLOW_CHRONO",

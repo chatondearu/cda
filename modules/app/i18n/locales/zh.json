@@ -26,6 +26,15 @@
       "archive": "CORE_DUMP"
     }
   },
+  "privacy": {
+    "umami": {
+      "ariaLabel": "分析同意",
+      "title": "TELEMETRY_GATE // UMAMI",
+      "body": "本主机可启用可选的隐私友好分析（Umami）。接受后加载脚本；拒绝则保持关闭。选择保存在本地。",
+      "accept": "接受",
+      "decline": "拒绝"
+    }
+  },
   "nav": {
     "home": "主页",
     "timeline": "时间线",
@@ -71,6 +80,7 @@
     }
   },
   "timeline": {
+    "seoTitle": "CHRONO_LOG // CHATONDEARU",
     "seoDescription": "ChatonDeAru 创作历程时间线。",
     "heroDescription": "真正重要的阶段：起步、高峰、暂停，以及 Twitch 回归准备。",
     "sectionTitle": "逻辑流程时间线",
