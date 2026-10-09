@@ -26,6 +26,6 @@
     "@types/pg": "latest",
     "drizzle-kit": "latest",
     "tsx": "latest",
-    "typescript": "latest"
+    "typescript": "5.8.3"
   }
 }
