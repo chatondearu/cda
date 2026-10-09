@@ -82,25 +82,22 @@ async function submitToken(): Promise<void> {
       </p>
 
       <form
-        class="mt-8 max-w-xl flex flex-col gap-4"
+        class="mt-8 max-w-xl flex flex-col gap-6"
         @submit.prevent="submitToken"
       >
-        <label class="flex flex-col gap-2">
-          <span class="text-[11px] text-primary font-bold tracking-widest font-mono uppercase">
-            {{ t('career.access.tokenLabel') }}
-          </span>
-          <input
-            v-model="tokenInput"
-            type="password"
-            autocomplete="one-time-code"
-            class="border border-outline_variant/30 bg-surface_container px-3 py-2 text-sm text-primary font-mono outline-none focus:border-primary"
-            :placeholder="t('career.access.tokenPlaceholder')"
-          >
-        </label>
+        <UiCommandInput
+          v-model="tokenInput"
+          input-id="career-access-token"
+          :label="t('career.access.tokenLabel')"
+          type="password"
+          autocomplete="one-time-code"
+          :placeholder="t('career.access.tokenPlaceholder')"
+          required
+        />
 
         <p
           v-if="errorMessage"
-          class="text-sm text-error font-mono"
+          class="border border-error/40 bg-error_container/20 px-4 py-3 text-xs text-error font-mono"
           role="alert"
         >
           {{ errorMessage }}
@@ -108,8 +105,9 @@ async function submitToken(): Promise<void> {
 
         <div class="flex flex-wrap gap-3">
           <UiButton
+            type="submit"
             :disabled="submitting"
-            @click="submitToken"
+            :aria-busy="submitting"
           >
             {{ submitting ? t('career.access.tokenSubmitting') : t('career.access.tokenSubmit') }}
           </UiButton>
