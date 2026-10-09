@@ -12,21 +12,15 @@ function sanitizeRedirect(value: unknown): string | null {
   return value
 }
 
-type Mode = 'signin' | 'signup'
-const mode = ref<Mode>('signin')
-const name = ref('')
 const email = ref('')
 const password = ref('')
 const pending = ref(false)
 const errorMessage = ref('')
+/** Email/password is secondary — collapsed until the operator opts in. */
+const showEmailForm = ref(false)
 
 const currentUser = computed(() => session.value?.data?.user ?? null)
 const callbackURL = computed(() => sanitizeRedirect(route.query.redirect) ?? localePath('/'))
-
-function toggleMode() {
-  mode.value = mode.value === 'signin' ? 'signup' : 'signin'
-  errorMessage.value = ''
-}
 
 async function onSocial(provider: 'discord' | 'twitch') {
   errorMessage.value = ''
@@ -37,25 +31,17 @@ async function onSubmit() {
   errorMessage.value = ''
   pending.value = true
 
-  const handlers = {
-    onError: (ctx: { error: { message?: string } }) => {
-      errorMessage.value = ctx.error.message ?? t('genericError')
+  await auth.signIn.email(
+    { email: email.value, password: password.value },
+    {
+      onError: (ctx: { error: { message?: string } }) => {
+        errorMessage.value = ctx.error.message ?? t('genericError')
+      },
+      onSuccess: () => {
+        navigateTo(callbackURL.value)
+      },
     },
-    onSuccess: () => {
-      navigateTo(callbackURL.value)
-    },
-  }
-
-  if (mode.value === 'signin') {
-    await auth.signIn.email({ email: email.value, password: password.value }, handlers)
-  }
-  else {
-    const fallbackName = email.value.split('@')[0] ?? email.value
-    await auth.signUp.email(
-      { email: email.value, password: password.value, name: name.value.trim() || fallbackName },
-      handlers,
-    )
-  }
+  )
 
   pending.value = false
 }
@@ -108,7 +94,7 @@ useSeoMeta({
           </div>
         </div>
 
-        <!-- Unauthenticated state -->
+        <!-- Unauthenticated state — Twitch-first community gateway -->
         <div
           v-else
           class="mt-8"
@@ -117,21 +103,26 @@ useSeoMeta({
             {{ t('subtitle') }}
           </p>
 
-          <!-- OAuth providers -->
-          <div class="grid gap-3 sm:grid-cols-2">
+          <!-- Primary identity: Twitch -->
+          <UiButton
+            class="w-full justify-center"
+            @click="onSocial('twitch')"
+          >
+            {{ t('oauthTwitch') }}
+          </UiButton>
+
+          <p class="mt-3 text-[10px] text-primary/40 tracking-widest font-mono uppercase">
+            {{ t('twitchPrimaryHint') }}
+          </p>
+
+          <!-- Optional Discord -->
+          <div class="mt-6">
             <UiButton
               variant="secondary"
               class="w-full justify-center"
               @click="onSocial('discord')"
             >
               {{ t('oauthDiscord') }}
-            </UiButton>
-            <UiButton
-              variant="secondary"
-              class="w-full justify-center"
-              @click="onSocial('twitch')"
-            >
-              {{ t('oauthTwitch') }}
             </UiButton>
           </div>
 
@@ -143,18 +134,24 @@ useSeoMeta({
             <span class="h-px flex-1 bg-primary_fixed_dim/20" />
           </div>
 
-          <!-- Email / password -->
+          <!-- Gated email/password (sign-in only; signup disabled server-side) -->
+          <button
+            type="button"
+            class="text-[11px] text-primary/60 tracking-widest font-mono uppercase transition-none hover:text-primary"
+            :aria-expanded="showEmailForm"
+            @click="showEmailForm = !showEmailForm"
+          >
+            {{ showEmailForm ? t('hideEmailForm') : t('showEmailForm') }}
+          </button>
+
           <form
-            class="flex flex-col gap-6"
+            v-if="showEmailForm"
+            class="mt-6 flex flex-col gap-6"
             @submit.prevent="onSubmit"
           >
-            <UiCommandInput
-              v-if="mode === 'signup'"
-              v-model="name"
-              input-id="auth-name"
-              :label="t('nameLabel')"
-              autocomplete="name"
-            />
+            <p class="text-xs text-primary/50 font-light leading-relaxed">
+              {{ t('emailGateHint') }}
+            </p>
             <UiCommandInput
               v-model="email"
               input-id="auth-email"
@@ -168,7 +165,7 @@ useSeoMeta({
               input-id="auth-password"
               :label="t('passwordLabel')"
               type="password"
-              :autocomplete="mode === 'signup' ? 'new-password' : 'current-password'"
+              autocomplete="current-password"
               required
             />
 
@@ -185,17 +182,9 @@ useSeoMeta({
               type="submit"
               :aria-busy="pending"
             >
-              {{ mode === 'signin' ? t('signInAction') : t('signUpAction') }}
+              {{ t('signInAction') }}
             </UiButton>
           </form>
-
-          <button
-            type="button"
-            class="mt-6 text-[11px] text-primary/60 tracking-widest font-mono uppercase transition-none hover:text-primary"
-            @click="toggleMode"
-          >
-            {{ mode === 'signin' ? t('toggleToSignUp') : t('toggleToSignIn') }}
-          </button>
         </div>
       </div>
     </section>
@@ -207,18 +196,18 @@ fr:
   seoTitle: 'CONNEXION // CDA_LAB'
   seoDescription: "Accès au terminal d'authentification CDA_LAB."
   title: 'AUTHENTIFICATION'
-  subtitle: 'Identifiez-vous via un fournisseur externe ou vos identifiants pour accéder aux modules restreints.'
+  subtitle: 'Porte d’entrée communauté : connectez-vous avec Twitch pour accéder aux modules restreints.'
   secureLine: 'SECURE_LINE'
-  oauthDiscord: 'CONTINUER AVEC DISCORD'
   oauthTwitch: 'CONTINUER AVEC TWITCH'
+  oauthDiscord: 'CONTINUER AVEC DISCORD (OPTIONNEL)'
+  twitchPrimaryHint: 'IDENTITÉ PRIMAIRE — COMMUNAUTÉ STREAM'
   orSeparator: 'OU'
-  nameLabel: 'NOM AFFICHÉ'
+  showEmailForm: 'UTILISER UN EMAIL / MOT DE PASSE'
+  hideEmailForm: 'MASQUER EMAIL / MOT DE PASSE'
+  emailGateHint: 'Réservé aux comptes existants. Les nouvelles inscriptions passent par Twitch.'
   emailLabel: 'EMAIL'
   passwordLabel: 'MOT DE PASSE'
   signInAction: 'SE CONNECTER'
-  signUpAction: 'CRÉER UN COMPTE'
-  toggleToSignUp: "PAS DE COMPTE ? S'INSCRIRE"
-  toggleToSignIn: 'DÉJÀ UN COMPTE ? SE CONNECTER'
   signedInAs: 'SESSION ACTIVE'
   signOutAction: 'SE DÉCONNECTER'
   backHome: "RETOUR À L'ACCUEIL"
@@ -227,18 +216,18 @@ en:
   seoTitle: 'LOGIN // CDA_LAB'
   seoDescription: 'Access to the CDA_LAB authentication terminal.'
   title: 'AUTHENTICATION'
-  subtitle: 'Sign in with an external provider or your credentials to access restricted modules.'
+  subtitle: 'Community gateway: sign in with Twitch to access restricted modules.'
   secureLine: 'SECURE_LINE'
-  oauthDiscord: 'CONTINUE WITH DISCORD'
   oauthTwitch: 'CONTINUE WITH TWITCH'
+  oauthDiscord: 'CONTINUE WITH DISCORD (OPTIONAL)'
+  twitchPrimaryHint: 'PRIMARY IDENTITY — STREAM COMMUNITY'
   orSeparator: 'OR'
-  nameLabel: 'DISPLAY NAME'
+  showEmailForm: 'USE EMAIL / PASSWORD'
+  hideEmailForm: 'HIDE EMAIL / PASSWORD'
+  emailGateHint: 'For existing accounts only. New sign-ups go through Twitch.'
   emailLabel: 'EMAIL'
   passwordLabel: 'PASSWORD'
   signInAction: 'SIGN IN'
-  signUpAction: 'CREATE ACCOUNT'
-  toggleToSignUp: 'NO ACCOUNT? SIGN UP'
-  toggleToSignIn: 'ALREADY REGISTERED? SIGN IN'
   signedInAs: 'ACTIVE SESSION'
   signOutAction: 'SIGN OUT'
   backHome: 'BACK TO HOME'
@@ -247,18 +236,18 @@ zh:
   seoTitle: '登录 // CDA_LAB'
   seoDescription: '访问 CDA_LAB 身份验证终端。'
   title: '身份验证'
-  subtitle: '使用外部提供商或您的凭据登录以访问受限模块。'
+  subtitle: '社区入口：使用 Twitch 登录以访问受限模块。'
   secureLine: 'SECURE_LINE'
-  oauthDiscord: '使用 DISCORD 继续'
   oauthTwitch: '使用 TWITCH 继续'
+  oauthDiscord: '使用 DISCORD 继续（可选）'
+  twitchPrimaryHint: '主要身份 — 直播社区'
   orSeparator: '或'
-  nameLabel: '显示名称'
+  showEmailForm: '使用电子邮件 / 密码'
+  hideEmailForm: '隐藏电子邮件 / 密码'
+  emailGateHint: '仅限现有账户。新注册请通过 Twitch。'
   emailLabel: '电子邮件'
   passwordLabel: '密码'
   signInAction: '登录'
-  signUpAction: '创建账户'
-  toggleToSignUp: '没有账户？注册'
-  toggleToSignIn: '已有账户？登录'
   signedInAs: '活动会话'
   signOutAction: '退出登录'
   backHome: '返回首页'
@@ -267,18 +256,18 @@ ja:
   seoTitle: 'ログイン // CDA_LAB'
   seoDescription: 'CDA_LAB 認証ターミナルへのアクセス。'
   title: '認証'
-  subtitle: '外部プロバイダーまたは認証情報でサインインして、制限付きモジュールにアクセスします。'
+  subtitle: 'コミュニティゲートウェイ：Twitch でサインインして制限付きモジュールにアクセスします。'
   secureLine: 'SECURE_LINE'
-  oauthDiscord: 'DISCORD で続行'
   oauthTwitch: 'TWITCH で続行'
+  oauthDiscord: 'DISCORD で続行（任意）'
+  twitchPrimaryHint: 'プライマリ ID — ストリームコミュニティ'
   orSeparator: 'または'
-  nameLabel: '表示名'
+  showEmailForm: 'メール / パスワードを使う'
+  hideEmailForm: 'メール / パスワードを隠す'
+  emailGateHint: '既存アカウント専用です。新規登録は Twitch 経由です。'
   emailLabel: 'メール'
   passwordLabel: 'パスワード'
   signInAction: 'サインイン'
-  signUpAction: 'アカウント作成'
-  toggleToSignUp: 'アカウントがない？登録'
-  toggleToSignIn: 'すでに登録済み？サインイン'
   signedInAs: 'アクティブセッション'
   signOutAction: 'サインアウト'
   backHome: 'ホームに戻る'
