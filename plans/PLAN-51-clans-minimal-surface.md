@@ -40,13 +40,13 @@ Branch `feat/51-clans-minimal-surface` from `dev` (or after #50 if CTA paths nee
 - [x] Membership status for current user
 - [x] Empty/loading states + i18n
 - [x] Link from account hub
-- [ ] `nix develop -c pnpm check:ci`; PR `Closes #51`; CI green; do not merge
+- [x] `nix develop -c pnpm check:ci`; PR `Closes #51`; CI green; do not merge
 
 ## Test plan
 
 - [x] Page works with local DB data / empty DB
 - [x] Account deep-link works
-- [ ] Remote CI green
+- [x] Remote CI green
 
 ## Verification
 
