@@ -86,32 +86,3 @@ else {
     </template>
   </div>
 </template>
-
-<i18n lang="json">
-{
-  "fr": {
-    "home": {
-      "meSeoTitle": "ME // RLienard",
-      "meSeoDescription": "Page de passerelle pour demander un accès au CV professionnel."
-    }
-  },
-  "en": {
-    "home": {
-      "meSeoTitle": "ME // RLienard",
-      "meSeoDescription": "Gateway page to request access to the professional resume."
-    }
-  },
-  "zh": {
-    "home": {
-      "meSeoTitle": "ME // RLienard",
-      "meSeoDescription": "用于申请访问职业履历的入口页面。"
-    }
-  },
-  "ja": {
-    "home": {
-      "meSeoTitle": "ME // RLienard",
-      "meSeoDescription": "職務経歴書へのアクセスを申請するためのゲートウェイページ。"
-    }
-  }
-}
-</i18n>

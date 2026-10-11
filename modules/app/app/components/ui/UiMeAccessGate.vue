@@ -16,9 +16,9 @@ const mailtoHref = computed(() => {
 <template>
   <UiHeroCommand icon="hub">
     <template #title>
-      IDENTITY_GATE:<br>
+      {{ t('titleLine1') }}:<br>
       <span class="bg-primary px-2 text-background">[ RLienard ]</span><br>
-      ACCESS_REQUEST
+      {{ t('titleLine3') }}
     </template>
 
     <template #description>
@@ -41,6 +41,8 @@ const mailtoHref = computed(() => {
 
 <i18n lang="yaml">
 fr:
+  titleLine1: PORTE_IDENTITE
+  titleLine3: DEMANDE_ACCES
   description: Page de passerelle pour demander un accès au CV professionnel.
   requestAccess: REQUEST_CV_ACCESS
   openContact: OPEN_CONTACT_CHANNEL
@@ -56,6 +58,8 @@ fr:
 
     Merci.
 en:
+  titleLine1: IDENTITY_GATE
+  titleLine3: ACCESS_REQUEST
   description: Gateway page to request access to the professional resume.
   requestAccess: REQUEST_CV_ACCESS
   openContact: OPEN_CONTACT_CHANNEL
@@ -71,6 +75,8 @@ en:
 
     Thank you.
 zh:
+  titleLine1: 身份门禁
+  titleLine3: 访问申请
   description: 用于申请访问职业履历的入口页面。
   requestAccess: 申请访问简历
   openContact: 打开联系渠道
@@ -86,6 +92,8 @@ zh:
 
     谢谢。
 ja:
+  titleLine1: 身分ゲート
+  titleLine3: アクセス申請
   description: 職務経歴書へのアクセスを申請するためのゲートウェイページ。
   requestAccess: CVアクセスを申請
   openContact: 連絡チャネルを開く

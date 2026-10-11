@@ -52,6 +52,8 @@
   "home": {
     "seoTitle": "CDA_LAB // LOGICAL MACHINE",
     "seoDescription": "Showcase fullstack, archives techniques et parcours createur de ChatonDeAru.",
+    "meSeoTitle": "ME // RLienard",
+    "meSeoDescription": "Page de passerelle pour demander un accès au CV professionnel.",
     "heroTitleLine1": "JOURNAL_DE_BORD",
     "heroTitleLine3": "CODE_AND_LIVE",
     "heroDescription": "Je construis des experiences web solides avec Vue/Nuxt, puis je les raconte en live avec la communaute. Ici, tu trouveras autant de code que d histoire de creation.",
