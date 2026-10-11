@@ -26,6 +26,15 @@
       "archive": "CORE_DUMP"
     }
   },
+  "privacy": {
+    "umami": {
+      "ariaLabel": "分析の同意",
+      "title": "TELEMETRY_GATE // UMAMI",
+      "body": "このホストでは任意のプライバシー配慮型分析（Umami）を有効にできます。同意するとスクリプトを読み込み、拒否すると追跡しません。選択はローカルに保存されます。",
+      "accept": "同意する",
+      "decline": "拒否する"
+    }
+  },
   "nav": {
     "home": "ホーム",
     "timeline": "タイムライン",
