@@ -52,6 +52,8 @@
   "home": {
     "seoTitle": "CDA_LAB // LOGICAL MACHINE",
     "seoDescription": "フルスタック実績、技術アーカイブ、クリエイター年表。",
+    "meSeoTitle": "ME // RLienard",
+    "meSeoDescription": "職務経歴書へのアクセスを申請するためのゲートウェイページ。",
     "heroTitleLine1": "制作ログ",
     "heroTitleLine3": "CODE_AND_LIVE",
     "heroDescription": "Vue/Nuxtで堅実なプロダクトを作り、その裏側を配信でコミュニティと共有しています。",

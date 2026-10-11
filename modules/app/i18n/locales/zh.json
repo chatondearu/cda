@@ -52,6 +52,8 @@
   "home": {
     "seoTitle": "CDA_LAB // LOGICAL MACHINE",
     "seoDescription": "全栈作品、技术档案与创作者历程。",
+    "meSeoTitle": "ME // RLienard",
+    "meSeoDescription": "用于申请访问职业履历的入口页面。",
     "heroTitleLine1": "创作航行日志",
     "heroTitleLine3": "CODE_AND_LIVE",
     "heroDescription": "我用 Vue/Nuxt 打造可靠的产品，也会在直播里真实分享创作过程与取舍。",

@@ -52,6 +52,8 @@
   "home": {
     "seoTitle": "CDA_LAB // LOGICAL MACHINE",
     "seoDescription": "Fullstack showcase, technical archive, and creator timeline.",
+    "meSeoTitle": "ME // RLienard",
+    "meSeoDescription": "Gateway page to request access to the professional resume.",
     "heroTitleLine1": "SHIP_LOG",
     "heroTitleLine3": "CODE_AND_LIVE",
     "heroDescription": "I build reliable Vue/Nuxt products, then share the behind-the-scenes in live sessions with the community.",
