@@ -152,9 +152,12 @@
     "initializingDeepSystems": "Initializing Deep Systems"
   },
   "auth": {
-    "session": "SESSION",
-    "login": "LOGIN",
-    "logout": "LOGOUT",
-    "account": "ACCOUNT"
+    "session": "COMMUNITY_SESSION",
+    "sessionActive": "LINKED — COMMUNITY MODULES",
+    "sessionGuest": "GUEST — SIGN IN FOR COMMUNITY",
+    "communityOperator": "USER: COMMUNITY",
+    "login": "COMMUNITY_LOGIN",
+    "logout": "SIGN_OUT",
+    "account": "ACCOUNT_HUB"
   }
 }

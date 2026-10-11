@@ -20,7 +20,8 @@ const errorMessage = ref('')
 const showEmailForm = ref(false)
 
 const currentUser = computed(() => session.value?.data?.user ?? null)
-const callbackURL = computed(() => sanitizeRedirect(route.query.redirect) ?? localePath('/'))
+/** Default post-login landing: community hub when no safe redirect is provided. */
+const callbackURL = computed(() => sanitizeRedirect(route.query.redirect) ?? localePath('/account'))
 
 async function onSocial(provider: 'discord' | 'twitch') {
   errorMessage.value = ''
@@ -81,12 +82,15 @@ useSeoMeta({
           <p class="mt-2 break-all text-sm text-primary font-mono">
             {{ currentUser.email }}
           </p>
+          <p class="mt-3 text-[10px] text-primary/40 tracking-widest font-mono uppercase">
+            {{ t('communitySessionHint') }}
+          </p>
           <div class="mt-6 flex flex-wrap gap-4">
             <UiButton
               variant="secondary"
-              to="/"
+              :to="localePath('/account')"
             >
-              {{ t('backHome') }}
+              {{ t('openHub') }}
             </UiButton>
             <UiButton @click="onSignOut">
               {{ t('signOutAction') }}
@@ -208,9 +212,10 @@ fr:
   emailLabel: 'EMAIL'
   passwordLabel: 'MOT DE PASSE'
   signInAction: 'SE CONNECTER'
-  signedInAs: 'SESSION ACTIVE'
+  signedInAs: 'SESSION COMMUNAUTÉ ACTIVE'
+  communitySessionHint: 'IDENTITÉ COMMUNAUTÉ — ACCÈS AUX MODULES RESTREINTS'
   signOutAction: 'SE DÉCONNECTER'
-  backHome: "RETOUR À L'ACCUEIL"
+  openHub: 'OUVRIR LE HUB COMPTE'
   genericError: 'Échec de la requête. Réessayez.'
 en:
   seoTitle: 'LOGIN // CDA_LAB'
@@ -228,9 +233,10 @@ en:
   emailLabel: 'EMAIL'
   passwordLabel: 'PASSWORD'
   signInAction: 'SIGN IN'
-  signedInAs: 'ACTIVE SESSION'
+  signedInAs: 'ACTIVE COMMUNITY SESSION'
+  communitySessionHint: 'COMMUNITY IDENTITY — RESTRICTED MODULE ACCESS'
   signOutAction: 'SIGN OUT'
-  backHome: 'BACK TO HOME'
+  openHub: 'OPEN ACCOUNT HUB'
   genericError: 'Request failed. Please retry.'
 zh:
   seoTitle: '登录 // CDA_LAB'
@@ -248,9 +254,10 @@ zh:
   emailLabel: '电子邮件'
   passwordLabel: '密码'
   signInAction: '登录'
-  signedInAs: '活动会话'
+  signedInAs: '社区会话已激活'
+  communitySessionHint: '社区身份 — 受限模块访问'
   signOutAction: '退出登录'
-  backHome: '返回首页'
+  openHub: '打开账户中心'
   genericError: '请求失败，请重试。'
 ja:
   seoTitle: 'ログイン // CDA_LAB'
@@ -268,8 +275,9 @@ ja:
   emailLabel: 'メール'
   passwordLabel: 'パスワード'
   signInAction: 'サインイン'
-  signedInAs: 'アクティブセッション'
+  signedInAs: 'コミュニティセッション有効'
+  communitySessionHint: 'コミュニティ ID — 制限付きモジュールアクセス'
   signOutAction: 'サインアウト'
-  backHome: 'ホームに戻る'
+  openHub: 'アカウントハブを開く'
   genericError: 'リクエストに失敗しました。再試行してください。'
 </i18n>

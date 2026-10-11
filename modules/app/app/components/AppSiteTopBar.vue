@@ -1,5 +1,16 @@
 <script setup lang="ts">
+const { t } = useI18n()
 const { telemetry } = useSystemData()
+const auth = useAuth()
+const session = auth.useSession()
+
+const currentUser = computed(() => session.value?.data?.user ?? null)
+/** Prefer community session framing over the static diagnostic operator label. */
+const operatorLabel = computed(() =>
+  currentUser.value
+    ? t('auth.communityOperator')
+    : telemetry.value.userText,
+)
 </script>
 
 <template>
@@ -12,7 +23,7 @@ const { telemetry } = useSystemData()
         <span class="h-2 w-2 animate-pulse bg-primary_fixed_dim" />
         {{ telemetry.secureLineText }}
       </span>
-      <span class="hidden opacity-60 md:inline">{{ telemetry.userText }}</span>
+      <span class="hidden opacity-60 md:inline">{{ operatorLabel }}</span>
       <AppSettingsMenu />
     </template>
   </UiTopBar>
