@@ -135,14 +135,14 @@ useSeoMeta({
           </div>
 
           <!-- Gated email/password (sign-in only; signup disabled server-side) -->
-          <button
+          <UiButton
+            variant="tertiary"
             type="button"
-            class="text-[11px] text-primary/60 tracking-widest font-mono uppercase transition-none hover:text-primary"
             :aria-expanded="showEmailForm"
             @click="showEmailForm = !showEmailForm"
           >
             {{ showEmailForm ? t('hideEmailForm') : t('showEmailForm') }}
-          </button>
+          </UiButton>
 
           <form
             v-if="showEmailForm"
