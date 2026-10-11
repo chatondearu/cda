@@ -1,31 +1,15 @@
 <script setup lang="ts">
 const config = useRuntimeConfig()
-const { locale, t } = useI18n()
+const { locale, t } = useI18n({ useScope: 'local' })
 const siteUrl = String(config.public.siteUrl ?? 'https://chatondearu.fr').replace(/\/+$/, '')
 const contactUrl = `${siteUrl}/contact`
 const localePath = useLocalePath()
 
 const mailtoHref = computed(() => {
-  const templates: Record<string, { subject: string, body: string }> = {
-    fr: {
-      subject: 'Demande d\'acces au CV',
-      body: 'Bonjour,\n\nJe souhaite demander l\'acces au CV.\n\nPrenom Nom :\nSociete :\nContexte de la demande :\n\nMerci.',
-    },
-    en: {
-      subject: 'Resume access request',
-      body: 'Hello,\n\nI would like to request access to the resume.\n\nFull name:\nCompany:\nRequest context:\n\nThank you.',
-    },
-    zh: {
-      subject: '申请访问简历',
-      body: '你好，\n\n我希望申请访问简历。\n\n姓名：\n公司：\n申请背景：\n\n谢谢。',
-    },
-    ja: {
-      subject: '履歴書アクセス申請',
-      body: 'こんにちは。\n\n履歴書へのアクセスを申請したいです。\n\n氏名：\n会社名：\n依頼の背景：\n\nよろしくお願いします。',
-    },
-  }
-  const selected = templates[locale.value] ?? templates.en ?? { subject: '', body: '' }
-  return `mailto:contact@chatondearu.fr?subject=${encodeURIComponent(selected.subject)}&body=${encodeURIComponent(selected.body)}`
+  void locale.value
+  const subject = t('mailtoSubject')
+  const body = t('mailtoBody')
+  return `mailto:contact@chatondearu.fr?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
 })
 </script>
 
@@ -38,19 +22,82 @@ const mailtoHref = computed(() => {
     </template>
 
     <template #description>
-      {{ t('home.meSeoDescription') }}
+      {{ t('description') }}
     </template>
 
     <template #actions>
       <UiButton :href="mailtoHref">
-        {{ t('career.requestAccess') }}
+        {{ t('requestAccess') }}
       </UiButton>
       <UiButton
         variant="secondary"
         :href="localePath('/contact') || contactUrl"
       >
-        {{ t('career.openContact') }}
+        {{ t('openContact') }}
       </UiButton>
     </template>
   </UiHeroCommand>
 </template>
+
+<i18n lang="yaml">
+fr:
+  description: Page de passerelle pour demander un accès au CV professionnel.
+  requestAccess: REQUEST_CV_ACCESS
+  openContact: OPEN_CONTACT_CHANNEL
+  mailtoSubject: Demande d'acces au CV
+  mailtoBody: |
+    Bonjour,
+
+    Je souhaite demander l'acces au CV.
+
+    Prenom Nom :
+    Societe :
+    Contexte de la demande :
+
+    Merci.
+en:
+  description: Gateway page to request access to the professional resume.
+  requestAccess: REQUEST_CV_ACCESS
+  openContact: OPEN_CONTACT_CHANNEL
+  mailtoSubject: Resume access request
+  mailtoBody: |
+    Hello,
+
+    I would like to request access to the resume.
+
+    Full name:
+    Company:
+    Request context:
+
+    Thank you.
+zh:
+  description: 用于申请访问职业履历的入口页面。
+  requestAccess: 申请访问简历
+  openContact: 打开联系渠道
+  mailtoSubject: 申请访问简历
+  mailtoBody: |
+    你好，
+
+    我希望申请访问简历。
+
+    姓名：
+    公司：
+    申请背景：
+
+    谢谢。
+ja:
+  description: 職務経歴書へのアクセスを申請するためのゲートウェイページ。
+  requestAccess: CVアクセスを申請
+  openContact: 連絡チャネルを開く
+  mailtoSubject: 履歴書アクセス申請
+  mailtoBody: |
+    こんにちは。
+
+    履歴書へのアクセスを申請したいです。
+
+    氏名：
+    会社名：
+    依頼の背景：
+
+    よろしくお願いします。
+</i18n>

@@ -1,7 +1,22 @@
 <script setup lang="ts">
+definePageMeta({
+  middleware: ['career-access'],
+})
+
 const { t } = useI18n()
 const localePath = useLocalePath()
 const { data: careerDoc } = await useCareerTimelineDetail()
+
+useSeoMeta({
+  title: () => t('career.detailTitle'),
+  robots: 'noindex, nofollow',
+})
+
+useHead({
+  meta: [
+    { name: 'robots', content: 'noindex, nofollow' },
+  ],
+})
 </script>
 
 <template>
