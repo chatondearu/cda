@@ -66,8 +66,12 @@ const clanRows = computed(() => {
   ]
 })
 
+const clansDeepLink = computed(() =>
+  clan.value?.id ? `/clans/${clan.value.id}` : '/clans',
+)
+
 const communityLinks = computed(() => [
-  { key: 'clan', to: '/clans', label: t('cta.clan') },
+  { key: 'clan', to: clansDeepLink.value, label: t('cta.clan') },
   { key: 'lab', to: '/cda-lab', label: t('cta.lab') },
   { key: 'cassette', to: '/cassette', label: t('cta.cassette') },
   { key: 'timeline', to: '/timeline', label: t('cta.timeline') },
