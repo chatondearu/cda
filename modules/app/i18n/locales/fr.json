@@ -152,9 +152,12 @@
     "initializingDeepSystems": "Initializing Deep Systems"
   },
   "auth": {
-    "session": "SESSION",
-    "login": "CONNEXION",
+    "session": "SESSION_COMMUNAUTÉ",
+    "sessionActive": "LIÉE — MODULES COMMUNAUTÉ",
+    "sessionGuest": "INVITÉ — CONNEXION COMMUNAUTÉ",
+    "communityOperator": "USER: COMMUNITY",
+    "login": "CONNEXION_COMMUNAUTÉ",
     "logout": "DÉCONNEXION",
-    "account": "COMPTE"
+    "account": "HUB_COMPTE"
   }
 }

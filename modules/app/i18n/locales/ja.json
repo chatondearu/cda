@@ -152,9 +152,12 @@
     "initializingDeepSystems": "深層システムを初期化中"
   },
   "auth": {
-    "session": "セッション",
-    "login": "ログイン",
+    "session": "コミュニティセッション",
+    "sessionActive": "連携済 — コミュニティモジュール",
+    "sessionGuest": "ゲスト — コミュニティにサインイン",
+    "communityOperator": "USER: COMMUNITY",
+    "login": "コミュニティログイン",
     "logout": "ログアウト",
-    "account": "アカウント"
+    "account": "アカウントハブ"
   }
 }

@@ -93,8 +93,11 @@ function onThemeToggle(close: () => void) {
         </UiButton>
 
         <div class="mt-3 border-t border-primary_fixed_dim/20 pt-3">
-          <p class="mb-2 text-[10px] text-primary/70 tracking-widest font-mono uppercase">
+          <p class="mb-1 text-[10px] text-primary/70 tracking-widest font-mono uppercase">
             {{ t('auth.session') }}
+          </p>
+          <p class="mb-2 text-[10px] text-primary/40 tracking-widest font-mono uppercase">
+            {{ currentUser ? t('auth.sessionActive') : t('auth.sessionGuest') }}
           </p>
           <NuxtLink
             v-if="currentUser"

@@ -152,9 +152,12 @@
     "initializingDeepSystems": "正在初始化深层系统"
   },
   "auth": {
-    "session": "会话",
-    "login": "登录",
+    "session": "社区会话",
+    "sessionActive": "已关联 — 社区模块",
+    "sessionGuest": "访客 — 登录以进入社区",
+    "communityOperator": "USER: COMMUNITY",
+    "login": "社区登录",
     "logout": "退出",
-    "account": "账户"
+    "account": "账户中心"
   }
 }
