@@ -12,17 +12,9 @@ const collaborationProtocol = computed(() => [
   t('contact.protocol.organization'),
 ])
 
-useSeoMeta({
-  title: t('contact.seoTitle'),
-  description: t('contact.seoDescription'),
-  ogTitle: '[og:title]',
-  ogDescription: '[og:description]',
-  ogImage: '[og:image]',
-  ogUrl: '[og:url]',
-  twitterTitle: '[twitter:title]',
-  twitterDescription: '[twitter:description]',
-  twitterImage: '[twitter:image]',
-  twitterCard: 'summary',
+usePageSeo({
+  title: () => t('contact.seoTitle'),
+  description: () => t('contact.seoDescription'),
 })
 </script>
 
