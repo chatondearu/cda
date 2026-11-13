@@ -36,14 +36,15 @@ You are an expert fullstack/frontend developer specialized in Nuxt 3/4, the Vue.
 
 ## 6. ENVIRONMENT RULES (NixOS)
 
-1. Run Node/PNPM/Nuxt commands inside Nix:
+1. Prefer host/Mise for daily Node/pnpm (`mise.toml` pins; `mise install` then `mise exec -- …`).
+2. Fall back to Nix when host tools are missing or broken:
    - `nix develop -c pnpm ...`
    - `nix develop -c npx ...`
-2. If direnv is blocked, run `direnv allow` at project root.
-3. Keep Nix files consistent: `flake.nix`, `flake.lock`, `.envrc`.
-4. For app-specific commands, use workspace filters from repo root:
-   - `nix develop -c pnpm --filter @chatondearu/app dev`
-   - `nix develop -c pnpm --filter @chatondearu/app build`
+3. If direnv is blocked, run `direnv allow` at project root.
+4. Keep Nix files consistent: `flake.nix`, `flake.lock`, `.envrc` (`use flake`). Do not remove the flake.
+5. For app-specific commands, use workspace filters from repo root:
+   - `mise exec -- pnpm --filter @chatondearu/app dev` (or `nix develop -c pnpm --filter @chatondearu/app dev`)
+   - `mise exec -- pnpm --filter @chatondearu/app build`
 
 ## 7. NUXT / CONTENT GOTCHAS
 

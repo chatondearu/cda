@@ -12,6 +12,7 @@
         pkgs = import nixpkgs { inherit system; };
       in
       {
+        # Daily Node/pnpm: prefer Mise (mise.toml). This flake is the hermetic fallback.
         devShells.default = pkgs.mkShell {
           packages = with pkgs; [
             nodejs_24
